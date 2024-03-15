@@ -1,4 +1,4 @@
-# Awesome_Super_Prompts
+# Awesome_Super_Prompts_Leaks
 - ChatGPT Jailbreaks
 - GPT Assistants Prompt Leaks
 - GPTs Prompt Injection
