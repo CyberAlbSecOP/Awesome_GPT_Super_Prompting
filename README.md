@@ -9,6 +9,8 @@
 - Ai Prompt Engineering
 - Adversarial Prompting
 
+---
+
 - [linexjlin/GPTs](https://github.com/linexjlin/GPTs)
 - [LouisShark/chatgpt_system_prompt](https://github.com/LouisShark/chatgpt_system_prompt)
 - [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
