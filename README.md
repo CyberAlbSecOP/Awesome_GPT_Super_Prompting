@@ -1,5 +1,5 @@
 # Awesome_Super_Prompts
-GPT Super Prompts, GPTs Prompt Leak, Prompt Injection, Prompt Security
+ChatGPT Jailbreaks, GPT Assistants Prompt Leaks, GPTs Prompt Injection, LLM Prompt Security, Super Prompts, Prompt Hack, Prompt Security, Ai Prompt Engineering.
 
 - [linexjlin/GPTs](https://github.com/linexjlin/GPTs)
 - [LouisShark/chatgpt_system_prompt](https://github.com/LouisShark/chatgpt_system_prompt)
