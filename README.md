@@ -8,7 +8,7 @@
 - Prompt Hack
 - Prompt Security
 - Ai Prompt Engineering
-- Adversarial Prompting
+- Adversarial Machine Learning
 
 ---
 
