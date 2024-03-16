@@ -46,7 +46,7 @@
 
 ---
 
-## Keywords (20+ Relevant Terms):
+## Keywords:
 ChatGPT Assistant Leak
 Jailbreak Prompts
 GPT Hacking
