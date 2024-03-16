@@ -1,3 +1,5 @@
+![maxresdefault](https://github.com/CyberAlbSecOP/Awesome_Super_Prompts_Leaks/assets/145022163/c34adb02-f584-4a18-bf33-ab3b20d6ad1b)
+
 # Awesome_Super_Prompts_Leaks: ChatGPT Jailbreaks , Leaks and Prompt Engineering
 
 **Description**:
