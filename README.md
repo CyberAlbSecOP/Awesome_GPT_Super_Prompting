@@ -1,4 +1,8 @@
-# Awesome_Super_Prompts_Leaks
+# Awesome_Super_Prompts_Leaks: ChatGPT Jailbreaks , Leaks and Prompt Engineering
+
+**Description**:
+**Awesome_Super_Prompts_Leaks** is your gateway to a treasure trove of cutting-edge AI prompts.
+
 **What will you find in here:**
 - ChatGPT Jailbreaks
 - GPT Assistants Prompt Leaks
@@ -36,3 +40,30 @@
 - [TakSec/Prompt-Injection-Everywhere](https://github.com/TakSec/Prompt-Injection-Everywhere)
 - [Valhall-ai/prompt-injection-mitigations](https://github.com/Valhall-ai/prompt-injection-mitigations)
 - [AnthenaMatrix/AI-Prompt-Injection-List](https://github.com/AnthenaMatrix/AI-Prompt-Injection-List)
+- [abilzerian/LLM-Prompt-Library](https://github.com/abilzerian/LLM-Prompt-Library)
+- [0xeb/TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary)
+- [alphatrait/100000-ai-prompts-by-contentifyai](https://github.com/alphatrait/100000-ai-prompts-by-contentifyai)
+
+---
+
+## Keywords (20+ Relevant Terms):
+ChatGPT Assistant Leak
+Jailbreak Prompts
+GPT Hacking
+GPT Agents Hack
+System Prompt Leaks
+Prompt Injection
+LLM Security
+Super Prompts
+AI Adversarial Prompting
+Prompt Design
+Secure AI
+Prompt Security
+Prompt Development
+Prompt Collection
+GPT Prompt Library
+Secret System Prompts
+Creative Prompts
+Prompt Crafting
+Prompt Engineering
+Prompt Vulnerability
