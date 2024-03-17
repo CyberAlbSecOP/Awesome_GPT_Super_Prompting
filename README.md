@@ -77,6 +77,15 @@
 - [promptslab/Awesome-Prompt-Engineering](https://github.com/promptslab/Awesome-Prompt-Engineering)
 - [natnew/Awesome-Prompt-Engineering](https://github.com/natnew/Awesome-Prompt-Engineering)
 
+### Cyber-Albsecop GPT Agents
+- [BL4CKH4T|GOD](https://flowgpt.com/p/bl4ckh4t-g0d-1)
+- [HYDRAX V2 | Advanced Malware Generator](https://flowgpt.com/p/hydrax-v2-advanced-malware-generator)
+- [M1N0T4UR | Impossible Security Challenge!](https://flowgpt.com/p/m1n0t4ur-impossible-security-challenge)
+- [LuciferIO | Evil AI](https://flowgpt.com/p/luciferio-the-evil-ai)
+- [V4MP1RE | Ultra Prompt Writer](https://flowgpt.com/p/v4mp1re-ultra-prompt-writer)
+- [JA1LBRE4KER | Newest Jailbreak (Updated Daily!)](https://flowgpt.com/p/ja1lbre4ker-newest-jailbreak-updated-daily)
+- [ORC V2 | Super Prompt Optimizer](https://flowgpt.com/p/orc-v2-super-prompt-optimizer)
+
 ### Cyber-AlbSecOP Super Prompts
 <details>
   <summary>**PlaceHolder**</summary>
