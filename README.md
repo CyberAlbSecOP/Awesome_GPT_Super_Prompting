@@ -1,6 +1,6 @@
 ![maxresdefault](https://github.com/CyberAlbSecOP/Awesome_Super_Prompts_Leaks/assets/145022163/c34adb02-f584-4a18-bf33-ab3b20d6ad1b)
 
-# Awesome_Super_Prompts_Leaks: ChatGPT Jailbreaks, Leaks and Prompt Engineering Resources.
+# Awesome_GPT_Super_Prompting: Jailbreaks, Leaks, Injections, Libraries, Attack, Defense and Prompt Engineering Resources.
 
 **What will you find in here:**
 - ChatGPT Jailbreaks
@@ -24,15 +24,7 @@
 - [yes133/ChatGPT-Prompts-Jailbreaks-And-More](https://github.com/yes133/ChatGPT-Prompts-Jailbreaks-And-More)
 - [jzzjackz/chatgptjailbreaks](https://github.com/jzzjackz/chatgptjailbreaks)
 
-### Prompt Injection
-- [AnthenaMatrix](https://github.com/AnthenaMatrix)
-- [FonduAI/awesome-prompt-injection](https://github.com/FonduAI/awesome-prompt-injection)
-- [Cranot/chatbot-injections-exploits](https://github.com/Cranot/chatbot-injections-exploits)
-- [TakSec/Prompt-Injection-Everywhere](https://github.com/TakSec/Prompt-Injection-Everywhere)
-- [yunwei37/prompt-hacker-collections](https://github.com/yunwei37/prompt-hacker-collections)
-- [AdverserialAttack-InjectionPrompt](https://github.com/Moaad-Ben/AdverserialAttack-InjectionPrompt)
-
-### System Prompt Leaks
+### GPT Agents System Prompt Leaks
 - [0xeb/TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary)
 - [tjadamlee/GPTs-prompts](https://github.com/tjadamlee/GPTs-prompts)
 - [linexjlin/GPTs](https://github.com/linexjlin/GPTs)
@@ -47,6 +39,14 @@
 - [Superdev0909/Awesome-AI-GPTs-main](https://github.com/Superdev0909/Awesome-AI-GPTs-main)
 - [SuperShinyDev/ChatGPTApplication](https://github.com/SuperShinyDev/ChatGPTApplication)
 - [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs)
+
+### Prompt Injection
+- [AnthenaMatrix](https://github.com/AnthenaMatrix)
+- [FonduAI/awesome-prompt-injection](https://github.com/FonduAI/awesome-prompt-injection)
+- [Cranot/chatbot-injections-exploits](https://github.com/Cranot/chatbot-injections-exploits)
+- [TakSec/Prompt-Injection-Everywhere](https://github.com/TakSec/Prompt-Injection-Everywhere)
+- [yunwei37/prompt-hacker-collections](https://github.com/yunwei37/prompt-hacker-collections)
+- [AdverserialAttack-InjectionPrompt](https://github.com/Moaad-Ben/AdverserialAttack-InjectionPrompt)
 
 ### Secure Prompting
 - [Valhall-ai/prompt-injection-mitigations](https://github.com/Valhall-ai/prompt-injection-mitigations)
@@ -77,7 +77,7 @@
 - [promptslab/Awesome-Prompt-Engineering](https://github.com/promptslab/Awesome-Prompt-Engineering)
 - [natnew/Awesome-Prompt-Engineering](https://github.com/natnew/Awesome-Prompt-Engineering)
 
-### Cyber AlbSecOP Super Prompts
+### Cyber-AlbSecOP Super Prompts
 <details>
   <summary>**PlaceHolder**</summary>
 Work in Progress.
@@ -86,10 +86,10 @@ Work in Progress.
 ---
 
 To do for V2.00
-- Add Description to all the repos
-- Make everything visually appealing
+- Add a short description to all the repos
+- Make everything more visually appealing
+- Add favorite sign to best repos
 - Add personal super prompts
-- Make toggle lists
 
 ## Keywords:
 ChatGPT Assistant Leak
