@@ -3,7 +3,7 @@
 # Awesome_GPT_Super_Prompting: Jailbreaks, Leaks, Injections, Libraries, Attack, Defense and Prompt Engineering Resources.
 
 **What will you find in here:**
-- [ChatGPT Jailbreaks](### Jailbreaks)
+- [ChatGPT Jailbreaks](###Jailbreaks)
 - GPT Assistants Prompt Leaks
 - GPTs Prompt Injection
 - LLM Prompt Security
