@@ -45,6 +45,7 @@
 - [abilzerian/LLM-Prompt-Library](https://github.com/abilzerian/LLM-Prompt-Library)
 - [0xeb/TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary)
 - [alphatrait/100000-ai-prompts-by-contentifyai](https://github.com/alphatrait/100000-ai-prompts-by-contentifyai)
+- [jzzjackz/chatgptjailbreaks](https://github.com/jzzjackz/chatgptjailbreaks)
 
 ---
 
