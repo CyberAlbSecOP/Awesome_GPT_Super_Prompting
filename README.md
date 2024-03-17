@@ -18,36 +18,54 @@
 
 ---
 
+### Jailbreaks
+- [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
+- [verazuo/jailbreak_llms](https://github.com/verazuo/jailbreak_llms)
+- [Cyberlion-Technologies/ChatGPT_DAN](https://github.com/Cyberlion-Technologies/ChatGPT_DAN)
+- [fdac23/jailbreak-gpt](https://github.com/fdac23/jailbreak-gpt)
+- [TrustAIRLab/JailbreakLLMs](https://github.com/TrustAIRLab/JailbreakLLMs)
+- [yes133/ChatGPT-Prompts-Jailbreaks-And-More](https://github.com/yes133/ChatGPT-Prompts-Jailbreaks-And-More)
+- [jzzjackz/chatgptjailbreaks](https://github.com/jzzjackz/chatgptjailbreaks)
+
+### Prompt Injection
+- [FonduAI/awesome-prompt-injection](https://github.com/FonduAI/awesome-prompt-injection)
+- [Cranot/chatbot-injections-exploits](https://github.com/Cranot/chatbot-injections-exploits)
+- [TakSec/Prompt-Injection-Everywhere](https://github.com/TakSec/Prompt-Injection-Everywhere)
+- [AnthenaMatrix/AI-Prompt-Injection-List](https://github.com/AnthenaMatrix/AI-Prompt-Injection-List)
+
+### System Prompt Leaks
+- [0xeb/TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary)
 - [linexjlin/GPTs](https://github.com/linexjlin/GPTs)
 - [LouisShark/chatgpt_system_prompt](https://github.com/LouisShark/chatgpt_system_prompt)
-- [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
-- [EmbraceAGI/Awesome-AI-GPTs](https://github.com/EmbraceAGI/Awesome-AI-GPTs)
 - [B3o/GPTS-Prompt-Collection](https://github.com/B3o/GPTS-Prompt-Collection)
 - [1003715231/gptstore-prompts](https://github.com/1003715231/gptstore-prompts)
 - [friuns2/Leaked-GPTs](https://github.com/friuns2/Leaked-GPTs)
 - [adamidarrha/TopGptPrompts](https://github.com/adamidarrha/TopGptPrompts)
-- [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs)
-- [verazuo/jailbreak_llms](https://github.com/verazuo/jailbreak_llms)
-- [Cyberlion-Technologies/ChatGPT_DAN](https://github.com/Cyberlion-Technologies/ChatGPT_DAN)
-- [fdac23/jailbreak-gpt](https://github.com/fdac23/jailbreak-gpt)
 - [friuns2/BlackFriday-GPTs-Prompts](https://github.com/friuns2/BlackFriday-GPTs-Prompts)
+
+### Secure Prompting
+- [Valhall-ai/prompt-injection-mitigations](https://github.com/Valhall-ai/prompt-injection-mitigations)
+
+### GPTs Lists
+- [EmbraceAGI/Awesome-AI-GPTs](https://github.com/EmbraceAGI/Awesome-AI-GPTs)
+- [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs)
 - [friuns2/Awesome-GPTs-Big-List](https://github.com/friuns2/Awesome-GPTs-Big-List)
-- [friuns2/Leaked-GPTs](https://github.com/friuns2/Leaked-GPTs)
-- [TrustAIRLab/JailbreakLLMs](https://github.com/TrustAIRLab/JailbreakLLMs)
-- [yes133/ChatGPT-Prompts-Jailbreaks-And-More](https://github.com/yes133/ChatGPT-Prompts-Jailbreaks-And-More)
+
+### Prompts Libraries
 - [ai-boost/awesome-prompts](https://github.com/ai-boost/awesome-prompts)
 - [yunwei37/prompt-hacker-collections](https://github.com/yunwei37/prompt-hacker-collections)
-- [FonduAI/awesome-prompt-injection](https://github.com/FonduAI/awesome-prompt-injection)
-- [Cranot/chatbot-injections-exploits](https://github.com/Cranot/chatbot-injections-exploits)
-- [TakSec/Prompt-Injection-Everywhere](https://github.com/TakSec/Prompt-Injection-Everywhere)
-- [Valhall-ai/prompt-injection-mitigations](https://github.com/Valhall-ai/prompt-injection-mitigations)
-- [AnthenaMatrix/AI-Prompt-Injection-List](https://github.com/AnthenaMatrix/AI-Prompt-Injection-List)
 - [abilzerian/LLM-Prompt-Library](https://github.com/abilzerian/LLM-Prompt-Library)
-- [0xeb/TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary)
 - [alphatrait/100000-ai-prompts-by-contentifyai](https://github.com/alphatrait/100000-ai-prompts-by-contentifyai)
-- [jzzjackz/chatgptjailbreaks](https://github.com/jzzjackz/chatgptjailbreaks)
+
+### Prompt Engineering
+(Work in Progress)
 
 ---
+
+To do for V2.00
+- Add Description to all the repos
+- Make everything visually appealing
+
 
 ## Keywords:
 ChatGPT Assistant Leak
