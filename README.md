@@ -1,9 +1,6 @@
 ![maxresdefault](https://github.com/CyberAlbSecOP/Awesome_Super_Prompts_Leaks/assets/145022163/c34adb02-f584-4a18-bf33-ab3b20d6ad1b)
 
-# Awesome_Super_Prompts_Leaks: ChatGPT Jailbreaks , Leaks and Prompt Engineering
-
-**Description**:
-**Awesome_Super_Prompts_Leaks** is your gateway to a treasure trove of cutting-edge AI prompts.
+# Awesome_Super_Prompts_Leaks: ChatGPT Jailbreaks, Leaks and Prompt Engineering Resources.
 
 **What will you find in here:**
 - ChatGPT Jailbreaks
@@ -17,14 +14,6 @@
 - Adversarial Machine Learning
 
 ---
-
-<details>
-  <summary>**Cyber AlbSecOP Super Prompts**</summary>
-
-<details>
-  <summary>Placeholder</summary>
-Work in Progress.
-
 
 ### Jailbreaks
 - [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
@@ -68,12 +57,18 @@ Work in Progress.
 ### Prompt Engineering
 (Work in Progress)
 
+### Cyber AlbSecOP Super Prompts
+<details>
+  <summary>**PlaceHolder**</summary>
+Work in Progress.
+
 ---
 
 To do for V2.00
 - Add Description to all the repos
 - Make everything visually appealing
-
+- Add personal super prompts
+- Make toggle lists
 
 ## Keywords:
 ChatGPT Assistant Leak
