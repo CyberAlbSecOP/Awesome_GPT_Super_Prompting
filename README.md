@@ -85,13 +85,13 @@ Work in Progress.
 
 ---
 
-To do for V2.00
+### To do for V2.00
 - Add a short description to all the repos
 - Make everything more visually appealing
 - Add favorite sign to best repos
 - Add personal super prompts
 
-## Keywords:
+### Keywords:
 ChatGPT Assistant Leak
 Jailbreak Prompts
 GPT Hacking
