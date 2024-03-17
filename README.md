@@ -17,8 +17,14 @@
 - Adversarial Machine Learning
 
 ---
-## My Super Leaks
-(Work in Progress)
+
+<details>
+  <summary>**Cyber AlbSecOP Super Prompts**</summary>
+
+<details>
+  <summary>Placeholder</summary>
+Work in Progress.
+
 
 ### Jailbreaks
 - [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
