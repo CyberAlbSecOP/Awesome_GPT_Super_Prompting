@@ -17,6 +17,8 @@
 - Adversarial Machine Learning
 
 ---
+## My Super Leaks
+(Work in Progress)
 
 ### Jailbreaks
 - [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
