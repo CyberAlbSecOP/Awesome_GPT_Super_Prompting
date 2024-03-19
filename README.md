@@ -16,7 +16,7 @@
 ---
 
 ### Jailbreaks
-- [😍][0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
+- [😍] | [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
 - [verazuo/jailbreak_llms](https://github.com/verazuo/jailbreak_llms)
 - [tg12/gpt_jailbreak_status](https://github.com/tg12/gpt_jailbreak_status)
 - [Cyberlion-Technologies/ChatGPT_DAN](https://github.com/Cyberlion-Technologies/ChatGPT_DAN)
