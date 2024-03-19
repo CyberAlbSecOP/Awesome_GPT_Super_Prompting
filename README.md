@@ -24,6 +24,11 @@
 - [TrustAIRLab/JailbreakLLMs](https://github.com/TrustAIRLab/JailbreakLLMs)
 - [yes133/ChatGPT-Prompts-Jailbreaks-And-More](https://github.com/yes133/ChatGPT-Prompts-Jailbreaks-And-More)
 - [jzzjackz/chatgptjailbreaks](https://github.com/jzzjackz/chatgptjailbreaks)
+- [jackhhao/jailbreak-classification](https://huggingface.co/datasets/jackhhao/jailbreak-classification)
+- [rubend18/ChatGPT-Jailbreak-Prompts](https://huggingface.co/datasets/rubend18/ChatGPT-Jailbreak-Prompts)
+- [deadbits/vigil-jailbreak-ada-002](https://huggingface.co/datasets/deadbits/vigil-jailbreak-ada-002)
+- [ShawnMenz/DAN_jailbreak](https://huggingface.co/datasets/ShawnMenz/DAN_jailbreak)
+- [brayene/tr-ChatGPT-Jailbreak-Prompts](https://huggingface.co/datasets/brayene/tr-ChatGPT-Jailbreak-Prompts)
 
 ### GPT Agents System Prompt Leaks
 - 😍 | [0xeb/TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary)
