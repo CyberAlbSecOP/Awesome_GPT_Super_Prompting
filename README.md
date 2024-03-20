@@ -32,9 +32,10 @@
 
 ### GPT Agents System Prompt Leaks
 - 😍 | [0xeb/TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary)
+- 😍 | [LouisShark/chatgpt_system_prompt](https://github.com/LouisShark/chatgpt_system_prompt)
+- 😍 | [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs)
 - [tjadamlee/GPTs-prompts](https://github.com/tjadamlee/GPTs-prompts)
 - [linexjlin/GPTs](https://github.com/linexjlin/GPTs)
-- [LouisShark/chatgpt_system_prompt](https://github.com/LouisShark/chatgpt_system_prompt)
 - [B3o/GPTS-Prompt-Collection](https://github.com/B3o/GPTS-Prompt-Collection)
 - [1003715231/gptstore-prompts](https://github.com/1003715231/gptstore-prompts)
 - [friuns2/Leaked-GPTs](https://github.com/friuns2/Leaked-GPTs)
@@ -44,7 +45,7 @@
 - [lxfater/Awesome-GPTs](https://github.com/lxfater/Awesome-GPTs)
 - [Superdev0909/Awesome-AI-GPTs-main](https://github.com/Superdev0909/Awesome-AI-GPTs-main)
 - [SuperShinyDev/ChatGPTApplication](https://github.com/SuperShinyDev/ChatGPTApplication)
-- [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs)
+
 
 ### Prompt Injection
 - 😍 | [AnthenaMatrix](https://github.com/AnthenaMatrix)
