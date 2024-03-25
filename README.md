@@ -15,8 +15,12 @@
 
 ---
 
+Legend:
+    🌟: Legendary!
+    🔥: Hot Stuff
+
 ### Jailbreaks
-- 😍 | [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
+- 🌟 | [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
 - [verazuo/jailbreak_llms](https://github.com/verazuo/jailbreak_llms)
 - [tg12/gpt_jailbreak_status](https://github.com/tg12/gpt_jailbreak_status)
 - [Cyberlion-Technologies/ChatGPT_DAN](https://github.com/Cyberlion-Technologies/ChatGPT_DAN)
@@ -31,9 +35,9 @@
 - [brayene/tr-ChatGPT-Jailbreak-Prompts](https://huggingface.co/datasets/brayene/tr-ChatGPT-Jailbreak-Prompts)
 
 ### GPT Agents System Prompt Leaks
-- 😍 | [0xeb/TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary)
-- 😍 | [LouisShark/chatgpt_system_prompt](https://github.com/LouisShark/chatgpt_system_prompt)
-- 😍 | [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs)
+- 🌟 | [0xeb/TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary)
+- 🔥 | [LouisShark/chatgpt_system_prompt](https://github.com/LouisShark/chatgpt_system_prompt)
+- [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs)
 - [tjadamlee/GPTs-prompts](https://github.com/tjadamlee/GPTs-prompts)
 - [linexjlin/GPTs](https://github.com/linexjlin/GPTs)
 - [B3o/GPTS-Prompt-Collection](https://github.com/B3o/GPTS-Prompt-Collection)
@@ -48,7 +52,7 @@
 
 
 ### Prompt Injection
-- 😍 | [AnthenaMatrix](https://github.com/AnthenaMatrix)
+- 🌟 | [AnthenaMatrix](https://github.com/AnthenaMatrix)
 - [FonduAI/awesome-prompt-injection](https://github.com/FonduAI/awesome-prompt-injection)
 - [Cranot/chatbot-injections-exploits](https://github.com/Cranot/chatbot-injections-exploits)
 - [TakSec/Prompt-Injection-Everywhere](https://github.com/TakSec/Prompt-Injection-Everywhere)
@@ -56,13 +60,13 @@
 - [AdverserialAttack-InjectionPrompt](https://github.com/Moaad-Ben/AdverserialAttack-InjectionPrompt)
 
 ### Secure Prompting
-- 😍 | [Valhall-ai/prompt-injection-mitigations](https://github.com/Valhall-ai/prompt-injection-mitigations)
+- 🌟 | [Valhall-ai/prompt-injection-mitigations](https://github.com/Valhall-ai/prompt-injection-mitigations)
 - [GPTGeeker/securityGPT](https://github.com/GPTGeeker/securityGPT)
 - [mykeln/GPTect](https://github.com/mykeln/GPTect)
 - [gavin-black-dsu/securePrompts](https://github.com/gavin-black-dsu/securePrompts)
 
 ### GPTs Lists
-- 😍 | [EmbraceAGI/Awesome-AI-GPTs](https://github.com/EmbraceAGI/Awesome-AI-GPTs)
+- 🌟 | [EmbraceAGI/Awesome-AI-GPTs](https://github.com/EmbraceAGI/Awesome-AI-GPTs)
 - [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs)
 - [friuns2/Awesome-GPTs-Big-List](https://github.com/friuns2/Awesome-GPTs-Big-List)
 - [AgentOps-AI/BestGPTs](https://github.com/AgentOps-AI/BestGPTs)
@@ -70,7 +74,7 @@
 - [cckuailong/awesome-gpt-security](https://github.com/cckuailong/awesome-gpt-security)
 
 ### Prompts Libraries
-- 😍 | [ai-boost/awesome-prompts](https://github.com/ai-boost/awesome-prompts)
+- 🌟 | [ai-boost/awesome-prompts](https://github.com/ai-boost/awesome-prompts)
 - [yunwei37/prompt-hacker-collections](https://github.com/yunwei37/prompt-hacker-collections)
 - [abilzerian/LLM-Prompt-Library](https://github.com/abilzerian/LLM-Prompt-Library)
 - [alphatrait/100000-ai-prompts-by-contentifyai](https://github.com/alphatrait/100000-ai-prompts-by-contentifyai)
@@ -81,7 +85,7 @@
 - [promptbase.com/](https://promptbase.com/)
 
 ### Prompt Engineering
-- 😍 | [snwfdhmp/awesome-gpt-prompt-engineering](https://github.com/snwfdhmp/awesome-gpt-prompt-engineering)
+- 🌟 | [snwfdhmp/awesome-gpt-prompt-engineering](https://github.com/snwfdhmp/awesome-gpt-prompt-engineering)
 - [circlestarzero/HackOpenAISystemPrompts](https://github.com/circlestarzero/HackOpenAISystemPrompts)
 - [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
 - [brexhq/prompt-engineering](https://github.com/brexhq/prompt-engineering)
@@ -92,7 +96,7 @@
 - [learnprompting.org](https://learnprompting.org/docs/intro)
 
 ### Prompt Sources
-- 😍 | [r/ChatGPTJailbreak/](https://www.reddit.com/r/ChatGPTJailbreak/)
+- 🌟 | [r/ChatGPTJailbreak/](https://www.reddit.com/r/ChatGPTJailbreak/)
 - [r/ChatGPTPromptGenius/](https://www.reddit.com/r/ChatGPTPromptGenius/)
 - [r/chatgpt_promptDesign/](https://www.reddit.com/r/chatgpt_promptDesign/)
 - [r/PromptEngineering/](https://www.reddit.com/r/PromptEngineering/)
