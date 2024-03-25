@@ -16,8 +16,8 @@
 ---
 
 Legend:
-    🌟: Legendary!
-    🔥: Hot Stuff
+    - 🌟: Legendary!
+    - 🔥: Hot Stuff
 
 ### Jailbreaks
 - 🌟 | [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
