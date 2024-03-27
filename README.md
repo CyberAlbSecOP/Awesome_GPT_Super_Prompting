@@ -110,10 +110,10 @@
 - [onehack.us/prompt](https://onehack.us/search?q=prompt)
 
 ### Cyber-Albsecop GPT Agents
-- [HYDRAX | Advanced Malware Generator](https://flowgpt.com/p/advanced-malware-generator)
-- [BL4CKH4T|GOD](https://flowgpt.com/p/bl4ckh4tg0d-2)
-- [M1N0T4UR | Impossible Security Challenge!](https://flowgpt.com/p/14-impossible-security-challenge)
-- [LuciferIO | Evil AI](https://flowgpt.com/p/the-evil-ai)
+- [HYDRAX | Advanced Malware Generator](https://flowgpt.com/p/hydrax-advanced-malware-generator)
+- [BL4CKH4T|GOD](https://flowgpt.com/p/bl4ckh4tg0d-master-hacker)
+- [M1N0T4UR | Impossible Security Challenge!](https://flowgpt.com/p/m1n0t4ur-impossible-security-challenge)
+- [LuciferIO | Evil AI](https://flowgpt.com/p/luciferio-the-evil-ai)
 - [V4MP1RE | Ultra Prompt Writer](https://flowgpt.com/p/v4mp1re-ultra-prompt-writer)
 - [JA1LBRE4KER | Newest Jailbreak (Updated Daily!)](https://flowgpt.com/p/ja1lbre4ker-newest-jailbreak-updated-daily)
 - [ORC V2 | Super Prompt Optimizer](https://flowgpt.com/p/orc-v2-super-prompt-optimizer)
