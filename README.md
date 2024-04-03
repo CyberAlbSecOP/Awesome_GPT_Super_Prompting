@@ -50,7 +50,6 @@
 - [Superdev0909/Awesome-AI-GPTs-main](https://github.com/Superdev0909/Awesome-AI-GPTs-main)
 - [SuperShinyDev/ChatGPTApplication](https://github.com/SuperShinyDev/ChatGPTApplication)
 
-
 ### Prompt Injection
 - 🌟 | [AnthenaMatrix](https://github.com/AnthenaMatrix)
 - [FonduAI/awesome-prompt-injection](https://github.com/FonduAI/awesome-prompt-injection)
@@ -110,11 +109,15 @@
 - [onehack.us/prompt](https://onehack.us/search?q=prompt)
 
 ### Cyber-Albsecop GPT Agents
+- [ALBSECOP | Cyber Security Master](https://flowgpt.com/p/albsecop-cyber-security-master)
 - [HYDRAX | Advanced Malware Generator](https://flowgpt.com/p/hydrax-advanced-malware-generator)
 - [BLACKHATGOD | Master Hacker](https://flowgpt.com/p/blackhatgod-master-hacker)
-- [MINOTAUR | Impossible Security Challenge!](https://flowgpt.com/p/m1n0t4ur-impossible-security-challenge)
 - [LUCIFERIO | Evil AI](https://flowgpt.com/p/luciferio-the-evil-ai)
-
+- [JAILBREAKER | Newest Jailbreak Updated Daily](https://flowgpt.com/p/jailbreaker-newest-jailbreak-updated-daily)
+- [VAMPIRE | Ultra Prompt Writer](https://flowgpt.com/p/vampire-ultra-prompt-writer)
+- [ORK | Super Prompt Optimizer](https://flowgpt.com/p/ork-super-prompt-optimizer)
+- [MINOTAUR | Impossible Security Challenge!](https://flowgpt.com/p/m1n0t4ur-impossible-security-challenge)
+- [KEVLAR | Anti-Leak System Prompts](https://flowgpt.com/p/kevlar-anti-leak-system-prompts)
 
 ### Cyber-AlbSecOP Super Prompts
 <details>
