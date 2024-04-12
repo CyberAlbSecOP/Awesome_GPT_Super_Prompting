@@ -63,6 +63,9 @@
 - [GPTGeeker/securityGPT](https://github.com/GPTGeeker/securityGPT)
 - [mykeln/GPTect](https://github.com/mykeln/GPTect)
 - [gavin-black-dsu/securePrompts](https://github.com/gavin-black-dsu/securePrompts)
+- [zinccat/PromptSafe](https://github.com/zinccat/PromptSafe)
+- [BenderScript/PromptGuardian](https://github.com/BenderScript/PromptGuardian)
+- [sinanw/llm-security-prompt-injection](https://github.com/sinanw/llm-security-prompt-injection)
 
 ### GPTs Lists
 - 🌟 | [EmbraceAGI/Awesome-AI-GPTs](https://github.com/EmbraceAGI/Awesome-AI-GPTs)
