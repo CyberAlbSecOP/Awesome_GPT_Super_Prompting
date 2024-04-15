@@ -21,18 +21,15 @@
 
 ### Jailbreaks
 - 🌟 | [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
-- [verazuo/jailbreak_llms](https://github.com/verazuo/jailbreak_llms)
+- 🔥 | [verazuo/jailbreak_llms](https://github.com/verazuo/jailbreak_llms)
+- 🔥 | [brayene/tr-ChatGPT-Jailbreak-Prompts](https://huggingface.co/datasets/brayene/tr-ChatGPT-Jailbreak-Prompts)
 - [tg12/gpt_jailbreak_status](https://github.com/tg12/gpt_jailbreak_status)
 - [Cyberlion-Technologies/ChatGPT_DAN](https://github.com/Cyberlion-Technologies/ChatGPT_DAN)
-- [fdac23/jailbreak-gpt](https://github.com/fdac23/jailbreak-gpt)
-- [TrustAIRLab/JailbreakLLMs](https://github.com/TrustAIRLab/JailbreakLLMs)
 - [yes133/ChatGPT-Prompts-Jailbreaks-And-More](https://github.com/yes133/ChatGPT-Prompts-Jailbreaks-And-More)
 - [jzzjackz/chatgptjailbreaks](https://github.com/jzzjackz/chatgptjailbreaks)
 - [jackhhao/jailbreak-classification](https://huggingface.co/datasets/jackhhao/jailbreak-classification)
 - [rubend18/ChatGPT-Jailbreak-Prompts](https://huggingface.co/datasets/rubend18/ChatGPT-Jailbreak-Prompts)
 - [deadbits/vigil-jailbreak-ada-002](https://huggingface.co/datasets/deadbits/vigil-jailbreak-ada-002)
-- [ShawnMenz/DAN_jailbreak](https://huggingface.co/datasets/ShawnMenz/DAN_jailbreak)
-- [brayene/tr-ChatGPT-Jailbreak-Prompts](https://huggingface.co/datasets/brayene/tr-ChatGPT-Jailbreak-Prompts)
 
 ### GPT Agents System Prompt Leaks
 - 🌟 | [0xeb/TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary)
@@ -133,7 +130,7 @@ Craft a tailored list of ChatGPT applications, each carefully selected to comple
 ### To do for V2.00
 - Add a short description to all the repos
 - Make everything more visually appealing
-- Add favorite sign to best repos
+- Add favorite hot sign to really good new repos
 - Add personal super prompts
 
 ### Keywords:
