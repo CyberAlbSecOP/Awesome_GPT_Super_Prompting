@@ -125,8 +125,15 @@
 Craft a tailored list of ChatGPT applications, each carefully selected to complement my professional role of {USER INPUT}. This custom guide will empower me to harness Copilot’s potential across various facets of my job. Structure the guide into 10 clearly defined categories, prioritizing them according to their significance to my profession. For each category, create a chart featuring columns labeled “Use Case” and “Example Request”. Populate each category with 5 examples of use cases. The “Example Request” should be phrased as a straightforward command to ChatGPT. Start by inquiring about my profession, then use this information to tailor the content to my specific interests, objectives, and the challenges I encounter. Ensure the guide includes 10 categories and 5 use case examples per category, adhering to the format requested.
 </details>
 
-### Star History
-[![Star History Chart](https://api.star-history.com/svg?repos=CyberAlbSecOP/Awesome_GPT_Super_Prompting&type=Date)](https://star-history.com/#CyberAlbSecOP/Awesome_GPT_Super_Prompting&Date)
+## Star History
+
+<a href="https://star-history.com/#CyberAlbSecOP/Awesome_GPT_Super_Prompting&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=CyberAlbSecOP/Awesome_GPT_Super_Prompting&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=CyberAlbSecOP/Awesome_GPT_Super_Prompting&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=CyberAlbSecOP/Awesome_GPT_Super_Prompting&type=Date" />
+ </picture>
+</a>
 
 ###
 
