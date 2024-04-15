@@ -127,7 +127,11 @@ Craft a tailored list of ChatGPT applications, each carefully selected to comple
 
 ###
 
-<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://star-history.com/embed?secret=Z2hwX3U1VHJJN0E4M2dHaXlRUDdGMjZvMEV3b3dXc3dYYTBONVpmUA==#CyberAlbSecOP/Awesome_GPT_Super_Prompting&Date" frameBorder="0"></iframe>
+<div align="center">
+  <iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://star-history.com/embed?secret=Z2hwX3U1VHJJN0E4M2dHaXlRUDdGMjZvMEV3b3dXc3dYYTBONVpmUA==#CyberAlbSecOP/Awesome_GPT_Super_Prompting&Date" frameBorder="0"></iframe>
+</div>
+
+###
 
 ---
 
