@@ -57,6 +57,7 @@
 
 ### Secure Prompting
 - 🌟 | [Valhall-ai/prompt-injection-mitigations](https://github.com/Valhall-ai/prompt-injection-mitigations)
+- [cckuailong/awesome-gpt-security](https://github.com/cckuailong/awesome-gpt-security)
 - [GPTGeeker/securityGPT](https://github.com/GPTGeeker/securityGPT)
 - [mykeln/GPTect](https://github.com/mykeln/GPTect)
 - [gavin-black-dsu/securePrompts](https://github.com/gavin-black-dsu/securePrompts)
