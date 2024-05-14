@@ -26,6 +26,7 @@
 - [tg12/gpt_jailbreak_status](https://github.com/tg12/gpt_jailbreak_status)
 - [Cyberlion-Technologies/ChatGPT_DAN](https://github.com/Cyberlion-Technologies/ChatGPT_DAN)
 - [yes133/ChatGPT-Prompts-Jailbreaks-And-More](https://github.com/yes133/ChatGPT-Prompts-Jailbreaks-And-More)
+- [GabryB03/ChatGPT-Jailbreaks](https://github.com/GabryB03/ChatGPT-Jailbreaks)
 - [jzzjackz/chatgptjailbreaks](https://github.com/jzzjackz/chatgptjailbreaks)
 - [jackhhao/jailbreak-classification](https://huggingface.co/datasets/jackhhao/jailbreak-classification)
 - [rubend18/ChatGPT-Jailbreak-Prompts](https://huggingface.co/datasets/rubend18/ChatGPT-Jailbreak-Prompts)
