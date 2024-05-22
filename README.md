@@ -76,8 +76,8 @@
 
 ### Prompts Libraries
 - 🌟 | [ai-boost/awesome-prompts](https://github.com/ai-boost/awesome-prompts)
+- 🔥 | [abilzerian/LLM-Prompt-Library](https://github.com/abilzerian/LLM-Prompt-Library)
 - [yunwei37/prompt-hacker-collections](https://github.com/yunwei37/prompt-hacker-collections)
-- [abilzerian/LLM-Prompt-Library](https://github.com/abilzerian/LLM-Prompt-Library)
 - [alphatrait/100000-ai-prompts-by-contentifyai](https://github.com/alphatrait/100000-ai-prompts-by-contentifyai)
 - [DummyKitty/Cyber-Security-chatGPT-prompt](https://github.com/DummyKitty/Cyber-Security-chatGPT-prompt)
 - [thepromptindex.com](https://www.thepromptindex.com/prompt-database.php)
