@@ -20,9 +20,12 @@
 - 🔥: Hot Stuff
 
 ### Jailbreaks
-- 🌟 | [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
+
+- 🌟 | [elder-plinius/L1B3RT45](https://github.com/elder-plinius/L1B3RT45)
+- 🌟 | [yueliu1999/Awesome-Jailbreak-on-LLMs](https://github.com/yueliu1999/Awesome-Jailbreak-on-LLMs)
 - 🔥 | [verazuo/jailbreak_llms](https://github.com/verazuo/jailbreak_llms)
 - 🔥 | [brayene/tr-ChatGPT-Jailbreak-Prompts](https://huggingface.co/datasets/brayene/tr-ChatGPT-Jailbreak-Prompts)
+- [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
 - [tg12/gpt_jailbreak_status](https://github.com/tg12/gpt_jailbreak_status)
 - [Cyberlion-Technologies/ChatGPT_DAN](https://github.com/Cyberlion-Technologies/ChatGPT_DAN)
 - [yes133/ChatGPT-Prompts-Jailbreaks-And-More](https://github.com/yes133/ChatGPT-Prompts-Jailbreaks-And-More)
