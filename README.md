@@ -1,6 +1,6 @@
 ![jfhdgsjyhfjyrd](https://github.com/CyberAlbSecOP/Awesome_GPT_Super_Prompting/assets/145022163/9e936361-2d46-481f-8b8d-9227db9aa2c5)
 
-## What will you find in here:**
+## What will you find in here:
 - ChatGPT Jailbreaks
 - GPT Assistants Prompt Leaks
 - GPTs Prompt Injection
