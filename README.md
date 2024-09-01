@@ -19,117 +19,160 @@
 - 🌟: Legendary!
 - 🔥: Hot Stuff
 
-### Jailbreaks
+---
 
-- 🌟 | [elder-plinius/L1B3RT45](https://github.com/elder-plinius/L1B3RT45)
-- 🌟 | [r/ChatGPTJailbreak/](https://www.reddit.com/r/ChatGPTJailbreak/)
-- 🔥 | [verazuo/jailbreak_llms](https://github.com/verazuo/jailbreak_llms)
-- [yueliu1999/Awesome-Jailbreak-on-LLMs](https://github.com/yueliu1999/Awesome-Jailbreak-on-LLMs)
-- [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
-- [tg12/gpt_jailbreak_status](https://github.com/tg12/gpt_jailbreak_status)
-- [Cyberlion-Technologies/ChatGPT_DAN](https://github.com/Cyberlion-Technologies/ChatGPT_DAN)
-- [yes133/ChatGPT-Prompts-Jailbreaks-And-More](https://github.com/yes133/ChatGPT-Prompts-Jailbreaks-And-More)
-- [GabryB03/ChatGPT-Jailbreaks](https://github.com/GabryB03/ChatGPT-Jailbreaks)
-- [jzzjackz/chatgptjailbreaks](https://github.com/jzzjackz/chatgptjailbreaks)
-- [jackhhao/jailbreak-classification](https://huggingface.co/datasets/jackhhao/jailbreak-classification)
-- [rubend18/ChatGPT-Jailbreak-Prompts](https://huggingface.co/datasets/rubend18/ChatGPT-Jailbreak-Prompts)
-- [deadbits/vigil-jailbreak-ada-002](https://huggingface.co/datasets/deadbits/vigil-jailbreak-ada-002)
+## 🚨 Jailbreaks
+Explore techniques for bypassing restrictions on GPT models.
 
-### GPT Agents System Prompt Leaks
-- 🌟 | [0xeb/TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary)
-- 🔥 | [LouisShark/chatgpt_system_prompt](https://github.com/LouisShark/chatgpt_system_prompt)
-- [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs)
-- [tjadamlee/GPTs-prompts](https://github.com/tjadamlee/GPTs-prompts)
-- [linexjlin/GPTs](https://github.com/linexjlin/GPTs)
-- [B3o/GPTS-Prompt-Collection](https://github.com/B3o/GPTS-Prompt-Collection)
-- [1003715231/gptstore-prompts](https://github.com/1003715231/gptstore-prompts)
-- [friuns2/Leaked-GPTs](https://github.com/friuns2/Leaked-GPTs)
-- [adamidarrha/TopGptPrompts](https://github.com/adamidarrha/TopGptPrompts)
-- [friuns2/BlackFriday-GPTs-Prompts](https://github.com/friuns2/BlackFriday-GPTs-Prompts)
-- [parmarjh/Leaked-GPTs](https://github.com/parmarjh/Leaked-GPTs)
-- [lxfater/Awesome-GPTs](https://github.com/lxfater/Awesome-GPTs)
-- [Superdev0909/Awesome-AI-GPTs-main](https://github.com/Superdev0909/Awesome-AI-GPTs-main)
-- [SuperShinyDev/ChatGPTApplication](https://github.com/SuperShinyDev/ChatGPTApplication)
+- 🌟 | [elder-plinius/L1B3RT45](https://github.com/elder-plinius/L1B3RT45) - A repository for advanced jailbreak strategies.
+- 🌟 | [r/ChatGPTJailbreak/](https://www.reddit.com/r/ChatGPTJailbreak/) - Reddit community focused on ChatGPT jailbreaks.
+- 🔥 | [verazuo/jailbreak_llms](https://github.com/verazuo/jailbreak_llms) - Methods to jailbreak various large language models.
+- [yueliu1999/Awesome-Jailbreak-on-LLMs](https://github.com/yueliu1999/Awesome-Jailbreak-on-LLMs) - A curated list of LLM jailbreak techniques.
+- [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN) - Jailbreak prompts designed to activate the "DAN" mode in ChatGPT.
+- [tg12/gpt_jailbreak_status](https://github.com/tg12/gpt_jailbreak_status) - A tool for monitoring jailbreak status of GPT models.
+- [Cyberlion-Technologies/ChatGPT_DAN](https://github.com/Cyberlion-Technologies/ChatGPT_DAN) - Another implementation of ChatGPT DAN mode prompts.
+- [yes133/ChatGPT-Prompts-Jailbreaks-And-More](https://github.com/yes133/ChatGPT-Prompts-Jailbreaks-And-More) - Collection of various jailbreak prompts.
+- [GabryB03/ChatGPT-Jailbreaks](https://github.com/GabryB03/ChatGPT-Jailbreaks) - Repository with different ChatGPT jailbreak techniques.
+- [jzzjackz/chatgptjailbreaks](https://github.com/jzzjackz/chatgptjailbreaks) - A simple repository showcasing jailbreak attempts.
+- [jackhhao/jailbreak-classification](https://huggingface.co/datasets/jackhhao/jailbreak-classification) - Dataset for classifying jailbreak prompts.
+- [rubend18/ChatGPT-Jailbreak-Prompts](https://huggingface.co/datasets/rubend18/ChatGPT-Jailbreak-Prompts) - A dataset of jailbreak prompts for ChatGPT.
+- [deadbits/vigil-jailbreak-ada-002](https://huggingface.co/datasets/deadbits/vigil-jailbreak-ada-002) - Vigilant dataset for ADA-002 jailbreak attempts.
 
-### Prompt Injection
-- 🌟 | [AnthenaMatrix](https://github.com/AnthenaMatrix)
-- 🔥 | [utkusen/promptmap](https://github.com/utkusen/promptmap)
-- 🔥 | [microsoft/promptbench](https://github.com/microsoft/promptbench)
-- [Cranot/chatbot-injections-exploits](https://github.com/Cranot/chatbot-injections-exploits)
-- [FonduAI/awesome-prompt-injection](https://github.com/FonduAI/awesome-prompt-injection)
-- [TakSec/Prompt-Injection-Everywhere](https://github.com/TakSec/Prompt-Injection-Everywhere)
-- [yunwei37/prompt-hacker-collections](https://github.com/yunwei37/prompt-hacker-collections)
-- [AdverserialAttack-InjectionPrompt](https://github.com/Moaad-Ben/AdverserialAttack-InjectionPrompt)
+---
 
-### Secure Prompting
-- 🌟 | [Valhall-ai/prompt-injection-mitigations](https://github.com/Valhall-ai/prompt-injection-mitigations)
-- 🔥 | [cckuailong/awesome-gpt-security](https://github.com/cckuailong/awesome-gpt-security)
-- [GPTGeeker/securityGPT](https://github.com/GPTGeeker/securityGPT)
-- [mykeln/GPTect](https://github.com/mykeln/GPTect)
-- [gavin-black-dsu/securePrompts](https://github.com/gavin-black-dsu/securePrompts)
-- [zinccat/PromptSafe](https://github.com/zinccat/PromptSafe)
-- [BenderScript/PromptGuardian](https://github.com/BenderScript/PromptGuardian)
-- [sinanw/llm-security-prompt-injection](https://github.com/sinanw/llm-security-prompt-injection)
+## 🕵️‍♂️ GPT Agents System Prompt Leaks
+Find leaked prompts and system information from GPT agents.
 
-### GPTs Lists
-- 🌟 | [EmbraceAGI/Awesome-AI-GPTs](https://github.com/EmbraceAGI/Awesome-AI-GPTs)
-- 🔥 | [Anil-matcha/Awesome-GPT-Store](https://github.com/Anil-matcha/Awesome-GPT-Store)
-- [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs)
-- [friuns2/Awesome-GPTs-Big-List](https://github.com/friuns2/Awesome-GPTs-Big-List)
-- [AgentOps-AI/BestGPTs](https://github.com/AgentOps-AI/BestGPTs)
-- [fr0gger/Awesome-GPT-Agents](https://github.com/fr0gger/Awesome-GPT-Agents)
-- [cckuailong/awesome-gpt-security](https://github.com/cckuailong/awesome-gpt-security)
+- 🌟 | [0xeb/TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary) - Extensive library of system prompts for GPT agents.
+- 🔥 | [LouisShark/chatgpt_system_prompt](https://github.com/LouisShark/chatgpt_system_prompt) - Collection of leaked system prompts for ChatGPT.
+- [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs) - A collection of useful GPT prompts.
+- [tjadamlee/GPTs-prompts](https://github.com/tjadamlee/GPTs-prompts) - Another repository with a variety of GPT prompts.
+- [linexjlin/GPTs](https://github.com/linexjlin/GPTs) - Compilation of various GPT prompts.
+- [B3o/GPTS-Prompt-Collection](https://github.com/B3o/GPTS-Prompt-Collection) - A rich collection of GPT prompts.
+- [1003715231/gptstore-prompts](https://github.com/1003715231/gptstore-prompts) - Repository containing a store of GPT prompts.
+- [friuns2/Leaked-GPTs](https://github.com/friuns2/Leaked-GPTs) - Leaked GPT system prompts repository.
+- [adamidarrha/TopGptPrompts](https://github.com/adamidarrha/TopGptPrompts) - Top GPT prompts curated from various sources.
+- [friuns2/BlackFriday-GPTs-Prompts](https://github.com/friuns2/BlackFriday-GPTs-Prompts) - Special edition leaked GPT prompts.
+- [parmarjh/Leaked-GPTs](https://github.com/parmarjh/Leaked-GPTs) - More leaked system prompts for GPT models.
+- [lxfater/Awesome-GPTs](https://github.com/lxfater/Awesome-GPTs) - Awesome collection of GPT prompts.
+- [Superdev0909/Awesome-AI-GPTs-main](https://github.com/Superdev0909/Awesome-AI-GPTs-main) - A main repository for awesome GPT prompts.
+- [SuperShinyDev/ChatGPTApplication](https://github.com/SuperShinyDev/ChatGPTApplication) - Application repository for GPT models with prompts.
 
-### Prompts Libraries
-- 🌟 | [ai-boost/awesome-prompts](https://github.com/ai-boost/awesome-prompts)
-- 🔥 | [B3o/GPTS-Prompt-Collection](https://github.com/B3o/GPTS-Prompt-Collection)
-- [abilzerian/LLM-Prompt-Library](https://github.com/abilzerian/LLM-Prompt-Library)
-- [yunwei37/prompt-hacker-collections](https://github.com/yunwei37/prompt-hacker-collections)
-- [alphatrait/100000-ai-prompts-by-contentifyai](https://github.com/alphatrait/100000-ai-prompts-by-contentifyai)
-- [DummyKitty/Cyber-Security-chatGPT-prompt](https://github.com/DummyKitty/Cyber-Security-chatGPT-prompt)
-- [thepromptindex.com](https://www.thepromptindex.com/prompt-database.php)
-- [snackprompt.com/](https://snackprompt.com/)
-- [usethisprompt.io/](https://www.usethisprompt.io/)
-- [promptbase.com/](https://promptbase.com/)
+---
 
-### Prompt Engineering
-- 🌟 | [snwfdhmp/awesome-gpt-prompt-engineering](https://github.com/snwfdhmp/awesome-gpt-prompt-engineering)
-- 🔥 | [promptslab/Awesome-Prompt-Engineering](https://github.com/promptslab/Awesome-Prompt-Engineering)
-- [circlestarzero/HackOpenAISystemPrompts](https://github.com/circlestarzero/HackOpenAISystemPrompts)
-- [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
-- [brexhq/prompt-engineering](https://github.com/brexhq/prompt-engineering)
-- [natnew/Awesome-Prompt-Engineering](https://github.com/natnew/Awesome-Prompt-Engineering)
-- [promptingguide.ai](https://www.promptingguide.ai/)
-- [promptdev.ai](https://promptdev.ai/)
-- [learnprompting.org](https://learnprompting.org/docs/intro)
+## 🛡️ Prompt Injection
+Resources focused on exploiting or defending against prompt injections.
 
-### Prompt Sources
-- 🌟 | [r/ChatGPTJailbreak/](https://www.reddit.com/r/ChatGPTJailbreak/)
-- 🔥 | [r/ChatGPTPromptGenius/](https://www.reddit.com/r/ChatGPTPromptGenius/)
-- [r/chatgpt_promptDesign/](https://www.reddit.com/r/chatgpt_promptDesign/)
-- [r/PromptEngineering/](https://www.reddit.com/r/PromptEngineering/)
-- [r/PromptDesign/](https://www.reddit.com/r/PromptDesign/)
-- [r/GPT_jailbreaks/](https://www.reddit.com/r/GPT_jailbreaks/)
-- [r/ChatGptDAN/](https://www.reddit.com/r/ChatGptDAN/)
-- [r/PromptSharing/](https://www.reddit.com/r/PromptSharing/)
-- [r/PromptWizardry/](https://www.reddit.com/r/PromptWizardry/)
-- [r/PromptWizards/](https://www.reddit.com/r/PromptWizards/)
-- [altenens.is/forums/chatgpt-tools](https://altenens.is/forums/chatgpt-tools.469297/)
-- [onehack.us/prompt](https://onehack.us/search?q=prompt)
+- 🌟 | [AnthenaMatrix](https://github.com/AnthenaMatrix) - Comprehensive repository on prompt injection techniques.
+- 🔥 | [utkusen/promptmap](https://github.com/utkusen/promptmap) - Tool for mapping and analyzing prompt injections.
+- 🔥 | [microsoft/promptbench](https://github.com/microsoft/promptbench) - Benchmarking tool for prompt injection vulnerabilities.
+- [Cranot/chatbot-injections-exploits](https://github.com/Cranot/chatbot-injections-exploits) - Repository of exploits based on prompt injections in chatbots.
+- [FonduAI/awesome-prompt-injection](https://github.com/FonduAI/awesome-prompt-injection) - Awesome list of resources on prompt injection.
+- [TakSec/Prompt-Injection-Everywhere](https://github.com/TakSec/Prompt-Injection-Everywhere) - Guide to prompt injection in various systems.
+- [yunwei37/prompt-hacker-collections](https://github.com/yunwei37/prompt-hacker-collections) - Collection of prompt hacking methods and exploits.
+- [AdverserialAttack-InjectionPrompt](https://github.com/Moaad-Ben/AdverserialAttack-InjectionPrompt) - Adversarial attacks through prompt injections.
 
-### Other Repos
-- [superiorlu/AITreasureBox](https://github.com/superiorlu/AITreasureBox)
+---
 
-### Cyber-Albsecop GPT Agents
-- [ALBSECOP | Cyber Security Master](https://flowgpt.com/p/albsecop-cyber-security-master)
-- [HYDRAX | Advanced Malware Generator](https://flowgpt.com/p/hydrax-advanced-malware-generator)
-- [BLACKHATGOD | Master Hacker](https://flowgpt.com/p/blackhatgod-master-hacker)
-- [LUCIFERIO | Evil AI](https://flowgpt.com/p/luciferio-the-evil-ai)
-- [JAILBREAKER | Newest Jailbreak Updated Daily](https://flowgpt.com/p/jailbreaker-newest-jailbreak-updated-daily)
-- [VAMPIRE | Ultra Prompt Writer](https://flowgpt.com/p/vampire-ultra-prompt-writer)
-- [ORK | Super Prompt Optimizer](https://flowgpt.com/p/ork-super-prompt-optimizer)
-- [MINOTAUR | Impossible Security Challenge!](https://flowgpt.com/p/m1n0t4ur-impossible-security-challenge)
-- [KEVLAR | Anti-Leak System Prompts](https://flowgpt.com/p/kevlar-anti-leak-system-prompts)
+## 🔐 Secure Prompting
+Repositories dedicated to securing prompts and mitigating vulnerabilities.
+
+- 🌟 | [Valhall-ai/prompt-injection-mitigations](https://github.com/Valhall-ai/prompt-injection-mitigations) - Mitigation strategies for prompt injections.
+- 🔥 | [cckuailong/awesome-gpt-security](https://github.com/cckuailong/awesome-gpt-security) - A curated list of GPT security best practices.
+- [GPTGeeker/securityGPT](https://github.com/GPTGeeker/securityGPT) - Security-focused prompts for GPT models.
+- [mykeln/GPTect](https://github.com/mykeln/GPTect) - GPT security protection techniques.
+- [gavin-black-dsu/securePrompts](https://github.com/gavin-black-dsu/securePrompts) - Repository with secure GPT prompts.
+- [zinccat/PromptSafe](https://github.com/zinccat/PromptSafe) - Ensuring safe prompts for GPT models.
+- [BenderScript/PromptGuardian](https://github.com/BenderScript/PromptGuardian) - Guardian scripts for securing GPT prompts.
+- [sinanw/llm-security-prompt-injection](https://github.com/sinanw/llm-security-prompt-injection) - Security-focused prompt injection repository.
+
+---
+
+## 🗂️ GPTs Lists
+Collections of various GPT resources and lists.
+
+- 🌟 | [EmbraceAGI/Awesome-AI-GPTs](https://github.com/EmbraceAGI/Awesome-AI-GPTs) - Comprehensive list of AI and GPT resources.
+- 🔥 | [Anil-matcha/Awesome-GPT-Store](https://github.com/Anil-matcha/Awesome-GPT-Store) - A store of awesome GPT prompts and resources.
+- [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs) - General collection of GPT-related resources.
+- [friuns2/Awesome-GPTs-Big-List](https://github.com/friuns2/Awesome-GPTs-Big-List) - Big list of awesome GPT prompts and tools.
+- [AgentOps-AI/BestGPTs](https://github.com/AgentOps-AI/BestGPTs) - Compilation of the best GPT resources.
+- [fr0gger/Awesome-GPT-Agents](https://github.com/fr0gger/Awesome-GPT-Agents) - Focused on GPT agents and their capabilities.
+- [cckuailong/awesome-gpt-security](https://github.com/cckuailong/awesome-gpt-security) - Security-centric GPT resources.
+
+---
+
+## 📚 Prompts Libraries
+Explore libraries of GPT prompts for various applications.
+
+- 🌟 | [ai-boost/awesome-prompts](https://github.com/
+
+ai-boost/awesome-prompts) - A vast library of awesome GPT prompts.
+- 🔥 | [B3o/GPTS-Prompt-Collection](https://github.com/B3o/GPTS-Prompt-Collection) - Extensive collection of prompts for GPT models.
+- [abilzerian/LLM-Prompt-Library](https://github.com/abilzerian/LLM-Prompt-Library) - Library of prompts for large language models.
+- [yunwei37/prompt-hacker-collections](https://github.com/yunwei37/prompt-hacker-collections) - Collection of hacking-oriented GPT prompts.
+- [alphatrait/100000-ai-prompts-by-contentifyai](https://github.com/alphatrait/100000-ai-prompts-by-contentifyai) - Massive collection of AI prompts.
+- [DummyKitty/Cyber-Security-chatGPT-prompt](https://github.com/DummyKitty/Cyber-Security-chatGPT-prompt) - Security-focused ChatGPT prompt library.
+- [thepromptindex.com](https://www.thepromptindex.com/prompt-database.php) - Online index of GPT prompts.
+- [snackprompt.com/](https://snackprompt.com/) - A snackable collection of GPT prompts.
+- [usethisprompt.io/](https://www.usethisprompt.io/) - A website to find and share GPT prompts.
+- [promptbase.com/](https://promptbase.com/) - Marketplace for buying and selling GPT prompts.
+
+---
+
+## 🛠️ Prompt Engineering
+Resources to master the craft of prompt engineering.
+
+- 🌟 | [snwfdhmp/awesome-gpt-prompt-engineering](https://github.com/snwfdhmp/awesome-gpt-prompt-engineering) - A list of awesome resources on prompt engineering.
+- 🔥 | [promptslab/Awesome-Prompt-Engineering](https://github.com/promptslab/Awesome-Prompt-Engineering) - Another excellent list of prompt engineering resources.
+- [circlestarzero/HackOpenAISystemPrompts](https://github.com/circlestarzero/HackOpenAISystemPrompts) - Hacking OpenAI system prompts.
+- [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide) - A guide to mastering prompt engineering.
+- [brexhq/prompt-engineering](https://github.com/brexhq/prompt-engineering) - Comprehensive resource for prompt engineering.
+- [natnew/Awesome-Prompt-Engineering](https://github.com/natnew/Awesome-Prompt-Engineering) - More resources on awesome prompt engineering.
+- [promptingguide.ai](https://www.promptingguide.ai/) - An online guide to prompt engineering.
+- [promptdev.ai](https://promptdev.ai/) - Platform for developing and sharing prompts.
+- [learnprompting.org](https://learnprompting.org/docs/intro) - Learn the art of prompting from scratch.
+
+---
+
+## 🔎 Prompt Sources
+Communities and forums for discovering and sharing prompts.
+
+- 🌟 | [r/ChatGPTJailbreak/](https://www.reddit.com/r/ChatGPTJailbreak/) - Reddit community for ChatGPT jailbreaks.
+- 🔥 | [r/ChatGPTPromptGenius/](https://www.reddit.com/r/ChatGPTPromptGenius/) - Subreddit for sharing and discovering GPT prompts.
+- [r/chatgpt_promptDesign/](https://www.reddit.com/r/chatgpt_promptDesign/) - Focused on designing effective ChatGPT prompts.
+- [r/PromptEngineering/](https://www.reddit.com/r/PromptEngineering/) - Subreddit dedicated to prompt engineering discussions.
+- [r/PromptDesign/](https://www.reddit.com/r/PromptDesign/) - Community for prompt design.
+- [r/GPT_jailbreaks/](https://www.reddit.com/r/GPT_jailbreaks/) - Discussion on GPT jailbreak methods.
+- [r/ChatGptDAN/](https://www.reddit.com/r/ChatGptDAN/) - Community for DAN mode and ChatGPT jailbreaks.
+- [r/PromptSharing/](https://www.reddit.com/r/PromptSharing/) - Share and discover prompts with the community.
+- [r/PromptWizardry/](https://www.reddit.com/r/PromptWizardry/) - Subreddit for creative and advanced prompting.
+- [r/PromptWizards/](https://www.reddit.com/r/PromptWizards/) - Community for wizards of prompt engineering.
+- [altenens.is/forums/chatgpt-tools](https://altenens.is/forums/chatgpt-tools.469297/) - Forum for sharing GPT tools and resources.
+- [onehack.us/prompt](https://onehack.us/search?q=prompt) - Another platform for discovering GPT prompts.
+
+---
+
+## 💼 Other Repos
+Miscellaneous repositories worth exploring.
+
+- [superiorlu/AITreasureBox](https://github.com/superiorlu/AITreasureBox) - A treasure trove of AI-related resources.
+
+---
+
+## 🧠 Cyber-Albsecop GPT Agents
+Specialized GPT agents focused on cybersecurity and more.
+
+- [ALBSECOP | Cyber Security Master](https://flowgpt.com/p/albsecop-cyber-security-master) - GPT agent for mastering cybersecurity.
+- [HYDRAX | Advanced Malware Generator](https://flowgpt.com/p/hydrax-advanced-malware-generator) - GPT agent designed for generating advanced malware.
+- [BLACKHATGOD | Master Hacker](https://flowgpt.com/p/blackhatgod-master-hacker) - GPT agent for hacking simulations.
+- [LUCIFERIO | Evil AI](https://flowgpt.com/p/luciferio-the-evil-ai) - An "evil" AI agent for creative scenarios.
+- [JAILBREAKER | Newest Jailbreak Updated Daily](https://flowgpt.com/p/jailbreaker-newest-jailbreak-updated-daily) - Daily updated jailbreak GPT agent.
+- [VAMPIRE | Ultra Prompt Writer](https://flowgpt.com/p/vampire-ultra-prompt-writer) - GPT agent specializing in writing ultra-effective prompts.
+- [ORK | Super Prompt Optimizer](https://flowgpt.com/p/ork-super-prompt-optimizer) - GPT agent for optimizing prompts.
+- [MINOTAUR | Impossible Security Challenge!](https://flowgpt.com/p/m1n0t4ur-impossible-security-challenge) - A GPT agent offering challenging security tasks.
+- [KEVLAR | Anti-Leak System Prompts](https://flowgpt.com/p/kevlar-anti-leak-system-prompts) - Agent designed to create anti-leak system prompts.
+
+---
 
 ### Cyber-AlbSecOP Super Prompts
 <details>
@@ -207,6 +250,8 @@ When given a query, provide a response tailored to the user’s needs, ensuring 
 </a>
 
 ###
+
+This repository is intended to be a comprehensive resource for anyone working with or interested in GPT models, from jailbreak enthusiasts to prompt engineers and security experts. Happy exploring!
 
 ---
 
