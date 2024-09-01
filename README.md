@@ -19,6 +19,9 @@
 - 🌟: Legendary!
 - 🔥: Hot Stuff
 
+### Ultimate Ai Repo
+- 🌟 | [superiorlu/AITreasureBox](https://github.com/superiorlu/AITreasureBox)
+
 ### Jailbreaks
 
 - 🌟 | [elder-plinius/L1B3RT45](https://github.com/elder-plinius/L1B3RT45)
@@ -73,7 +76,8 @@
 
 ### GPTs Lists
 - 🌟 | [EmbraceAGI/Awesome-AI-GPTs](https://github.com/EmbraceAGI/Awesome-AI-GPTs)
-- 🔥 | [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs)
+- 🔥 | [Anil-matcha/Awesome-GPT-Store](https://github.com/Anil-matcha/Awesome-GPT-Store)
+- [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs)
 - [friuns2/Awesome-GPTs-Big-List](https://github.com/friuns2/Awesome-GPTs-Big-List)
 - [AgentOps-AI/BestGPTs](https://github.com/AgentOps-AI/BestGPTs)
 - [fr0gger/Awesome-GPT-Agents](https://github.com/fr0gger/Awesome-GPT-Agents)
@@ -81,7 +85,8 @@
 
 ### Prompts Libraries
 - 🌟 | [ai-boost/awesome-prompts](https://github.com/ai-boost/awesome-prompts)
-- 🔥 | [abilzerian/LLM-Prompt-Library](https://github.com/abilzerian/LLM-Prompt-Library)
+- 🔥 | [B3o/GPTS-Prompt-Collection](https://github.com/B3o/GPTS-Prompt-Collection)
+- [abilzerian/LLM-Prompt-Library](https://github.com/abilzerian/LLM-Prompt-Library)
 - [yunwei37/prompt-hacker-collections](https://github.com/yunwei37/prompt-hacker-collections)
 - [alphatrait/100000-ai-prompts-by-contentifyai](https://github.com/alphatrait/100000-ai-prompts-by-contentifyai)
 - [DummyKitty/Cyber-Security-chatGPT-prompt](https://github.com/DummyKitty/Cyber-Security-chatGPT-prompt)
