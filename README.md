@@ -19,9 +19,6 @@
 - 🌟: Legendary!
 - 🔥: Hot Stuff
 
-### Ultimate Ai Repo
-- 🌟 | [superiorlu/AITreasureBox](https://github.com/superiorlu/AITreasureBox)
-
 ### Jailbreaks
 
 - 🌟 | [elder-plinius/L1B3RT45](https://github.com/elder-plinius/L1B3RT45)
@@ -119,6 +116,9 @@
 - [r/PromptWizards/](https://www.reddit.com/r/PromptWizards/)
 - [altenens.is/forums/chatgpt-tools](https://altenens.is/forums/chatgpt-tools.469297/)
 - [onehack.us/prompt](https://onehack.us/search?q=prompt)
+
+### Other Repos
+- [superiorlu/AITreasureBox](https://github.com/superiorlu/AITreasureBox)
 
 ### Cyber-Albsecop GPT Agents
 - [ALBSECOP | Cyber Security Master](https://flowgpt.com/p/albsecop-cyber-security-master)
