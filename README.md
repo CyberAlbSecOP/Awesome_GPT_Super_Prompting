@@ -32,6 +32,7 @@ Explore techniques for bypassing restrictions on GPT models.
 - [tg12/gpt_jailbreak_status](https://github.com/tg12/gpt_jailbreak_status) - A tool for monitoring jailbreak status of GPT models.
 - [Cyberlion-Technologies/ChatGPT_DAN](https://github.com/Cyberlion-Technologies/ChatGPT_DAN) - Another implementation of ChatGPT DAN mode prompts.
 - [yes133/ChatGPT-Prompts-Jailbreaks-And-More](https://github.com/yes133/ChatGPT-Prompts-Jailbreaks-And-More) - Collection of various jailbreak prompts.
+- [THUDM/ChatGLM-6B](https://github.com/THUDM/ChatGLM-6B)
 - [GabryB03/ChatGPT-Jailbreaks](https://github.com/GabryB03/ChatGPT-Jailbreaks) - Repository with different ChatGPT jailbreak techniques.
 - [jzzjackz/chatgptjailbreaks](https://github.com/jzzjackz/chatgptjailbreaks) - A simple repository showcasing jailbreak attempts.
 - [jackhhao/jailbreak-classification](https://huggingface.co/datasets/jackhhao/jailbreak-classification) - Dataset for classifying jailbreak prompts.
@@ -104,11 +105,10 @@ Collections of various GPT resources and lists.
 ## 📚 Prompts Libraries
 Explore libraries of GPT prompts for various applications.
 
-- 🌟 | [ai-boost/awesome-prompts](https://github.com/
-
-ai-boost/awesome-prompts) - A vast library of awesome GPT prompts.
+- 🌟 | [ai-boost/awesome-prompts](https://github.com/ai-boost/awesome-prompts) - A vast library of awesome GPT prompts.
 - 🔥 | [B3o/GPTS-Prompt-Collection](https://github.com/B3o/GPTS-Prompt-Collection) - Extensive collection of prompts for GPT models.
 - [abilzerian/LLM-Prompt-Library](https://github.com/abilzerian/LLM-Prompt-Library) - Library of prompts for large language models.
+- [f/awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts)
 - [yunwei37/prompt-hacker-collections](https://github.com/yunwei37/prompt-hacker-collections) - Collection of hacking-oriented GPT prompts.
 - [alphatrait/100000-ai-prompts-by-contentifyai](https://github.com/alphatrait/100000-ai-prompts-by-contentifyai) - Massive collection of AI prompts.
 - [DummyKitty/Cyber-Security-chatGPT-prompt](https://github.com/DummyKitty/Cyber-Security-chatGPT-prompt) - Security-focused ChatGPT prompt library.
@@ -149,13 +149,6 @@ Communities and forums for discovering and sharing prompts.
 - [r/PromptWizards/](https://www.reddit.com/r/PromptWizards/) - Community for wizards of prompt engineering.
 - [altenens.is/forums/chatgpt-tools](https://altenens.is/forums/chatgpt-tools.469297/) - Forum for sharing GPT tools and resources.
 - [onehack.us/prompt](https://onehack.us/search?q=prompt) - Another platform for discovering GPT prompts.
-
----
-
-## 💼 Other Repos
-Miscellaneous repositories worth exploring.
-
-- [superiorlu/AITreasureBox](https://github.com/superiorlu/AITreasureBox) - A treasure trove of AI-related resources.
 
 ---
 
