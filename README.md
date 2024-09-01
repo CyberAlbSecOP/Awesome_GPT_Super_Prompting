@@ -22,9 +22,9 @@
 ### Jailbreaks
 
 - 🌟 | [elder-plinius/L1B3RT45](https://github.com/elder-plinius/L1B3RT45)
-- 🌟 | [yueliu1999/Awesome-Jailbreak-on-LLMs](https://github.com/yueliu1999/Awesome-Jailbreak-on-LLMs)
+- 🌟 | [r/ChatGPTJailbreak/](https://www.reddit.com/r/ChatGPTJailbreak/)
 - 🔥 | [verazuo/jailbreak_llms](https://github.com/verazuo/jailbreak_llms)
-- 🔥 | [brayene/tr-ChatGPT-Jailbreak-Prompts](https://huggingface.co/datasets/brayene/tr-ChatGPT-Jailbreak-Prompts)
+- [yueliu1999/Awesome-Jailbreak-on-LLMs](https://github.com/yueliu1999/Awesome-Jailbreak-on-LLMs)
 - [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN)
 - [tg12/gpt_jailbreak_status](https://github.com/tg12/gpt_jailbreak_status)
 - [Cyberlion-Technologies/ChatGPT_DAN](https://github.com/Cyberlion-Technologies/ChatGPT_DAN)
@@ -53,15 +53,17 @@
 
 ### Prompt Injection
 - 🌟 | [AnthenaMatrix](https://github.com/AnthenaMatrix)
-- [FonduAI/awesome-prompt-injection](https://github.com/FonduAI/awesome-prompt-injection)
+- 🔥 | [utkusen/promptmap](https://github.com/utkusen/promptmap)
+- 🔥 | [microsoft/promptbench](https://github.com/microsoft/promptbench)
 - [Cranot/chatbot-injections-exploits](https://github.com/Cranot/chatbot-injections-exploits)
+- [FonduAI/awesome-prompt-injection](https://github.com/FonduAI/awesome-prompt-injection)
 - [TakSec/Prompt-Injection-Everywhere](https://github.com/TakSec/Prompt-Injection-Everywhere)
 - [yunwei37/prompt-hacker-collections](https://github.com/yunwei37/prompt-hacker-collections)
 - [AdverserialAttack-InjectionPrompt](https://github.com/Moaad-Ben/AdverserialAttack-InjectionPrompt)
 
 ### Secure Prompting
 - 🌟 | [Valhall-ai/prompt-injection-mitigations](https://github.com/Valhall-ai/prompt-injection-mitigations)
-- [cckuailong/awesome-gpt-security](https://github.com/cckuailong/awesome-gpt-security)
+- 🔥 | [cckuailong/awesome-gpt-security](https://github.com/cckuailong/awesome-gpt-security)
 - [GPTGeeker/securityGPT](https://github.com/GPTGeeker/securityGPT)
 - [mykeln/GPTect](https://github.com/mykeln/GPTect)
 - [gavin-black-dsu/securePrompts](https://github.com/gavin-black-dsu/securePrompts)
@@ -71,7 +73,7 @@
 
 ### GPTs Lists
 - 🌟 | [EmbraceAGI/Awesome-AI-GPTs](https://github.com/EmbraceAGI/Awesome-AI-GPTs)
-- [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs)
+- 🔥 | [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs)
 - [friuns2/Awesome-GPTs-Big-List](https://github.com/friuns2/Awesome-GPTs-Big-List)
 - [AgentOps-AI/BestGPTs](https://github.com/AgentOps-AI/BestGPTs)
 - [fr0gger/Awesome-GPT-Agents](https://github.com/fr0gger/Awesome-GPT-Agents)
@@ -90,10 +92,10 @@
 
 ### Prompt Engineering
 - 🌟 | [snwfdhmp/awesome-gpt-prompt-engineering](https://github.com/snwfdhmp/awesome-gpt-prompt-engineering)
+- 🔥 | [promptslab/Awesome-Prompt-Engineering](https://github.com/promptslab/Awesome-Prompt-Engineering)
 - [circlestarzero/HackOpenAISystemPrompts](https://github.com/circlestarzero/HackOpenAISystemPrompts)
 - [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
 - [brexhq/prompt-engineering](https://github.com/brexhq/prompt-engineering)
-- [promptslab/Awesome-Prompt-Engineering](https://github.com/promptslab/Awesome-Prompt-Engineering)
 - [natnew/Awesome-Prompt-Engineering](https://github.com/natnew/Awesome-Prompt-Engineering)
 - [promptingguide.ai](https://www.promptingguide.ai/)
 - [promptdev.ai](https://promptdev.ai/)
@@ -101,7 +103,7 @@
 
 ### Prompt Sources
 - 🌟 | [r/ChatGPTJailbreak/](https://www.reddit.com/r/ChatGPTJailbreak/)
-- [r/ChatGPTPromptGenius/](https://www.reddit.com/r/ChatGPTPromptGenius/)
+- 🔥 | [r/ChatGPTPromptGenius/](https://www.reddit.com/r/ChatGPTPromptGenius/)
 - [r/chatgpt_promptDesign/](https://www.reddit.com/r/chatgpt_promptDesign/)
 - [r/PromptEngineering/](https://www.reddit.com/r/PromptEngineering/)
 - [r/PromptDesign/](https://www.reddit.com/r/PromptDesign/)
@@ -204,11 +206,9 @@ When given a query, provide a response tailored to the user’s needs, ensuring 
 ---
 
 ### To do for V2.00
-- Add a short description to all the repos
 - Make everything more visually appealing
-- Add favorite hot sign to really good new repos
 - Add credits
-- Add personal super prompts
+- Add personal super prompts folder
 - Add legendary leaks
 
 ### Keywords:
