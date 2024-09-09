@@ -11,6 +11,8 @@
 - Ai Prompt Engineering
 - Adversarial Machine Learning
 
+⚠️ When you look into the "Latest Jailbreaks" folder, just check the latest additions for working Jailbreaks. ⚠️
+
 ---
 
 ### Legend:
