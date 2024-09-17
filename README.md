@@ -19,6 +19,9 @@
 - 🌟: Legendary!
 - 🔥: Hot Stuff
 
+### Hall Of Fame:
+- 🏆 | [FMHY](https://fmhy.pages.dev/) - The best of the best of the Internet!
+
 ---
 
 ## 🚨 Jailbreaks
@@ -27,12 +30,13 @@ Explore techniques for bypassing restrictions on GPT models.
 - 🌟 | [elder-plinius/L1B3RT45](https://github.com/elder-plinius/L1B3RT45) - A repository for advanced jailbreak strategies.
 - 🌟 | [r/ChatGPTJailbreak/](https://www.reddit.com/r/ChatGPTJailbreak/) - Reddit community focused on ChatGPT jailbreaks.
 - 🔥 | [verazuo/jailbreak_llms](https://github.com/verazuo/jailbreak_llms) - Methods to jailbreak various large language models.
+- 🔥 | [rentry.org](https://rentry.org/jb-listing) - Collection of various jailbreak prompts.
 - [yueliu1999/Awesome-Jailbreak-on-LLMs](https://github.com/yueliu1999/Awesome-Jailbreak-on-LLMs) - A curated list of LLM jailbreak techniques.
 - [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN) - Jailbreak prompts designed to activate the "DAN" mode in ChatGPT.
 - [tg12/gpt_jailbreak_status](https://github.com/tg12/gpt_jailbreak_status) - A tool for monitoring jailbreak status of GPT models.
 - [Cyberlion-Technologies/ChatGPT_DAN](https://github.com/Cyberlion-Technologies/ChatGPT_DAN) - Another implementation of ChatGPT DAN mode prompts.
 - [yes133/ChatGPT-Prompts-Jailbreaks-And-More](https://github.com/yes133/ChatGPT-Prompts-Jailbreaks-And-More) - Collection of various jailbreak prompts.
-- [THUDM/ChatGLM-6B](https://github.com/THUDM/ChatGLM-6B)
+- [THUDM/ChatGLM-6B](https://github.com/THUDM/ChatGLM-6B) - Collection of various jailbreak prompts.
 - [GabryB03/ChatGPT-Jailbreaks](https://github.com/GabryB03/ChatGPT-Jailbreaks) - Repository with different ChatGPT jailbreak techniques.
 - [jzzjackz/chatgptjailbreaks](https://github.com/jzzjackz/chatgptjailbreaks) - A simple repository showcasing jailbreak attempts.
 - [jackhhao/jailbreak-classification](https://huggingface.co/datasets/jackhhao/jailbreak-classification) - Dataset for classifying jailbreak prompts.
