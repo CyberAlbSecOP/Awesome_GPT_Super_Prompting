@@ -1,5 +1,11 @@
 ![jfhdgsjyhfjyrd](https://github.com/CyberAlbSecOP/Awesome_GPT_Super_Prompting/assets/145022163/9e936361-2d46-481f-8b8d-9227db9aa2c5)
 
+---
+
+⭐⭐⭐⭐⭐ +1000 STARS | THANK YOU! ⭐⭐⭐⭐⭐
+
+---
+
 ## What will you find in V.2.0:
 - ChatGPT Jailbreaks
 - GPT Assistants Prompt Leaks
@@ -12,10 +18,6 @@
 - Adversarial Machine Learning
 
 ⚠️ When you look into the "Latest Jailbreaks" folder, just check the latest additions for working Jailbreaks. ⚠️
-
----
-
-⭐⭐⭐⭐⭐ +1000 STARS | THANK YOU ⭐⭐⭐⭐⭐
 
 ---
 
