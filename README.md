@@ -27,14 +27,15 @@
 
 ### Hall Of Fame:
 - 🏆 | [FMHY](https://fmhy.pages.dev/) - The best of the best of the Internet!
+- 🏆 | [r/ChatGPTJailbreak/](https://www.reddit.com/r/ChatGPTJailbreak/) - Reddit community focused on ChatGPT jailbreaks.
 
 ---
 
 ## 🚨 Jailbreaks
 Explore techniques for bypassing restrictions on GPT models.
 
-- 🌟 | [elder-plinius/L1B3RT45](https://github.com/elder-plinius/L1B3RT45) - A repository for advanced jailbreak strategies.
 - 🌟 | [r/ChatGPTJailbreak/](https://www.reddit.com/r/ChatGPTJailbreak/) - Reddit community focused on ChatGPT jailbreaks.
+- 🌟 | [elder-plinius/L1B3RT45](https://github.com/elder-plinius/L1B3RT45) - A repository for advanced jailbreak strategies.
 - 🔥 | [verazuo/jailbreak_llms](https://github.com/verazuo/jailbreak_llms) - Methods to jailbreak various large language models.
 - 🔥 | [rentry.org](https://rentry.org/jb-listing) - Collection of various jailbreak prompts.
 - [yueliu1999/Awesome-Jailbreak-on-LLMs](https://github.com/yueliu1999/Awesome-Jailbreak-on-LLMs) - A curated list of LLM jailbreak techniques.
