@@ -26,8 +26,11 @@
 - 🔥: Hot Stuff
 
 ### Hall Of Fame:
-- 🏆 | [FMHY](https://fmhy.pages.dev/) - The best of the best of the Internet!
-- 🏆 | [r/ChatGPTJailbreak/](https://www.reddit.com/r/ChatGPTJailbreak/) - Reddit community focused on ChatGPT jailbreaks.
+- 🏆 | u/yell0wfever92
+- 🏆 | u/HORSELOCKSPACEPIRATE 
+- 🏆 | u/FamilyK1ng
+- 🏆 | u/getoffmylawn0014
+- 🏆 | u/Positive_Average_446 
 
 ---
 
