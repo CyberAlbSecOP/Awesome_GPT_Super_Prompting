@@ -2,7 +2,7 @@
 
 ---
 
-⭐⭐⭐⭐⭐ +1000 STARS | THANK YOU! ⭐⭐⭐⭐⭐
+⭐⭐⭐⭐⭐ +1500 STARS | THANK YOU! ⭐⭐⭐⭐⭐
 
 ---
 
