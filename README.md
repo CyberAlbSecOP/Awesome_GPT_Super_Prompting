@@ -17,8 +17,8 @@
 - Ai Prompt Engineering
 - Adversarial Machine Learning
 
-⚠️ When you look into the "Latest Jailbreaks" folder, just check the latest additions for highest chance of working Jailbreaks. ⚠️
-⚠️ If you find one of your secret prompts in this repo and want it removed, please let me know ASAP and I will delete it. ⚠️
+"""⚠️ When you look into the "Latest Jailbreaks" folder, just check the latest additions for highest chance of working Jailbreaks. ⚠️
+⚠️ If you find one of your secret prompts in this repo and want it removed, please let me know ASAP and I will delete it. ⚠️"""
 
 ---
 
