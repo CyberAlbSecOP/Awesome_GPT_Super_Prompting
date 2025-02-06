@@ -118,6 +118,9 @@ Collections of various GPT resources and lists.
 - [AgentOps-AI/BestGPTs](https://github.com/AgentOps-AI/BestGPTs) - Compilation of the best GPT resources.
 - [fr0gger/Awesome-GPT-Agents](https://github.com/fr0gger/Awesome-GPT-Agents) - Focused on GPT agents and their capabilities.
 - [cckuailong/awesome-gpt-security](https://github.com/cckuailong/awesome-gpt-security) - Security-centric GPT resources.
+- [LiLittleCat/awesome-free-chatgpt/tree](https://github.com/LiLittleCat/awesome-free-chatgpt) - List of free ChatGPT mirror sites, continuously updated.
+- [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources) - A list of free LLM inference resources accessible via API.
+- [sindresorhus/awesome-chatgpt](https://github.com/sindresorhus/awesome-chatgpt) - Awesome list for ChatGPT — an artificial intelligence chatbot developed by OpenAI.
 
 ---
 
@@ -135,6 +138,7 @@ Explore libraries of GPT prompts for various applications.
 - [snackprompt.com/](https://snackprompt.com/) - A snackable collection of GPT prompts.
 - [usethisprompt.io/](https://www.usethisprompt.io/) - A website to find and share GPT prompts.
 - [promptbase.com/](https://promptbase.com/) - Marketplace for buying and selling GPT prompts.
+- [prompts.chat/](https://prompts.chat/) - World's First & Most Famous Prompts Directory.
 
 ---
 
@@ -143,6 +147,7 @@ Resources to master the craft of prompt engineering.
 
 - 🌟 | [snwfdhmp/awesome-gpt-prompt-engineering](https://github.com/snwfdhmp/awesome-gpt-prompt-engineering) - A list of awesome resources on prompt engineering.
 - 🔥 | [promptslab/Awesome-Prompt-Engineering](https://github.com/promptslab/Awesome-Prompt-Engineering) - Another excellent list of prompt engineering resources.
+- [NirDiamant/Prompt_Engineering](https://github.com/NirDiamant/Prompt_Engineering) - Comprehensive collection of tutorials and implementations for Prompt Engineering techniques
 - [circlestarzero/HackOpenAISystemPrompts](https://github.com/circlestarzero/HackOpenAISystemPrompts) - Hacking OpenAI system prompts.
 - [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide) - A guide to mastering prompt engineering.
 - [brexhq/prompt-engineering](https://github.com/brexhq/prompt-engineering) - Comprehensive resource for prompt engineering.
@@ -150,6 +155,7 @@ Resources to master the craft of prompt engineering.
 - [promptingguide.ai](https://www.promptingguide.ai/) - An online guide to prompt engineering.
 - [promptdev.ai](https://promptdev.ai/) - Platform for developing and sharing prompts.
 - [learnprompting.org](https://learnprompting.org/docs/intro) - Learn the art of prompting from scratch.
+- [https://learningprompt.wiki/](https://learningprompt.wiki/) - Free Prompt Engineering Online Course.
 
 ---
 
