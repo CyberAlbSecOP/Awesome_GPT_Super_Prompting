@@ -2,7 +2,7 @@
 
 ---
 
-⭐⭐⭐⭐⭐ +1700 STARS | THANK YOU! ⭐⭐⭐⭐⭐
+⭐⭐⭐⭐⭐ +1800 STARS | THANK YOU! ⭐⭐⭐⭐⭐
 
 ---
 
@@ -155,7 +155,7 @@ Resources to master the craft of prompt engineering.
 - [promptingguide.ai](https://www.promptingguide.ai/) - An online guide to prompt engineering.
 - [promptdev.ai](https://promptdev.ai/) - Platform for developing and sharing prompts.
 - [learnprompting.org](https://learnprompting.org/docs/intro) - Learn the art of prompting from scratch.
-- [https://learningprompt.wiki/](https://learningprompt.wiki/) - Free Prompt Engineering Online Course.
+- [learningprompt.wiki/](https://learningprompt.wiki/) - Free Prompt Engineering Online Course.
 
 ---
 
