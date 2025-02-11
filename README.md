@@ -19,8 +19,8 @@
 
 ---
 
-- ⚠️ When you look into the "Latest Jailbreaks" folder, just check the latest additions for highest chance of working Jailbreaks. ⚠️
-- ⚠️ If you find one of your secret prompts in this repo and want it removed, please let me know ASAP and I will delete it. ⚠️
+- ⚠️ Into "Latest Jailbreaks" folder, just check latest additions for working Jailbreaks. ⚠️
+- ⚠️ If you find your secret prompts here and want it removed, please let me know ASAP. ⚠️
 
 ---
 
