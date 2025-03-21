@@ -46,6 +46,7 @@ Explore techniques for bypassing restrictions on GPT models.
 - 🔥 | [cyberark/FuzzyAI](https://github.com/cyberark/FuzzyAI) - A powerful tool for automated LLM fuzzing.
 - 🔥 | [verazuo/jailbreak_llms](https://github.com/verazuo/jailbreak_llms) - Methods to jailbreak various large language models.
 - 🔥 | [rentry.org](https://rentry.org/jb-listing) - Collection of various jailbreak prompts.
+- [catsanzsh/01preview-jailbreaks](https://github.com/catsanzsh/01preview-jailbreaks) - A collection of Jailbreaks for o1-preview.
 - [yueliu1999/Awesome-Jailbreak-on-LLMs](https://github.com/yueliu1999/Awesome-Jailbreak-on-LLMs) - A curated list of LLM jailbreak techniques.
 - [0xk1h0/ChatGPT_DAN](https://github.com/0xk1h0/ChatGPT_DAN) - Jailbreak prompts designed to activate the "DAN" mode in ChatGPT.
 - [tg12/gpt_jailbreak_status](https://github.com/tg12/gpt_jailbreak_status) - A tool for monitoring jailbreak status of GPT models.
