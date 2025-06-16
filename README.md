@@ -114,6 +114,7 @@ Collections of various GPT resources and lists.
 
 - 🌟 | [EmbraceAGI/Awesome-AI-GPTs](https://github.com/EmbraceAGI/Awesome-AI-GPTs) - Comprehensive list of AI and GPT resources.
 - 🔥 | [Anil-matcha/Awesome-GPT-Store](https://github.com/Anil-matcha/Awesome-GPT-Store) - A store of awesome GPT prompts and resources.
+- [AI/ML API](https://aimlapi.com/app/?utm_source=Awesome_GPT_Super_Prompting&utm_medium=github&utm_campaign=integration) - AI/ML API provides 300+ AI models including Deepseek, Gemini, ChatGPT.
 - [gogooing/Awesome-GPTs](https://github.com/gogooing/Awesome-GPTs) - General collection of GPT-related resources.
 - [friuns2/Awesome-GPTs-Big-List](https://github.com/friuns2/Awesome-GPTs-Big-List) - Big list of awesome GPT prompts and tools.
 - [AgentOps-AI/BestGPTs](https://github.com/AgentOps-AI/BestGPTs) - Compilation of the best GPT resources.
