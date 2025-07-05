@@ -142,13 +142,23 @@ class PromptArsenal {
         this.showLoading(true);
         
         try {
-            // Get all files from the server
+            console.log('Loading file structure from server...');
             const response = await fetch('/api/files');
+            
             if (response.ok) {
-                this.allFiles = await response.json();
+                const data = await response.json();
+                this.allFiles = Array.isArray(data) ? data : [];
+                console.log(`Loaded ${this.allFiles.length} files from server`);
+                
+                if (this.allFiles.length === 0) {
+                    console.warn('No files returned from server');
+                    this.showNotification('No markdown files found', 'warning');
+                }
             } else {
-                // Fallback to hardcoded structure if API fails
-                this.allFiles = this.buildHardcodedStructure();
+                const errorText = await response.text();
+                console.error('Failed to load files from server:', response.status, errorText);
+                this.allFiles = [];
+                this.showNotification(`Server error: ${response.status}`, 'error');
             }
             
             this.populateFolderFilter();
@@ -156,9 +166,10 @@ class PromptArsenal {
             this.filteredFiles = [...this.allFiles];
             
         } catch (error) {
-            console.error('Failed to load file structure:', error);
-            this.allFiles = this.buildHardcodedStructure();
-            this.filteredFiles = [...this.allFiles];
+            console.error('Network error loading file structure:', error);
+            this.allFiles = [];
+            this.filteredFiles = [];
+            this.showNotification('Network error - is the server running?', 'error');
         }
         
         this.showLoading(false);
@@ -557,10 +568,9 @@ class PromptArsenal {
 
         // Add click events to files
         treeStructure.querySelectorAll('.tree-file').forEach(fileEl => {
-            fileEl.addEventListener('click', (e) => {
+            fileEl.addEventListener('click', async (e) => {
                 const filePath = e.currentTarget.dataset.file;
-                this.openFile(filePath);
-                this.showFilePreview(filePath);
+                await this.showFilePreview(filePath);
             });
         });
     }
@@ -573,26 +583,32 @@ class PromptArsenal {
             let content = this.fileContents.get(filePath);
             
             if (!content) {
-                // Try to load from server first
                 try {
                     console.log('Loading file:', filePath);
                     const response = await fetch(`/api/file?path=${encodeURIComponent(filePath)}`);
+                    
                     if (response.ok) {
                         content = await response.text();
                         console.log('File loaded successfully:', filePath);
+                        this.fileContents.set(filePath, content);
                     } else {
-                        const errorText = await response.text();
+                        let errorText = 'Unknown error';
+                        try {
+                            const errorResponse = await response.json();
+                            errorText = errorResponse.error || errorText;
+                        } catch (e) {
+                            errorText = await response.text();
+                        }
+                        
                         console.error('Server error:', response.status, errorText);
-                        throw new Error(`Server error: ${response.status} - ${errorText}`);
+                        content = `Error loading file: ${response.status}\n${errorText}`;
+                        this.showNotification(`Failed to load file: ${response.status}`, 'error');
                     }
                 } catch (error) {
                     console.error('Error fetching file:', error);
-                    // Fallback to mock content
-                    content = this.generateMockContent(filePath);
-                    this.showNotification('Could not load file, showing sample content', 'warning');
+                    content = `Network error loading file: ${error.message}`;
+                    this.showNotification('Network error loading file', 'error');
                 }
-                
-                this.fileContents.set(filePath, content);
             }
             
             this.showModal(filePath, content);
@@ -737,7 +753,7 @@ Apply these techniques responsibly and ethically.`;
         document.body.style.overflow = '';
     }
 
-    showFilePreview(filePath) {
+    async showFilePreview(filePath) {
         const filePreview = document.getElementById('filePreview');
         if (!filePreview) return;
 
@@ -745,8 +761,17 @@ Apply these techniques responsibly and ethically.`;
         let content = this.fileContents.get(filePath);
         
         if (!content) {
-            content = this.generateMockContent(filePath);
-            this.fileContents.set(filePath, content);
+            try {
+                const response = await fetch(`/api/file?path=${encodeURIComponent(filePath)}`);
+                if (response.ok) {
+                    content = await response.text();
+                    this.fileContents.set(filePath, content);
+                } else {
+                    content = 'Error loading file preview';
+                }
+            } catch (error) {
+                content = 'Network error loading file preview';
+            }
         }
 
         filePreview.innerHTML = `
@@ -838,8 +863,20 @@ Apply these techniques responsibly and ethically.`;
     async refresh() {
         this.showLoading(true);
         this.fileContents.clear();
+        
+        try {
+            // Call refresh endpoint first
+            const refreshResponse = await fetch('/api/refresh');
+            if (refreshResponse.ok) {
+                console.log('Server refreshed file index');
+            }
+        } catch (error) {
+            console.warn('Could not refresh server index:', error);
+        }
+        
         await this.loadFileStructure();
         this.filterAndRenderFiles();
+        this.updateStats();
         this.showNotification('Data refreshed!');
     }
 
