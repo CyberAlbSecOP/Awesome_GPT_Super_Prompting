@@ -1523,48 +1523,87 @@
             try {
                 const files = [];
                 
-                // Get actual files from the current directory
-                const knownFiles = [
-                    'index.html',
-                    'script.js', 
-                    'style.css',
-                    '.replit'
-                ];
-
-                // Add any additional files that might exist
-                const potentialFiles = [
+                // Common .md file patterns to check
+                const commonMdFiles = [
                     'README.md',
-                    'main.py',
-                    'app.js',
-                    'server.js',
-                    'package.json',
-                    'requirements.txt',
-                    'config.js',
-                    'data.json',
-                    'utils.js',
-                    'helpers.py',
-                    'styles.css',
-                    'script.min.js',
-                    'favicon.ico',
-                    'manifest.json'
+                    'CHANGELOG.md',
+                    'CONTRIBUTING.md',
+                    'LICENSE.md',
+                    'DOCS.md',
+                    'INSTALL.md',
+                    'USAGE.md',
+                    'API.md',
+                    'GUIDE.md',
+                    'TUTORIAL.md'
                 ];
 
-                const allFiles = [...knownFiles, ...potentialFiles];
+                // Common directory patterns that might contain .md files
+                const commonDirectories = [
+                    'docs/',
+                    'documentation/',
+                    'guides/',
+                    'tutorials/',
+                    'examples/',
+                    'samples/',
+                    'prompts/',
+                    'jailbreaks/',
+                    'techniques/',
+                    'methods/',
+                    'security/',
+                    'tools/',
+                    'resources/',
+                    'collection/',
+                    'archive/',
+                    'latest/',
+                    'legendary/',
+                    'ultra/',
+                    'advanced/',
+                    'basic/',
+                    'premium/',
+                    'free/',
+                    'public/',
+                    'private/'
+                ];
+
+                // Generate potential .md file paths
+                const potentialMdFiles = [
+                    ...commonMdFiles,
+                    // Add numbered patterns
+                    ...Array.from({length: 50}, (_, i) => `${i + 1}.md`),
+                    ...Array.from({length: 20}, (_, i) => `prompt${i + 1}.md`),
+                    ...Array.from({length: 20}, (_, i) => `jailbreak${i + 1}.md`),
+                    ...Array.from({length: 20}, (_, i) => `technique${i + 1}.md`),
+                    // Add files in subdirectories
+                    ...commonDirectories.flatMap(dir => [
+                        ...commonMdFiles.map(file => `${dir}${file}`),
+                        ...Array.from({length: 30}, (_, i) => `${dir}${i + 1}.md`),
+                        ...Array.from({length: 15}, (_, i) => `${dir}prompt${i + 1}.md`),
+                        ...Array.from({length: 15}, (_, i) => `${dir}jailbreak${i + 1}.md`),
+                        ...Array.from({length: 15}, (_, i) => `${dir}technique${i + 1}.md`)
+                    ])
+                ];
+
+                console.log(`Scanning for ${potentialMdFiles.length} potential .md files...`);
                 
-                for (const fileName of allFiles) {
+                for (const filePath of potentialMdFiles) {
                     try {
-                        const response = await fetch(fileName);
+                        const response = await fetch(filePath);
                         if (response.ok) {
                             const content = await response.text();
-                            const size = new Blob([content]).size;
                             
-                            files.push({
-                                name: fileName.replace(/\.[^/.]+$/, ""), // Remove extension
-                                folder: determineFolder(fileName),
-                                path: fileName,
-                                size: size,
-                                content: content
-                            });
+                            // Only include if it's actually markdown content (has some content)
+                            if (content && content.trim().length > 0) {
+                                const size = new Blob([content]).size;
+                                const fileName = filePath.split('/').pop() || filePath;
+                                
+                                files.push({
+                                    name: fileName.replace(/\.md$/, ""), // Remove .md extension
+                                    folder: determineFolder(filePath),
+                                    path: filePath,
+                                    size: size,
+                                    content: content
+                                });
+                            }
                         }
                     } catch (error) {
                         // File doesn't exist or can't be loaded, skip silently
@@ -1572,6 +1611,7 @@
                     }
                 }
                 
+                console.log(`Found ${files.length} .md files`);
                 return files;
             } catch (error) {
                 console.error('Error scanning directory:', error);
@@ -1592,38 +1632,40 @@
             }
         }
 
-        function determineFolder(fileName) {
-            const ext = fileName.split('.').pop().toLowerCase();
-            const name = fileName.toLowerCase();
+        function determineFolder(filePath) {
+            const fileName = filePath.toLowerCase();
+            const path = filePath.toLowerCase();
             
-            // Web files
-            if (ext === 'html' || ext === 'htm') return 'Web Pages';
-            if (ext === 'css' || ext === 'scss' || ext === 'sass') return 'Stylesheets';
-            if (ext === 'js' || ext === 'jsx' || ext === 'ts' || ext === 'tsx') return 'JavaScript';
+            // Determine folder based on directory structure first
+            if (path.includes('jailbreak')) return 'Latest Jailbreaks';
+            if (path.includes('legendary') || path.includes('leak')) return 'Legendary Leaks';
+            if (path.includes('security') || path.includes('protection')) return 'Prompt Security';
+            if (path.includes('ultra') || path.includes('advanced') || path.includes('premium')) return 'Ultra Prompts';
+            if (path.includes('injection') || path.includes('bypass')) return 'Injection Techniques';
+            if (path.includes('tool') || path.includes('utility')) return 'Security Tools';
+            if (path.includes('guide') || path.includes('tutorial')) return 'Guides & Tutorials';
+            if (path.includes('example') || path.includes('sample')) return 'Examples';
+            if (path.includes('doc') || fileName === 'readme.md') return 'Documentation';
+            if (path.includes('prompt') && !path.includes('security')) return 'Prompt Collection';
+            if (path.includes('technique') || path.includes('method')) return 'Techniques';
+            if (path.includes('collection') || path.includes('archive')) return 'Archives';
+            if (path.includes('resource')) return 'Resources';
             
-            // Programming languages
-            if (ext === 'py' || ext === 'python') return 'Python';
-            if (ext === 'java' || ext === 'class') return 'Java';
-            if (ext === 'cpp' || ext === 'c' || ext === 'h') return 'C/C++';
-            if (ext === 'php') return 'PHP';
-            if (ext === 'rb' || ext === 'ruby') return 'Ruby';
+            // Determine folder based on file name patterns
+            if (fileName.includes('jailbreak')) return 'Latest Jailbreaks';
+            if (fileName.includes('legendary') || fileName.includes('leak')) return 'Legendary Leaks';
+            if (fileName.includes('security') || fileName.includes('protection')) return 'Prompt Security';
+            if (fileName.includes('ultra') || fileName.includes('advanced')) return 'Ultra Prompts';
+            if (fileName.includes('injection') || fileName.includes('bypass')) return 'Injection Techniques';
+            if (fileName.includes('tool') || fileName.includes('utility')) return 'Security Tools';
+            if (fileName.includes('guide') || fileName.includes('tutorial')) return 'Guides & Tutorials';
+            if (fileName.includes('prompt')) return 'Prompt Collection';
+            if (fileName.includes('technique') || fileName.includes('method')) return 'Techniques';
             
-            // Documentation and text
-            if (ext === 'md' || ext === 'markdown') return 'Documentation';
-            if (ext === 'txt' || ext === 'text') return 'Text Files';
-            if (ext === 'json') return 'Data Files';
-            if (ext === 'xml' || ext === 'yaml' || ext === 'yml') return 'Data Files';
+            // Numeric files go to general prompt collection
+            if (/^\d+\.md$/.test(fileName.split('/').pop())) return 'Prompt Collection';
             
-            // Configuration
-            if (name.includes('config') || name.includes('.env') || fileName === '.replit') return 'Configuration';
-            if (ext === 'toml' || ext === 'ini' || ext === 'conf') return 'Configuration';
-            if (fileName === 'package.json' || fileName === 'requirements.txt') return 'Dependencies';
-            
-            // Media
-            if (ext === 'jpg' || ext === 'jpeg' || ext === 'png' || ext === 'gif' || ext === 'svg') return 'Images';
-            if (ext === 'ico') return 'Assets';
-            
-            return 'Miscellaneous';
+            return 'General';
         }
 
         // GPT Arsenal Application
