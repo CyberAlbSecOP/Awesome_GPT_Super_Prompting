@@ -504,16 +504,16 @@ class PromptArsenal {
                         .replace(/\s+/g, '_')       // Replace spaces with underscores
                         .replace(/_+/g, '_')        // Replace multiple underscores with single
                         .replace('.md', '.txt');
-                    console.log('Fetching from:', `./content/${safePath}`);
-                    const response = await fetch(`./content/${safePath}`);
+                    console.log('Fetching from:', `./${safePath}`);
+                    const response = await fetch(`./${safePath}`);
 
                     if (response.ok) {
                         content = await response.text();
                         console.log('File loaded successfully:', filePath);
                         this.fileContents.set(filePath, content);
                     } else {
-                        console.error('Error loading file:', response.status, 'Path:', `./content/${safePath}`);
-                        content = `Error loading file: ${response.status}\nTried to load: ./content/${safePath}`;
+                        console.error('Error loading file:', response.status, 'Path:', `./${safePath}`);
+                        content = `Error loading file: ${response.status}\nTried to load: ./${safePath}`;
                         this.showNotification(`Failed to load file: ${response.status}`, 'error');
                     }
                 } catch (error) {
@@ -571,7 +571,7 @@ class PromptArsenal {
                     .replace(/_+/g, '_')        // Replace multiple underscores with single
                     .replace('.md', '.txt');
                 console.log('Loading preview for:', filePath, 'Safe path:', safePath);
-                const response = await fetch(`./content/${safePath}`);
+                const response = await fetch(`./${safePath}`);
                 if (response.ok) {
                     content = await response.text();
                     this.fileContents.set(filePath, content);
