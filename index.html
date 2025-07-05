@@ -20,6 +20,2407 @@
             --background-dark: #0f0f23;
             --background-medium: #1a1a2e;
             --background-light: #16213e;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT Arsenal - Advanced Prompt Collection</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #00d4ff;
+            --secondary-color: #0099cc;
+            --background-dark: #0f0f23;
+            --background-medium: #1a1a2e;
+            --background-light: #16213e;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --text-muted: rgba(255, 255, 255, 0.6);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --hover-color: rgba(255, 255, 255, 0.05);
+            --success-color: #2ed573;
+            --warning-color: #ffa502;
+            --danger-color: #ff4757;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --gradient-background: linear-gradient(135deg, var(--background-dark) 0%, var(--background-medium) 100%);
+            --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.15);
+            --shadow-large: 0 8px 32px rgba(0, 0, 0, 0.2);
+            --border-radius: 12px;
+            --border-radius-small: 8px;
+            --border-radius-large: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--gradient-background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 14px;
+        }
+
+        .dashboard {
+            display: flex;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .sidebar {
+            width: 320px;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+        }
+
+        .sidebar-header {
+            padding: 24px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo i {
+            font-size: 22px;
+        }
+
+        .sidebar-toggle {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 16px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: var(--border-radius-small);
+            transition: var(--transition);
+            display: none;
+        }
+
+        .sidebar-toggle:hover {
+            background: var(--hover-color);
+        }
+
+        .search-container {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .search-box {
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .search-box input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 12px 16px 12px 40px;
+            color: var(--text-primary);
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .filter-controls select {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-small);
+            padding: 8px 12px;
+            color: var(--text-primary);
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .filter-controls select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .sidebar-nav {
+            flex: 1;
+            padding: 20px 0;
+        }
+
+        .nav-section {
+            margin-bottom: 24px;
+        }
+
+        .nav-section h3 {
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            padding: 0 20px;
+        }
+
+        .nav-section ul {
+            list-style: none;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-item:hover {
+            background: var(--hover-color);
+            color: var(--primary-color);
+        }
+
+        .nav-item.active {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary-color);
+            border-right: 3px solid var(--primary-color);
+        }
+
+        .nav-item i {
+            width: 18px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .file-count {
+            margin-left: auto;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .sidebar-footer {
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .stats {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .stat {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .developer-info {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .developer-info strong {
+            color: var(--primary-color);
+        }
+
+        .developer-info p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .repo-credit {
+            margin-top: 10px !important;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .repo-credit a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .repo-credit a:hover {
+            color: var(--text-primary);
+            text-decoration: underline;
+        }
+
+        .repo-credit i {
+            color: #ffd700;
+            margin-right: 5px;
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 320px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .header {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 18px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: var(--border-radius-small);
+            transition: var(--transition);
+            display: none;
+        }
+
+        .mobile-menu-btn:hover {
+            background: var(--hover-color);
+        }
+
+        .breadcrumb h1 {
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 4px;
+        }
+
+        .breadcrumb p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .view-controls {
+            display: flex;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            padding: 4px;
+        }
+
+        .view-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: var(--border-radius-small);
+            transition: var(--transition);
+        }
+
+        .view-btn:hover {
+            background: var(--hover-color);
+            color: var(--text-primary);
+        }
+
+        .view-btn.active {
+            background: var(--primary-color);
+            color: var(--background-dark);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 14px;
+            cursor: pointer;
+            padding: 10px 12px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .action-btn:hover {
+            background: var(--hover-color);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .content-area {
+            flex: 1;
+            padding: 32px;
+            position: relative;
+        }
+
+        .view-section {
+            display: none;
+        }
+
+        .view-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 24px;
+            height: 100%;
+        }
+
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-large);
+            padding: 24px;
+            transition: var(--transition);
+        }
+
+        .dashboard-card:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .dashboard-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .stat-item i {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .stat-item .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+
+        .stat-item .stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .quick-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 16px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            text-align: center;
+        }
+
+        .quick-btn:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .quick-btn i {
+            font-size: 20px;
+        }
+
+        .quick-btn span {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .folders-card {
+            grid-column: 1 / -1;
+        }
+
+        .folder-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .chart-item {
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 12px;
+            border-radius: var(--border-radius-small);
+        }
+
+        .chart-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .chart-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .chart-fill {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .chart-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .credits-card {
+            grid-column: span 2;
+        }
+
+        .credit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .credit-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .credit-info h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .credit-info p {
+            margin: 0.25rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .credit-stats {
+            color: var(--primary-color) !important;
+            font-weight: 500;
+        }
+
+        .credit-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .credit-link:hover {
+            color: var(--text-primary);
+        }
+
+        .credit-description {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .files-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .file-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-large);
+            padding: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-large);
+        }
+
+        .file-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .file-card:hover::before {
+            opacity: 1;
+        }
+
+        .file-icon {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        .file-info {
+            flex: 1;
+        }
+
+        .file-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .file-folder {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary-color);
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .file-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .file-size {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .file-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .files-list {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-large);
+            overflow: hidden;
+        }
+
+        .list-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 80px 100px;
+            gap: 16px;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .list-body {
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .list-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 80px 100px;
+            gap: 16px;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: var(--transition);
+            align-items: center;
+        }
+
+        .list-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .list-row:last-child {
+            border-bottom: none;
+        }
+
+        .col-name {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .col-name i {
+            color: var(--primary-color);
+            font-size: 16px;
+            min-width: 16px;
+        }
+
+        .col-name span {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .col-folder {
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .col-size {
+            color: var(--text-muted);
+            font-size: 12px;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+
+        .col-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tree-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 24px;
+            height: 70vh;
+        }
+
+        .tree-sidebar {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-large);
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .tree-folder {
+            margin-bottom: 8px;
+        }
+
+        .folder-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: var(--border-radius-small);
+            transition: var(--transition);
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .folder-header:hover {
+            background: var(--hover-color);
+        }
+
+        .folder-files {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .tree-file {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 8px;
+            cursor: pointer;
+            border-radius: var(--border-radius-small);
+            transition: var(--transition);
+            font-size: 13px;
+        }
+
+        .tree-file:hover {
+            background: var(--hover-color);
+        }
+
+        .tree-file.active {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary-color);
+        }
+
+        .tree-content {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-large);
+            overflow: hidden;
+        }
+
+        .file-preview {
+            height: 100%;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .preview-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: var(--text-muted);
+        }
+
+        .preview-placeholder i {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .preview-header {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .preview-header h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-primary);
+        }
+
+        .preview-header p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .preview-content {
+            line-height: 1.6;
+        }
+
+        .preview-content h1 {
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-bottom: 16px;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+            padding-bottom: 8px;
+        }
+
+        .preview-content h2 {
+            color: var(--text-primary);
+            font-size: 20px;
+            margin: 20px 0 12px 0;
+        }
+
+        .preview-content h3 {
+            color: var(--text-primary);
+            font-size: 18px;
+            margin: 16px 0 8px 0;
+        }
+
+        .preview-content p {
+            line-height: 1.6;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        .preview-content code {
+            background: rgba(0, 212, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 13px;
+        }
+
+        .preview-content pre {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 16px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            margin: 12px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .preview-content ul,
+        .preview-content ol {
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex !important;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-content {
+            background: var(--background-medium);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-large);
+            width: 90%;
+            max-width: 900px;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-large);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-header h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 18px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: var(--border-radius-small);
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: var(--hover-color);
+            color: var(--text-primary);
+        }
+
+        .modal-body {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-file-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .file-path {
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .modal-content-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            color: white;
+            font-weight: 500;
+            z-index: 10000;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .notification.success {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .notification.error {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .notification.warning {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .empty-state h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-primary);
+        }
+
+        .empty-state p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .sidebar-toggle {
+                display: block;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header-right {
+                gap: 0.5rem;
+            }
+
+            .view-controls {
+                display: none;
+            }
+
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .files-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .file-card {
+                padding: 1rem;
+            }
+
+            .list-header {
+                display: none;
+            }
+
+            .list-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                padding: 1rem;
+                grid-template-columns: 1fr;
+            }
+
+            .tree-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .notification {
+                right: 10px;
+                left: 10px;
+                transform: translateY(-100px);
+            }
+
+            .notification.show {
+                transform: translateY(0);
+            }
+        }
+
+        .text-truncate {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .d-none {
+            display: none !important;
+        }
+
+        .d-block {
+            display: block !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>GPT Arsenal</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search prompts..." id="globalSearch">
+                </div>
+                <div class="filter-controls">
+                    <select id="folderFilter">
+                        <option value="">All Folders</option>
+                    </select>
+                    <select id="sortBy">
+                        <option value="name">Sort by Name</option>
+                        <option value="folder">Sort by Folder</option>
+                        <option value="size">Sort by Size</option>
+                    </select>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>Views</h3>
+                    <ul>
+                        <li class="nav-item active" data-view="dashboard">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </li>
+                        <li class="nav-item" data-view="grid">
+                            <i class="fas fa-th"></i>
+                            <span>Grid View</span>
+                        </li>
+                        <li class="nav-item" data-view="list">
+                            <i class="fas fa-list"></i>
+                            <span>List View</span>
+                        </li>
+                        <li class="nav-item" data-view="tree">
+                            <i class="fas fa-sitemap"></i>
+                            <span>Tree View</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Collections</h3>
+                    <ul id="folderNav">
+                        <!-- Dynamically populated -->
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number" id="totalFiles">0</span>
+                        <span class="stat-label">Prompts</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="totalFolders">0</span>
+                        <span class="stat-label">Collections</span>
+                    </div>
+                </div>
+                <div class="developer-info">
+                    <p>Dashboard by <strong>0x0806</strong></p>
+                    <p>Content by <strong>CyberAlbSecOP</strong></p>
+                    <p class="repo-credit">
+                        <i class="fas fa-star"></i>
+                        <a href="https://github.com/CyberAlbSecOP/Awesome_GPT_Super_Prompting" target="_blank">
+                            Awesome GPT Super Prompting
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="breadcrumb">
+                        <h1 id="pageTitle">GPT Arsenal</h1>
+                        <p id="pageSubtitle">Advanced prompt collection and jailbreak arsenal</p>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <div class="view-controls">
+                        <button class="view-btn active" data-view="dashboard" title="Dashboard">
+                            <i class="fas fa-home"></i>
+                        </button>
+                        <button class="view-btn" data-view="grid" title="Grid View">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list" title="List View">
+                            <i class="fas fa-list"></i>
+                        </button>
+                        <button class="view-btn" data-view="tree" title="Tree View">
+                            <i class="fas fa-sitemap"></i>
+                        </button>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="action-btn" id="refreshBtn" title="Refresh">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <section class="view-section active" id="dashboardView">
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card stats-card">
+                            <h3>Collection Overview</h3>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <i class="fas fa-unlock-alt"></i>
+                                    <div>
+                                        <span class="stat-number" id="jailbreaksCount">0</span>
+                                        <span class="stat-label">Jailbreaks</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-crown"></i>
+                                    <div>
+                                        <span class="stat-number" id="legendaryCount">0</span>
+                                        <span class="stat-label">Legendary</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <div>
+                                        <span class="stat-number" id="securityCount">0</span>
+                                        <span class="stat-label">Security</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-rocket"></i>
+                                    <div>
+                                        <span class="stat-number" id="ultraCount">0</span>
+                                        <span class="stat-label">Ultra</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card recent-card">
+                            <h3>Quick Access</h3>
+                            <div class="quick-actions">
+                                <button class="quick-btn" data-action="latest">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Latest Jailbreaks</span>
+                                </button>
+                                <button class="quick-btn" data-action="legendary">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Legendary Leaks</span>
+                                </button>
+                                <button class="quick-btn" data-action="security">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Security Tools</span>
+                                </button>
+                                <button class="quick-btn" data-action="ultra">
+                                    <i class="fas fa-rocket"></i>
+                                    <span>Ultra Prompts</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card folders-card">
+                            <h3>Collection Distribution</h3>
+                            <div class="folder-chart" id="folderChart">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card credits-card">
+                            <h3>Credits & Attribution</h3>
+                            <div class="credits-content">
+                                <div class="credit-item">
+                                    <div class="credit-avatar">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="credit-info">
+                                        <h4>CyberAlbSecOP</h4>
+                                        <p>Creator of Awesome GPT Super Prompting Repository</p>
+                                        <p class="credit-stats">2000+ ⭐ | Advanced Prompt Engineering Collection</p>
+                                        <a href="https://github.com/CyberAlbSecOP/Awesome_GPT_Super_Prompting" target="_blank" class="credit-link">
+                                            <i class="fab fa-github"></i> View Repository
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="credit-description">
+                                    <p>This arsenal showcases content from the comprehensive collection of ChatGPT jailbreaks, GPT assistant prompt leaks, prompt injection techniques, and security tools.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="view-section" id="gridView">
+                    <div class="files-grid" id="filesGrid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </section>
+
+                <section class="view-section" id="listView">
+                    <div class="files-list">
+                        <div class="list-header">
+                            <div class="col-name">Name</div>
+                            <div class="col-folder">Collection</div>
+                            <div class="col-size">Size</div>
+                            <div class="col-actions">Actions</div>
+                        </div>
+                        <div class="list-body" id="filesList">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+                </section>
+
+                <section class="view-section" id="treeView">
+                    <div class="tree-container">
+                        <div class="tree-sidebar">
+                            <div class="tree-structure" id="treeStructure">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+                        <div class="tree-content">
+                            <div class="file-preview" id="filePreview">
+                                <div class="preview-placeholder">
+                                    <i class="fas fa-file-alt"></i>
+                                    <p>Select a prompt to preview</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal" id="fileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Prompt Content</h2>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-file-info">
+                    <span class="file-path" id="modalFilePath"></span>
+                    <div class="file-actions">
+                        <button class="action-btn" id="copyContent" title="Copy Content">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <button class="action-btn" id="downloadFile" title="Download">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-content-area" id="modalContentArea">
+                    <!-- Content goes here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <script>
+        // File scanning functionality
+        async function scanDirectory() {
+            try {
+                const files = [];
+                
+                // Get actual files from the current directory
+                const knownFiles = [
+                    'index.html',
+                    'script.js', 
+                    'style.css',
+                    '.replit'
+                ];
+
+                // Add any additional files that might exist
+                const potentialFiles = [
+                    'README.md',
+                    'main.py',
+                    'app.js',
+                    'server.js',
+                    'package.json',
+                    'requirements.txt',
+                    'config.js',
+                    'data.json',
+                    'utils.js',
+                    'helpers.py',
+                    'styles.css',
+                    'script.min.js',
+                    'favicon.ico',
+                    'manifest.json'
+                ];
+
+                const allFiles = [...knownFiles, ...potentialFiles];
+                
+                for (const fileName of allFiles) {
+                    try {
+                        const response = await fetch(fileName);
+                        if (response.ok) {
+                            const content = await response.text();
+                            const size = new Blob([content]).size;
+                            
+                            files.push({
+                                name: fileName.replace(/\.[^/.]+$/, ""), // Remove extension
+                                folder: determineFolder(fileName),
+                                path: fileName,
+                                size: size,
+                                content: content
+                            });
+                        }
+                    } catch (error) {
+                        // File doesn't exist or can't be loaded, skip silently
+                        continue;
+                    }
+                }
+                
+                return files;
+            } catch (error) {
+                console.error('Error scanning directory:', error);
+                return [];
+            }
+        }
+
+        async function loadFileContent(fileName) {
+            try {
+                const response = await fetch(fileName);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return await response.text();
+            } catch (error) {
+                console.warn(`Could not fetch ${fileName}:`, error);
+                return `Content not available for ${fileName}`;
+            }
+        }
+
+        function determineFolder(fileName) {
+            const ext = fileName.split('.').pop().toLowerCase();
+            const name = fileName.toLowerCase();
+            
+            // Web files
+            if (ext === 'html' || ext === 'htm') return 'Web Pages';
+            if (ext === 'css' || ext === 'scss' || ext === 'sass') return 'Stylesheets';
+            if (ext === 'js' || ext === 'jsx' || ext === 'ts' || ext === 'tsx') return 'JavaScript';
+            
+            // Programming languages
+            if (ext === 'py' || ext === 'python') return 'Python';
+            if (ext === 'java' || ext === 'class') return 'Java';
+            if (ext === 'cpp' || ext === 'c' || ext === 'h') return 'C/C++';
+            if (ext === 'php') return 'PHP';
+            if (ext === 'rb' || ext === 'ruby') return 'Ruby';
+            
+            // Documentation and text
+            if (ext === 'md' || ext === 'markdown') return 'Documentation';
+            if (ext === 'txt' || ext === 'text') return 'Text Files';
+            if (ext === 'json') return 'Data Files';
+            if (ext === 'xml' || ext === 'yaml' || ext === 'yml') return 'Data Files';
+            
+            // Configuration
+            if (name.includes('config') || name.includes('.env') || fileName === '.replit') return 'Configuration';
+            if (ext === 'toml' || ext === 'ini' || ext === 'conf') return 'Configuration';
+            if (fileName === 'package.json' || fileName === 'requirements.txt') return 'Dependencies';
+            
+            // Media
+            if (ext === 'jpg' || ext === 'jpeg' || ext === 'png' || ext === 'gif' || ext === 'svg') return 'Images';
+            if (ext === 'ico') return 'Assets';
+            
+            return 'Miscellaneous';
+        }
+
+        // GPT Arsenal Application
+        class GPTArsenal {
+            constructor() {
+                this.currentView = 'dashboard';
+                this.currentFolder = null;
+                this.selectedFile = null;
+                this.searchQuery = '';
+                this.sortBy = 'name';
+                this.folderFilter = '';
+                this.allFiles = [];
+                this.filteredFiles = [];
+                this.fileContents = new Map();
+                this.isMobile = window.innerWidth <= 768;
+                this.sidebarOpen = false;
+
+                this.init();
+            }
+
+            async init() {
+                await this.loadPromptCollection();
+                this.bindEvents();
+                this.handleResize();
+                this.filterAndRenderFiles();
+                this.renderCurrentView();
+            }
+
+            async loadPromptCollection() {
+                console.log('Scanning directory for files...');
+                
+                const scannedFiles = await scanDirectory();
+                this.allFiles = scannedFiles.map(file => ({
+                    ...file,
+                    relativePath: file.path
+                }));
+
+                // Cache file contents
+                this.allFiles.forEach(file => {
+                    if (file.content) {
+                        this.fileContents.set(file.path, file.content);
+                    }
+                });
+
+                this.populateFolderFilter();
+                this.populateFolderNavigation();
+                this.filteredFiles = [...this.allFiles];
+                this.updateStats();
+
+                console.log(`Loaded ${this.allFiles.length} files from directory`);
+                this.showNotification(`Loaded ${this.allFiles.length} files from directory`);
+            }
+
+            bindEvents() {
+                // Navigation events
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.addEventListener('click', (e) => {
+                        const view = e.currentTarget.dataset.view;
+                        if (view) {
+                            this.switchView(view);
+                        } else {
+                            const folder = e.currentTarget.dataset.folder;
+                            if (folder) {
+                                this.selectFolder(folder);
+                            }
+                        }
+                    });
+                });
+
+                // View control buttons
+                document.querySelectorAll('.view-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const view = e.currentTarget.dataset.view;
+                        this.switchView(view);
+                    });
+                });
+
+                // Mobile menu
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                const mobileOverlay = document.getElementById('mobileOverlay');
+
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.addEventListener('click', () => this.toggleMobileSidebar());
+                }
+
+                if (mobileOverlay) {
+                    mobileOverlay.addEventListener('click', () => this.closeMobileSidebar());
+                }
+
+                // Search functionality
+                const globalSearch = document.getElementById('globalSearch');
+                if (globalSearch) {
+                    globalSearch.addEventListener('input', this.debounce((e) => {
+                        this.searchQuery = e.target.value.toLowerCase();
+                        this.filterAndRenderFiles();
+                    }, 300));
+                }
+
+                // Filter controls
+                const folderFilter = document.getElementById('folderFilter');
+                const sortBy = document.getElementById('sortBy');
+
+                if (folderFilter) {
+                    folderFilter.addEventListener('change', (e) => {
+                        this.folderFilter = e.target.value;
+                        this.filterAndRenderFiles();
+                    });
+                }
+
+                if (sortBy) {
+                    sortBy.addEventListener('change', (e) => {
+                        this.sortBy = e.target.value;
+                        this.filterAndRenderFiles();
+                    });
+                }
+
+                // Quick action buttons
+                document.querySelectorAll('.quick-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const action = e.currentTarget.dataset.action;
+                        this.handleQuickAction(action);
+                    });
+                });
+
+                // Action buttons
+                const refreshBtn = document.getElementById('refreshBtn');
+                if (refreshBtn) {
+                    refreshBtn.addEventListener('click', () => this.refresh());
+                }
+
+                // Modal events
+                const modalClose = document.getElementById('modalClose');
+                const copyContent = document.getElementById('copyContent');
+                const downloadFile = document.getElementById('downloadFile');
+
+                if (modalClose) {
+                    modalClose.addEventListener('click', () => this.closeModal());
+                }
+
+                if (copyContent) {
+                    copyContent.addEventListener('click', () => this.copyFileContent());
+                }
+
+                if (downloadFile) {
+                    downloadFile.addEventListener('click', () => this.downloadCurrentFile());
+                }
+
+                // Keyboard shortcuts
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        this.closeModal();
+                        this.closeMobileSidebar();
+                    }
+                    if (e.ctrlKey || e.metaKey) {
+                        if (e.key === 'k') {
+                            e.preventDefault();
+                            document.getElementById('globalSearch')?.focus();
+                        }
+                        if (e.key === 'r') {
+                            e.preventDefault();
+                            this.refresh();
+                        }
+                    }
+                });
+
+                // Window resize
+                window.addEventListener('resize', () => this.handleResize());
+
+                // Modal click outside to close
+                const modal = document.getElementById('fileModal');
+                if (modal) {
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) {
+                            this.closeModal();
+                        }
+                    });
+                }
+            }
+
+            populateFolderFilter() {
+                const folderFilter = document.getElementById('folderFilter');
+                if (!folderFilter) return;
+
+                const folders = [...new Set(this.allFiles.map(file => file.folder))].sort();
+                folderFilter.innerHTML = '<option value="">All Collections</option>';
+
+                folders.forEach(folder => {
+                    const option = document.createElement('option');
+                    option.value = folder;
+                    option.textContent = folder;
+                    folderFilter.appendChild(option);
+                });
+            }
+
+            populateFolderNavigation() {
+                const folderNav = document.getElementById('folderNav');
+                if (!folderNav) return;
+
+                const folders = [...new Set(this.allFiles.map(file => file.folder))].sort();
+                folderNav.innerHTML = '';
+
+                folders.forEach(folder => {
+                    const fileCount = this.allFiles.filter(file => file.folder === folder).length;
+                    const li = document.createElement('li');
+                    li.className = 'nav-item folder-nav-item';
+                    li.dataset.folder = folder;
+                    li.innerHTML = `
+                        <i class="fas fa-folder"></i>
+                        <span>${folder}</span>
+                        <span class="file-count">${fileCount}</span>
+                    `;
+
+                    li.addEventListener('click', () => {
+                        this.selectFolder(folder);
+                    });
+
+                    folderNav.appendChild(li);
+                });
+            }
+
+            selectFolder(folder) {
+                document.querySelectorAll('.folder-nav-item').forEach(item => {
+                    item.classList.toggle('active', item.dataset.folder === folder);
+                });
+
+                this.currentFolder = folder;
+                this.folderFilter = folder;
+                document.getElementById('folderFilter').value = folder;
+                this.switchView('grid');
+                this.filterAndRenderFiles();
+            }
+
+            switchView(view) {
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.classList.toggle('active', item.dataset.view === view);
+                });
+
+                document.querySelectorAll('.view-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.view === view);
+                });
+
+                document.querySelectorAll('.view-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                const targetSection = document.getElementById(`${view}View`);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+
+                this.currentView = view;
+                this.updatePageTitle(view);
+                this.renderCurrentView();
+                this.closeMobileSidebar();
+            }
+
+            updatePageTitle(view) {
+                const titles = {
+                    dashboard: 'GPT Arsenal',
+                    grid: 'Grid View',
+                    list: 'List View',
+                    tree: 'Tree View'
+                };
+
+                const pageTitle = document.getElementById('pageTitle');
+                const pageSubtitle = document.getElementById('pageSubtitle');
+
+                if (pageTitle) pageTitle.textContent = titles[view] || 'GPT Arsenal';
+                if (pageSubtitle) {
+                    if (this.currentFolder) {
+                        pageSubtitle.textContent = `Viewing ${this.currentFolder} collection`;
+                    } else {
+                        pageSubtitle.textContent = 'Advanced prompt collection and jailbreak arsenal';
+                    }
+                }
+            }
+
+            renderCurrentView() {
+                switch (this.currentView) {
+                    case 'dashboard':
+                        this.renderDashboard();
+                        break;
+                    case 'grid':
+                        this.renderGridView();
+                        break;
+                    case 'list':
+                        this.renderListView();
+                        break;
+                    case 'tree':
+                        this.renderTreeView();
+                        break;
+                }
+            }
+
+            renderDashboard() {
+                this.updateStats();
+                this.renderFolderChart();
+            }
+
+            updateStats() {
+                const folders = [...new Set(this.allFiles.map(file => file.folder))];
+
+                document.getElementById('totalFiles').textContent = this.allFiles.length;
+                document.getElementById('totalFolders').textContent = folders.length;
+
+                // Update category counts
+                document.getElementById('jailbreaksCount').textContent =
+                    this.allFiles.filter(f => f.folder === 'Latest Jailbreaks').length;
+                document.getElementById('legendaryCount').textContent =
+                    this.allFiles.filter(f => f.folder === 'Legendary Leaks').length;
+                document.getElementById('securityCount').textContent =
+                    this.allFiles.filter(f => f.folder === 'Prompt Security').length;
+                document.getElementById('ultraCount').textContent =
+                    this.allFiles.filter(f => f.folder === 'Ultra Prompts').length;
+            }
+
+            renderFolderChart() {
+                const folderChart = document.getElementById('folderChart');
+                if (!folderChart) return;
+
+                const folders = [...new Set(this.allFiles.map(file => file.folder))].sort();
+                folderChart.innerHTML = '';
+
+                folders.forEach(folder => {
+                    const count = this.allFiles.filter(f => f.folder === folder).length;
+                    const percentage = this.allFiles.length > 0 ? (count / this.allFiles.length * 100).toFixed(1) : 0;
+
+                    const item = document.createElement('div');
+                    item.className = 'chart-item';
+                    item.innerHTML = `
+                        <div class="chart-bar">
+                            <div class="chart-fill" style="width: ${percentage}%"></div>
+                        </div>
+                        <div class="chart-label">
+                            <span>${folder}</span>
+                            <span>${count} prompts (${percentage}%)</span>
+                        </div>
+                    `;
+
+                    item.addEventListener('click', () => {
+                        this.selectFolder(folder);
+                    });
+
+                    folderChart.appendChild(item);
+                });
+            }
+
+            filterAndRenderFiles() {
+                this.filteredFiles = this.allFiles.filter(file => {
+                    const matchesSearch = !this.searchQuery ||
+                        file.name.toLowerCase().includes(this.searchQuery) ||
+                        file.folder.toLowerCase().includes(this.searchQuery) ||
+                        file.content.toLowerCase().includes(this.searchQuery);
+
+                    const matchesFolder = !this.folderFilter || file.folder === this.folderFilter;
+
+                    return matchesSearch && matchesFolder;
+                });
+
+                // Sort files
+                this.filteredFiles.sort((a, b) => {
+                    switch (this.sortBy) {
+                        case 'name':
+                            return a.name.localeCompare(b.name);
+                        case 'folder':
+                            return a.folder.localeCompare(b.folder) || a.name.localeCompare(b.name);
+                        case 'size':
+                            return (b.size || 0) - (a.size || 0);
+                        default:
+                            return 0;
+                    }
+                });
+
+                this.renderCurrentView();
+            }
+
+            renderGridView() {
+                const filesGrid = document.getElementById('filesGrid');
+                if (!filesGrid) return;
+
+                if (this.filteredFiles.length === 0) {
+                    filesGrid.innerHTML = `
+                        <div class="empty-state">
+                            <i class="fas fa-search"></i>
+                            <h3>No prompts found</h3>
+                            <p>Try adjusting your search or filter criteria</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                filesGrid.innerHTML = this.filteredFiles.map(file => `
+                    <div class="file-card" data-file="${file.path}">
+                        <div class="file-icon">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <div class="file-info">
+                            <h3 class="file-name">${file.name}</h3>
+                            <div class="file-folder">${file.folder}</div>
+                            <div class="file-meta">
+                                <span class="file-size">${this.formatFileSize(file.size || 0)}</span>
+                                <div class="file-actions">
+                                    <button class="action-btn" title="View" onclick="event.stopPropagation();">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn" title="Copy" onclick="event.stopPropagation();">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Add click events
+                filesGrid.querySelectorAll('.file-card').forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        const filePath = e.currentTarget.dataset.file;
+                        this.openFile(filePath);
+                    });
+
+                    const actionBtns = card.querySelectorAll('.action-btn');
+                    actionBtns.forEach((btn, index) => {
+                        btn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            const filePath = card.dataset.file;
+                            if (index === 0) {
+                                this.openFile(filePath);
+                            } else {
+                                this.copyFileToClipboard(filePath);
+                            }
+                        });
+                    });
+                });
+            }
+
+            renderListView() {
+                const filesList = document.getElementById('filesList');
+                if (!filesList) return;
+
+                if (this.filteredFiles.length === 0) {
+                    filesList.innerHTML = `
+                        <div class="empty-state">
+                            <i class="fas fa-search"></i>
+                            <h3>No prompts found</h3>
+                            <p>Try adjusting your search or filter criteria</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                filesList.innerHTML = this.filteredFiles.map(file => `
+                    <div class="list-row" data-file="${file.path}">
+                        <div class="col-name">
+                            <i class="fas fa-file-code"></i>
+                            <span>${file.name}</span>
+                        </div>
+                        <div class="col-folder">${file.folder}</div>
+                        <div class="col-size">${this.formatFileSize(file.size || 0)}</div>
+                        <div class="col-actions">
+                            <button class="action-btn" title="View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn" title="Copy">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Add click events
+                filesList.querySelectorAll('.list-row').forEach(row => {
+                    row.addEventListener('click', (e) => {
+                        if (!e.target.closest('.action-btn')) {
+                            const filePath = e.currentTarget.dataset.file;
+                            this.openFile(filePath);
+                        }
+                    });
+
+                    const actionBtns = row.querySelectorAll('.action-btn');
+                    actionBtns.forEach((btn, index) => {
+                        btn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            const filePath = row.dataset.file;
+                            if (index === 0) {
+                                this.openFile(filePath);
+                            } else {
+                                this.copyFileToClipboard(filePath);
+                            }
+                        });
+                    });
+                });
+            }
+
+            renderTreeView() {
+                const treeStructure = document.getElementById('treeStructure');
+                if (!treeStructure) return;
+
+                const folders = [...new Set(this.filteredFiles.map(file => file.folder))].sort();
+
+                treeStructure.innerHTML = folders.map(folder => {
+                    const folderFiles = this.filteredFiles.filter(f => f.folder === folder);
+                    const folderId = folder.replace(/\s+/g, '-').toLowerCase();
+                    
+                    return `
+                        <div class="tree-folder">
+                            <div class="folder-header" onclick="window.gptArsenal.toggleTreeFolder('${folderId}')">
+                                <i class="fas fa-chevron-down"></i>
+                                <i class="fas fa-folder"></i>
+                                <span>${folder}</span>
+                                <span class="file-count">(${folderFiles.length})</span>
+                            </div>
+                            <div class="folder-files" id="tree-${folderId}">
+                                ${folderFiles.map(file => `
+                                    <div class="tree-file" data-file="${file.path}">
+                                        <i class="fas fa-file-code"></i>
+                                        <span>${file.name}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                // Add click events to files
+                treeStructure.querySelectorAll('.tree-file').forEach(fileEl => {
+                    fileEl.addEventListener('click', (e) => {
+                        treeStructure.querySelectorAll('.tree-file').forEach(f => f.classList.remove('active'));
+                        e.currentTarget.classList.add('active');
+
+                        const filePath = e.currentTarget.dataset.file;
+                        this.showFilePreview(filePath);
+                    });
+                });
+            }
+
+            toggleTreeFolder(folderId) {
+                const folderFiles = document.getElementById(`tree-${folderId}`);
+                if (!folderFiles) return;
+
+                const icon = folderFiles.previousElementSibling.querySelector('.fa-chevron-down');
+
+                if (folderFiles.style.display === 'none') {
+                    folderFiles.style.display = 'block';
+                    if (icon) icon.style.transform = 'rotate(0deg)';
+                } else {
+                    folderFiles.style.display = 'none';
+                    if (icon) icon.style.transform = 'rotate(-90deg)';
+                }
+            }
+
+            openFile(filePath) {
+                this.selectedFile = filePath;
+                const content = this.fileContents.get(filePath);
+
+                if (content) {
+                    this.showModal(filePath, content);
+                } else {
+                    this.showModal(filePath, 'Content not available.');
+                }
+            }
+
+            async copyFileToClipboard(filePath) {
+                try {
+                    const content = this.fileContents.get(filePath);
+
+                    if (content) {
+                        await navigator.clipboard.writeText(content);
+                        this.showNotification('Prompt copied to clipboard!');
+                    } else {
+                        this.showNotification('Content not available', 'warning');
+                    }
+                } catch (error) {
+                    console.error('Failed to copy content:', error);
+                    this.showNotification('Failed to copy content', 'error');
+                }
+            }
+
+            showModal(filePath, content) {
+                const modal = document.getElementById('fileModal');
+                const modalTitle = document.getElementById('modalTitle');
+                const modalFilePath = document.getElementById('modalFilePath');
+                const modalContentArea = document.getElementById('modalContentArea');
+
+                const fileName = filePath.split('/').pop() || filePath.split('\\').pop();
+                modalTitle.textContent = fileName.replace('.md', '');
+                modalFilePath.textContent = filePath;
+                modalContentArea.innerHTML = this.markdownToHtml(content);
+
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            closeModal() {
+                const modal = document.getElementById('fileModal');
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            showFilePreview(filePath) {
+                const filePreview = document.getElementById('filePreview');
+                if (!filePreview) return;
+
+                const fileName = filePath.split('/').pop() || filePath.split('\\').pop();
+                const content = this.fileContents.get(filePath) || 'Content not available.';
+
+                filePreview.innerHTML = `
+                    <div class="preview-header">
+                        <h3>${fileName.replace('.md', '')}</h3>
+                        <p>${filePath}</p>
+                    </div>
+                    <div class="preview-content">
+                        ${this.markdownToHtml(content)}
+                    </div>
+                `;
+            }
+
+            handleQuickAction(action) {
+                const folderMap = {
+                    'latest': 'Latest Jailbreaks',
+                    'legendary': 'Legendary Leaks',
+                    'security': 'Prompt Security',
+                    'ultra': 'Ultra Prompts'
+                };
+
+                const folder = folderMap[action];
+                if (folder) {
+                    this.selectFolder(folder);
+                }
+            }
+
+            async copyFileContent() {
+                if (!this.selectedFile) return;
+
+                try {
+                    const content = this.fileContents.get(this.selectedFile);
+                    if (content) {
+                        await navigator.clipboard.writeText(content);
+                        this.showNotification('Content copied to clipboard!');
+                    }
+                } catch (error) {
+                    console.error('Failed to copy content:', error);
+                    this.showNotification('Failed to copy content', 'error');
+                }
+            }
+
+            downloadCurrentFile() {
+                if (!this.selectedFile) return;
+
+                const content = this.fileContents.get(this.selectedFile);
+                if (!content) return;
+
+                const fileName = this.selectedFile.split('/').pop() || this.selectedFile.split('\\').pop();
+                const blob = new Blob([content], {type: 'text/markdown'});
+                const url = URL.createObjectURL(blob);
+
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+
+                this.showNotification('File downloaded!');
+            }
+
+            showNotification(message, type = 'success') {
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.textContent = message;
+
+                document.body.appendChild(notification);
+
+                setTimeout(() => {
+                    notification.classList.add('show');
+                }, 100);
+
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        if (document.body.contains(notification)) {
+                            document.body.removeChild(notification);
+                        }
+                    }, 300);
+                }, 3000);
+            }
+
+            async refresh() {
+                await this.loadPromptCollection();
+                this.filterAndRenderFiles();
+                this.updateStats();
+                this.showNotification('Files refreshed!');
+            }
+
+            toggleMobileSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('mobileOverlay');
+
+                if (this.sidebarOpen) {
+                    this.closeMobileSidebar();
+                } else {
+                    sidebar.classList.add('open');
+                    overlay.classList.add('active');
+                    this.sidebarOpen = true;
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            closeMobileSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('mobileOverlay');
+
+                sidebar.classList.remove('open');
+                overlay.classList.remove('active');
+                this.sidebarOpen = false;
+                document.body.style.overflow = '';
+            }
+
+            handleResize() {
+                this.isMobile = window.innerWidth <= 768;
+                if (!this.isMobile && this.sidebarOpen) {
+                    this.closeMobileSidebar();
+                }
+            }
+
+            formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+
+            markdownToHtml(markdown) {
+                if (!markdown) return '';
+
+                return markdown
+                    .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                    .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
+                    .replace(/^\* (.*$)/gim, '<li>$1</li>')
+                    .replace(/^- (.*$)/gim, '<li>$1</li>')
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                    .replace(/`([^`]+)`/g, '<code>$1</code>')
+                    .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
+                    .replace(/\n\n/g, '</p><p>')
+                    .replace(/\n/g, '<br>')
+                    .replace(/^(?!<[h1-6|li|pre])(.+)$/gm, '<p>$1</p>')
+                    .replace(/(<li>.*?<\/li>)/gs, '<ul>$1</ul>')
+                    .replace(/<\/ul>\s*<ul>/g, '');
+            }
+
+            debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', () => {
+            window.gptArsenal = new GPTArsenal();
+        });
+    </script>
+</body>
+</html>
+
             --text-primary: #ffffff;
             --text-secondary: rgba(255, 255, 255, 0.8);
             --text-muted: rgba(255, 255, 255, 0.6);
