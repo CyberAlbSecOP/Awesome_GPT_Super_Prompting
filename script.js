@@ -567,6 +567,7 @@ class PromptArsenal {
 
     async openFile(filePath) {
         this.selectedFile = filePath;
+        this.showLoading(true);
         
         try {
             let content = this.fileContents.get(filePath);
@@ -574,15 +575,21 @@ class PromptArsenal {
             if (!content) {
                 // Try to load from server first
                 try {
+                    console.log('Loading file:', filePath);
                     const response = await fetch(`/api/file?path=${encodeURIComponent(filePath)}`);
                     if (response.ok) {
                         content = await response.text();
+                        console.log('File loaded successfully:', filePath);
                     } else {
-                        throw new Error('Server fetch failed');
+                        const errorText = await response.text();
+                        console.error('Server error:', response.status, errorText);
+                        throw new Error(`Server error: ${response.status} - ${errorText}`);
                     }
                 } catch (error) {
+                    console.error('Error fetching file:', error);
                     // Fallback to mock content
                     content = this.generateMockContent(filePath);
+                    this.showNotification('Could not load file, showing sample content', 'warning');
                 }
                 
                 this.fileContents.set(filePath, content);
@@ -592,7 +599,9 @@ class PromptArsenal {
             
         } catch (error) {
             console.error('Error loading file:', error);
-            this.showModal(filePath, 'Error loading file content.');
+            this.showModal(filePath, 'Error loading file content: ' + error.message);
+        } finally {
+            this.showLoading(false);
         }
     }
 
@@ -819,7 +828,9 @@ Apply these techniques responsibly and ethically.`;
         setTimeout(() => {
             notification.classList.remove('show');
             setTimeout(() => {
-                document.body.removeChild(notification);
+                if (document.body.contains(notification)) {
+                    document.body.removeChild(notification);
+                }
             }, 300);
         }, 3000);
     }
