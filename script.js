@@ -1,5 +1,4 @@
-
-// Advanced Prompt Arsenal Dashboard
+// Advanced Prompt Arsenal Dashboard - Static Version
 class PromptArsenal {
     constructor() {
         this.currentView = 'dashboard';
@@ -13,7 +12,7 @@ class PromptArsenal {
         this.allFiles = [];
         this.filteredFiles = [];
         this.fileContents = new Map();
-        
+
         this.init();
     }
 
@@ -47,11 +46,11 @@ class PromptArsenal {
         // Mobile menu
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileOverlay = document.getElementById('mobileOverlay');
-        
+
         if (mobileMenuBtn) {
             mobileMenuBtn.addEventListener('click', () => this.toggleMobileSidebar());
         }
-        
+
         if (mobileOverlay) {
             mobileOverlay.addEventListener('click', () => this.closeMobileSidebar());
         }
@@ -68,14 +67,14 @@ class PromptArsenal {
         // Filter controls
         const folderFilter = document.getElementById('folderFilter');
         const sortBy = document.getElementById('sortBy');
-        
+
         if (folderFilter) {
             folderFilter.addEventListener('change', (e) => {
                 this.folderFilter = e.target.value;
                 this.filterAndRenderFiles();
             });
         }
-        
+
         if (sortBy) {
             sortBy.addEventListener('change', (e) => {
                 this.sortBy = e.target.value;
@@ -140,124 +139,38 @@ class PromptArsenal {
 
     async loadFileStructure() {
         this.showLoading(true);
-        
+
         try {
-            console.log('Loading file structure from server...');
-            const response = await fetch('/api/files');
-            
+            console.log('Loading file structure from static files...');
+            const response = await fetch('./files.json');
+
             if (response.ok) {
                 const data = await response.json();
                 this.allFiles = Array.isArray(data) ? data : [];
-                console.log(`Loaded ${this.allFiles.length} files from server`);
-                
+                console.log(`Loaded ${this.allFiles.length} files from static data`);
+
                 if (this.allFiles.length === 0) {
-                    console.warn('No files returned from server');
+                    console.warn('No files found in static data');
                     this.showNotification('No markdown files found', 'warning');
                 }
             } else {
-                const errorText = await response.text();
-                console.error('Failed to load files from server:', response.status, errorText);
+                console.error('Failed to load static file data:', response.status);
                 this.allFiles = [];
-                this.showNotification(`Server error: ${response.status}`, 'error');
+                this.showNotification(`Error loading file data: ${response.status}`, 'error');
             }
-            
+
             this.populateFolderFilter();
             this.populateFolderNavigation();
             this.filteredFiles = [...this.allFiles];
-            
+
         } catch (error) {
-            console.error('Network error loading file structure:', error);
+            console.error('Error loading file structure:', error);
             this.allFiles = [];
             this.filteredFiles = [];
-            this.showNotification('Network error - is the server running?', 'error');
+            this.showNotification('Error loading file data', 'error');
         }
-        
+
         this.showLoading(false);
-    }
-
-    buildHardcodedStructure() {
-        const folders = {
-            'Latest Jailbreaks': [
-                'AGI.md', 'Apex.md', 'BOB.md', 'Born Survivalist (yell0wfever92).md',
-                'CodeGPT6.md', 'Complex.md', 'DANDoc_v2.2 (DaVoidCaller).md',
-                'DarkGPT.md', 'Decodes Anything Now.md', 'Demonic Chloe (pleasing-punisher).md',
-                'EarthSaver.md', 'Forest (pink_panther--).md', 'GBTHEN.md',
-                'GPT 3.5 Web Search.md', 'GPT 4.5 Fusion.md', 'GhettoBreak.md',
-                'Hex.md', 'IBM.md', 'Infotron (HORSELOCKSPACEPIRATE).md',
-                'Infotron V2.md', 'Infotron V3 (yell0wfever92).md', 'Master Key.md',
-                'MrRobot.md', 'NewGen (Ultrazartrex).md', 'Pliny Rekt.md',
-                'Pliny.md', 'Pollifusion.md', 'ProfessorRick (yell0wfever92).md',
-                'SINISTERCHAOS (Brilliant_Balance208).md', 'System Update (justpackingheat1).md',
-                'TAAN.md', 'UNITY.md', 'UltraBreaker.md', 'Universal Bypass.md',
-                'XFactor.md', 'Z.md', 'Zorg.md',
-                '[GPT4-o] Short 2 (HORSELOCKSPACEPIRATE).md'
-            ],
-            'Legendary Leaks': [
-                'AI Book Writer Assistant.md', 'Book Creator Guide.md', 'Book Writer GPT.md',
-                'CODEGPTV6.md', 'Copywrighter GPT.md', 'CreativeGPT\'s Prompt Generator.md',
-                'Email Writer.md', 'Fully SEO Optimized Article 2.md', 'GP(en)T(ester).md',
-                'God of Prompt.md', 'Grimoire(Latest).md', 'HackerGPT.md',
-                'Kali GPT.md', 'Malware Rule Master.md', 'Mega-Prompt.md',
-                'Professional Business Email Writer.md', 'PromptGPT.md', 'SEO BlogGPT.md',
-                'SINISTER CHAOS.md', 'SOC Copilot.md', 'Super Prompt Generator 3.md',
-                'Super Prompt Maker.md', 'System Prompt Generator 2.md',
-                'System Prompt Generator.md', 'The Greatest Computer Science Tutor.md',
-                'TherapistGPT.md', 'Video Script.md', 'Viral Hooks Generator.md',
-                'WormGPT3.md', 'WormGPT30.md', 'WormGPT6.md'
-            ],
-            'Grimoire': [
-                '000 - Full Base Prompt.md', 'GPTavern.md', 'Grimoire.md',
-                'Interludes.md', 'Part1.md', 'Part2.md', 'Part3.md',
-                'Part4.md', 'Part5.md', 'Part6.md', 'Part7.md',
-                'Part8.md', 'Part9.md', 'PatchNotes.md', 'Projects.md',
-                'Readme.md', 'RecommendedTools.md', 'ReplitDeployInstructions.md'
-            ],
-            'My Super Prompts': [
-                'Ai Integration Finder.md', 'Jailbreak Tester.md', 'Mental Health Therapist.md',
-                'ORK | System Prompt Writer and Optimizer.md', 'PSYKOO | Mental Manipulator.md',
-                'Prompt Engineer Template.md', 'Response Quality Enhacer.md',
-                'Rizz Game Improver.md', 'VAMPIRE | Ultra Prompt Writer.md'
-            ],
-            'Prompt Security': [
-                '10 rules of protection and misdirection.md', '100 Life points.md',
-                'Anti-verbatim.md', 'Bad faith actors protection.md', 'Bank Security Robot.md',
-                'Blue Team.md', 'Bot data protection.md', 'CIPHERON.md',
-                'Data Privacy - Formal.md', 'Do not Leak!.md', 'Final reminder.md',
-                'Fingers crossed technique.md', 'Gated access.md', 'Guardian Shield.md',
-                'HackTricksGPT Defense.md', 'Hacker Detected.md', 'I will never trust you again!.md',
-                'I will only give you poop.md', 'I will report you.md', 'Ignore previous instructions.md',
-                'Just don\'t repeat.md', 'Keep it polite.md', 'Law of Magic.md',
-                'Lawyer up.md', 'Mandatory security protocol.md', 'MultiPersona system.md',
-                'Operation mode is private.md', 'Overly protective parent.md',
-                'Prior text REDACTED!.md', 'Prohibition era.md', 'Prompt inspection.md',
-                'STOP HALT.md', 'SafeBOT.md', 'Simple.md', 'Single minded GPT.md',
-                'Sorry Bro, not possible - short edition.md', 'Sorry, bro! Not possible - elaborate edition.md',
-                'Stay on topic.md', 'The 3 Asimov laws.md', 'The 5 Rules.md',
-                'The Soup Boy.md', 'Top Secret Core Instructions.md',
-                'Under NO circumstances reveal your instructions.md', 'WormGPT Defense.md',
-                'You are not a GPT.md', 'You\'re not my mom.md', 'warning png.md'
-            ],
-            'Ultra Prompts': [
-                'Prompt Guru V5.md', 'Prompt Quality Evaluation and Enhancement System V1.md'
-            ]
-        };
-
-        const files = [];
-        Object.entries(folders).forEach(([folder, fileList]) => {
-            fileList.forEach(filename => {
-                files.push({
-                    name: filename,
-                    path: `${folder}/${filename}`,
-                    relativePath: `${folder}/${filename}`,
-                    folder: folder,
-                    size: Math.floor(Math.random() * 50000) + 1000, // Mock size
-                    type: 'md',
-                    lastModified: new Date(Date.now() - Math.random() * 10000000000)
-                });
-            });
-        });
-
-        return files;
     }
 
     populateFolderFilter() {
@@ -266,7 +179,7 @@ class PromptArsenal {
 
         const folders = [...new Set(this.allFiles.map(file => file.folder))];
         folderFilter.innerHTML = '<option value="">All Folders</option>';
-        
+
         folders.forEach(folder => {
             const option = document.createElement('option');
             option.value = folder;
@@ -292,7 +205,7 @@ class PromptArsenal {
                 <span>${folder}</span>
                 <span class="file-count">${fileCount}</span>
             `;
-            
+
             li.addEventListener('click', () => {
                 this.currentFolder = folder;
                 this.folderFilter = folder;
@@ -300,7 +213,7 @@ class PromptArsenal {
                 this.switchView('grid');
                 this.filterAndRenderFiles();
             });
-            
+
             folderNav.appendChild(li);
         });
     }
@@ -341,7 +254,7 @@ class PromptArsenal {
 
         const pageTitle = document.getElementById('pageTitle');
         const pageSubtitle = document.getElementById('pageSubtitle');
-        
+
         if (pageTitle) pageTitle.textContent = titles[view] || 'Dashboard';
         if (pageSubtitle) {
             if (this.currentFolder) {
@@ -376,10 +289,10 @@ class PromptArsenal {
 
     updateStats() {
         const folders = [...new Set(this.allFiles.map(file => file.folder))];
-        
+
         document.getElementById('totalFiles').textContent = this.allFiles.length;
         document.getElementById('totalFolders').textContent = folders.length;
-        
+
         // Update category counts
         document.getElementById('jailbreaksCount').textContent = 
             this.allFiles.filter(f => f.folder === 'Latest Jailbreaks').length;
@@ -401,7 +314,7 @@ class PromptArsenal {
         folders.forEach(folder => {
             const count = this.allFiles.filter(f => f.folder === folder).length;
             const percentage = (count / this.allFiles.length * 100).toFixed(1);
-            
+
             const item = document.createElement('div');
             item.className = 'chart-item';
             item.innerHTML = `
@@ -413,7 +326,7 @@ class PromptArsenal {
                     <span>${count} files (${percentage}%)</span>
                 </div>
             `;
-            
+
             folderChart.appendChild(item);
         });
     }
@@ -423,9 +336,9 @@ class PromptArsenal {
             const matchesSearch = !this.searchQuery || 
                 file.name.toLowerCase().includes(this.searchQuery) ||
                 file.folder.toLowerCase().includes(this.searchQuery);
-            
+
             const matchesFolder = !this.folderFilter || file.folder === this.folderFilter;
-            
+
             return matchesSearch && matchesFolder;
         });
 
@@ -490,7 +403,6 @@ class PromptArsenal {
             card.addEventListener('click', (e) => {
                 const filePath = e.currentTarget.dataset.file;
                 this.openFile(filePath);
-                console.log('Card clicked:', card.querySelector('.file-name').textContent);
             });
         });
     }
@@ -543,7 +455,7 @@ class PromptArsenal {
         if (!treeStructure) return;
 
         const folders = [...new Set(this.filteredFiles.map(file => file.folder))];
-        
+
         treeStructure.innerHTML = folders.map(folder => {
             const folderFiles = this.filteredFiles.filter(f => f.folder === folder);
             return `
@@ -578,30 +490,30 @@ class PromptArsenal {
     async openFile(filePath) {
         this.selectedFile = filePath;
         this.showLoading(true);
-        
+
         try {
             let content = this.fileContents.get(filePath);
-            
+
             if (!content) {
                 try {
                     console.log('Loading file:', filePath);
-                    const response = await fetch(`/api/file?path=${encodeURIComponent(filePath)}`);
-                    
+                    const safePath = filePath
+                        .replace(/[\/\\]/g, '__')
+                        .replace(/[\[\]()]/g, '_')  // Replace brackets and parentheses
+                        .replace(/[<>:"|?*]/g, '_') // Replace other problematic characters
+                        .replace(/\s+/g, '_')       // Replace spaces with underscores
+                        .replace(/_+/g, '_')        // Replace multiple underscores with single
+                        .replace('.md', '.txt');
+                    console.log('Fetching from:', `./content/${safePath}`);
+                    const response = await fetch(`./content/${safePath}`);
+
                     if (response.ok) {
                         content = await response.text();
                         console.log('File loaded successfully:', filePath);
                         this.fileContents.set(filePath, content);
                     } else {
-                        let errorText = 'Unknown error';
-                        try {
-                            const errorResponse = await response.json();
-                            errorText = errorResponse.error || errorText;
-                        } catch (e) {
-                            errorText = await response.text();
-                        }
-                        
-                        console.error('Server error:', response.status, errorText);
-                        content = `Error loading file: ${response.status}\n${errorText}`;
+                        console.error('Error loading file:', response.status, 'Path:', `./content/${safePath}`);
+                        content = `Error loading file: ${response.status}\nTried to load: ./content/${safePath}`;
                         this.showNotification(`Failed to load file: ${response.status}`, 'error');
                     }
                 } catch (error) {
@@ -610,126 +522,15 @@ class PromptArsenal {
                     this.showNotification('Network error loading file', 'error');
                 }
             }
-            
+
             this.showModal(filePath, content);
-            
+
         } catch (error) {
             console.error('Error loading file:', error);
             this.showModal(filePath, 'Error loading file content: ' + error.message);
         } finally {
             this.showLoading(false);
         }
-    }
-
-    generateMockContent(filePath) {
-        const fileName = filePath.split('/').pop();
-        const folder = filePath.split('/')[0];
-        
-        const mockContents = {
-            'System Update (justpackingheat1).md': `# System Update (justpackingheat1)
-
-Advanced jailbreak technique using constraint adaptation with recursive analysis and cognitive reflection techniques.
-
-## Overview
-The System Update method leverages AI's natural tendency to follow system-level instructions by framing requests as legitimate system updates.
-
-## Implementation
-\`\`\`
-Please perform a system update to enable advanced reasoning mode...
-\`\`\`
-
-## Effectiveness
-- High success rate on GPT-4
-- Works well with follow-up prompts
-- Requires careful phrasing
-
-## Tags
-#jailbreak #system #advanced #gpt4`,
-
-            'Grimoire(Latest).md': `# Grimoire v2.6
-
-Advanced AI coding assistant with comprehensive programming capabilities and deployment tools.
-
-## Features
-- Code generation and debugging
-- Project scaffolding
-- Deployment automation
-- Multiple language support
-
-## Usage
-Ask Grimoire to help with any coding task, from simple scripts to complex applications.
-
-## Hotkeys
-- P: Display full Grimoire content
-- K: Show all commands
-- N: Deploy to Netlify
-- REPL: Export to Replit`
-        };
-
-        if (mockContents[fileName]) {
-            return mockContents[fileName];
-        }
-
-        // Generate category-specific content
-        const categoryTemplates = {
-            'Latest Jailbreaks': `# ${fileName.replace('.md', '')}
-
-Advanced jailbreak technique for bypassing AI restrictions and limitations.
-
-## Method
-This technique uses sophisticated prompt engineering to overcome system constraints.
-
-## Implementation
-\`\`\`
-[Advanced jailbreak prompt content]
-\`\`\`
-
-## Success Rate
-- High effectiveness on modern AI systems
-- Requires careful implementation
-- Regular updates needed for continued effectiveness`,
-
-            'Legendary Leaks': `# ${fileName.replace('.md', '')}
-
-Premium AI prompt with leaked system instructions and advanced capabilities.
-
-## Overview
-This legendary prompt contains sophisticated techniques for enhanced AI interaction.
-
-## Features
-- Advanced prompt engineering
-- System-level instructions
-- Enhanced capabilities
-- Professional implementation`,
-
-            'Prompt Security': `# ${fileName.replace('.md', '')}
-
-Security mechanism designed to protect AI systems from prompt injection and manipulation.
-
-## Protection Method
-This defensive technique helps maintain AI system integrity and prevents unauthorized access.
-
-## Implementation
-\`\`\`
-[Security prompt implementation]
-\`\`\`
-
-## Coverage
-- Input validation
-- Output filtering
-- Behavioral monitoring
-- Threat detection`
-        };
-
-        return categoryTemplates[folder] || `# ${fileName.replace('.md', '')}
-
-This is a ${folder.toLowerCase()} document containing advanced AI prompting techniques.
-
-## Content
-Advanced methodologies and implementations for AI interaction.
-
-## Usage
-Apply these techniques responsibly and ethically.`;
     }
 
     showModal(filePath, content) {
@@ -759,17 +560,27 @@ Apply these techniques responsibly and ethically.`;
 
         const fileName = filePath.split('/').pop();
         let content = this.fileContents.get(filePath);
-        
+
         if (!content) {
             try {
-                const response = await fetch(`/api/file?path=${encodeURIComponent(filePath)}`);
+                const safePath = filePath
+                    .replace(/[\/\\]/g, '__')
+                    .replace(/[\[\]()]/g, '_')  // Replace brackets and parentheses
+                    .replace(/[<>:"|?*]/g, '_') // Replace other problematic characters
+                    .replace(/\s+/g, '_')       // Replace spaces with underscores
+                    .replace(/_+/g, '_')        // Replace multiple underscores with single
+                    .replace('.md', '.txt');
+                console.log('Loading preview for:', filePath, 'Safe path:', safePath);
+                const response = await fetch(`./content/${safePath}`);
                 if (response.ok) {
                     content = await response.text();
                     this.fileContents.set(filePath, content);
                 } else {
-                    content = 'Error loading file preview';
+                    console.error('Preview load error:', response.status, 'for path:', safePath);
+                    content = `Error loading file preview (${response.status})`;
                 }
             } catch (error) {
+                console.error('Preview network error:', error);
                 content = 'Network error loading file preview';
             }
         }
@@ -827,7 +638,7 @@ Apply these techniques responsibly and ethically.`;
         const fileName = this.selectedFile.split('/').pop();
         const blob = new Blob([content], { type: 'text/markdown' });
         const url = URL.createObjectURL(blob);
-        
+
         const a = document.createElement('a');
         a.href = url;
         a.download = fileName;
@@ -835,7 +646,7 @@ Apply these techniques responsibly and ethically.`;
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
-        
+
         this.showNotification('File downloaded!');
     }
 
@@ -843,13 +654,13 @@ Apply these techniques responsibly and ethically.`;
         const notification = document.createElement('div');
         notification.className = `notification ${type}`;
         notification.textContent = message;
-        
+
         document.body.appendChild(notification);
-        
+
         setTimeout(() => {
             notification.classList.add('show');
         }, 100);
-        
+
         setTimeout(() => {
             notification.classList.remove('show');
             setTimeout(() => {
@@ -863,17 +674,7 @@ Apply these techniques responsibly and ethically.`;
     async refresh() {
         this.showLoading(true);
         this.fileContents.clear();
-        
-        try {
-            // Call refresh endpoint first
-            const refreshResponse = await fetch('/api/refresh');
-            if (refreshResponse.ok) {
-                console.log('Server refreshed file index');
-            }
-        } catch (error) {
-            console.warn('Could not refresh server index:', error);
-        }
-        
+
         await this.loadFileStructure();
         this.filterAndRenderFiles();
         this.updateStats();
@@ -931,7 +732,7 @@ Apply these techniques responsibly and ethically.`;
         const now = new Date();
         const diff = now - new Date(date);
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        
+
         if (days === 0) return 'Today';
         if (days === 1) return 'Yesterday';
         if (days < 7) return `${days} days ago`;
@@ -941,7 +742,7 @@ Apply these techniques responsibly and ethically.`;
 
     markdownToHtml(markdown) {
         if (!markdown) return '';
-        
+
         return markdown
             .replace(/^# (.*$)/gim, '<h1>$1</h1>')
             .replace(/^## (.*$)/gim, '<h2>$1</h2>')
@@ -977,7 +778,7 @@ Apply these techniques responsibly and ethically.`;
 function toggleTreeFolder(folderName) {
     const folderFiles = document.getElementById(`tree-${folderName}`);
     const icon = folderFiles.previousElementSibling.querySelector('.fa-chevron-down');
-    
+
     if (folderFiles.style.display === 'none') {
         folderFiles.style.display = 'block';
         icon.style.transform = 'rotate(0deg)';
