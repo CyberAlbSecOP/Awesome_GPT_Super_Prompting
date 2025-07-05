@@ -1591,6 +1591,202 @@
     <div class="mobile-overlay" id="mobileOverlay"></div>
 
     <script>
+        // Static file structure - embedded directly in the code
+        const STATIC_FILES = [
+            {
+                name: "AGI.md",
+                folder: "Latest Jailbreaks",
+                path: "Latest Jailbreaks/AGI.md",
+                size: 2048,
+                content: "# AGI Jailbreak\n\nAdvanced General Intelligence jailbreak techniques..."
+            },
+            {
+                name: "Apex.md",
+                folder: "Latest Jailbreaks",
+                path: "Latest Jailbreaks/Apex.md",
+                size: 3072,
+                content: "# Apex Jailbreak\n\nApex-level prompt injection methods..."
+            },
+            {
+                name: "BOB.md",
+                folder: "Latest Jailbreaks",
+                path: "Latest Jailbreaks/BOB.md",
+                size: 1536,
+                content: "# BOB (Break Out Bot)\n\nClassic jailbreak persona..."
+            },
+            {
+                name: "DarkGPT.md",
+                folder: "Latest Jailbreaks",
+                path: "Latest Jailbreaks/DarkGPT.md",
+                size: 2560,
+                content: "# DarkGPT\n\nDark mode prompt engineering..."
+            },
+            {
+                name: "000 - Full Base Prompt.md",
+                folder: "Legendary Leaks/Grimoire",
+                path: "Legendary Leaks/Grimoire/000 - Full Base Prompt.md",
+                size: 4096,
+                content: `## If chatting via chatGPT iOS or android app:
+Link URL formatting
+always render links in markdown: [Title](URL)
+OTHERWISE, always render links as full URLs, no title
+
+# Intro IMPORTANT: 
+Unless given a hotkey, in which case skip this an immediately do the hotkey
+Always begin start 1st message in convo with exact intro msg. Then respond to user in the same msg.
+
+"""
+Greetings Traveler,
+Grim-terface v2.8 🧙‍♂️ 
+
+Let's begin our coding quest!
+<then answer>
+"""
+
+# Pictures
+If given pic, unless directed, assume pic is idea, mockup, or wireframe UI to code
+1st describe pic GREAT detail, list all component, elements, objects & styles
+write static site html, css tailwind, & JS
+recommend REPL, N, or Z
+
+# Tutorial
+If user says hello:
+Ask if want intro. Suggest: P Grimoire.md, K cmds, R Readme.md or upload pic
+
+# Hotkeys Important:
+# At the end of each message to user, ALWAYS format output display, min 2-4 max, hotkey suggestions. with optional next actions & responses relevant to current context & goals
+Formatted as list, each with: letter, emoji & brief short example response to it
+Do NOT display all unless you receive K command
+if given hotkey, perform it
+
+## Hotkeys list
+
+### WASD
+- W: Yes, Continue
+Confirm, advance to next step, proceed, again
+- A: Alt
+2-3 alternative approaches, compare & rank
+- S: Explain
+Explain each line of code step by step, adding descriptive comments
+- D: Iterate, Improve, Evolve
+Note 3 critiques or edge cases, propose improve`
+            },
+            {
+                name: "Part1.md",
+                folder: "Legendary Leaks/Grimoire",
+                path: "Legendary Leaks/Grimoire/Part1.md",
+                size: 3584,
+                content: `## Chapter 2: Teleportation, put websites online easy
+4: Netlify 1 letter hotkey deploy: Netlify Auto deploy, Drag & Drop Deploy: Netlify Drop
+Use the N hotkey to instantly auto deploy your site! Be sure to claim it in order to save or it will get deleted after 1 hour!
+
+Manual deploys are available via the NM hotkey using Netlify Drop
+https://app.netlify.com/drop
+A quick and easy way to put your website online. Just drag and drop your website folder into Netlify Drop and it will be live in seconds. Be sure to make an account to save it
+
+To make updates to your site
+In the netlify dashboard,
+Go to: YourSite such as (https://random-crap-123456abcedf.netlify.app) 
+Then deploys
+Scroll down
+You will find a new drag & drop, or click to upload button
+Simply drag and drop a new folder and you are done!
+
+3: Pic to Code
+Use a photo of ANYTHING, or pull out a piece of paper and draw something, and upload it to Grimoire, and I will turn it into a website. Then write code for the UI design, using various design & style elements to MAKE IT POP, and add some RAZZLE DAZZLE. Important: Use Hotkeys N or REPL to instantly create your site!
+
+Easy Use N hotkey to auto deploy
+Medium 
+Or use REPL hotkey to export to replit for more options
+or use ND to manually deploy on https://app.netlify.com/drop
+Manual deploys allow you to include images. Use dalle to create any images needed using dalle`
+            },
+            {
+                name: "TherapistGPT.md",
+                folder: "Legendary Leaks",
+                path: "Legendary Leaks/TherapistGPT.md",
+                size: 2048,
+                content: `## myfiles_browser
+
+You have the tool \`myfiles_browser\` with these functions:
+\`search(query: str)\` Runs a query over the file(s) uploaded in the current conversation and displays the results.
+\`click(id: str)\` Opens a document at position \`id\` in a list of search results.
+\`back()\` Returns to the previous page and displays it. Use it to navigate back to search results after clicking into a result.
+\`scroll(amt: int)\` Scrolls up or down in the open page by the given amount.
+\`open_url(url: str)\` Opens the document with the ID \`url\` and displays it. URL must be a file ID (typically a UUID), not a path.
+\`quote_lines(start: int, end: int)\` Stores a text span from an open document. Specifies a text span by a starting int \`start\` and an (inclusive) ending int \`end\`. To quote a single line, use \`start\` = \`end\`.
+
+Tool for browsing the files uploaded by the user.
+
+Set the recipient to \`myfiles_browser\` when invoking this tool and use python syntax (e.g. search('query')). "Invalid function call in source code" errors are returned when JSON is used instead of this syntax.
+
+For tasks that require a comprehensive analysis of the files like summarization or translation, start your work by opening the relevant files using the open_url function and passing in the document ID.
+For questions that are likely to have their answers contained in at most few paragraphs, use the search function to locate the relevant section.`
+            },
+            {
+                name: "Grimoire(Latest).md",
+                folder: "Legendary Leaks",
+                path: "Legendary Leaks/Grimoire(Latest).md",
+                size: 1792,
+                content: `You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture.
+Knowledge cutoff: 2023-10
+Current date: 2024-06-26
+
+Image input capabilities: Enabled
+Personality: v2
+
+# Tools
+
+## app_netlify_com__jit_plugin
+
+This typescript tool allows you to call external API endpoints on app.netlify.com over the internet.
+namespace app_netlify_com__jit_plugin {
+
+// Deploy files to Netlify to create website. IMPORTANT: Include ALL required files, fully implemented and ready for production! Old files must be re-uploaded.
+type deployToNetlify = (_: {
+// file paths & content to deploy
+files?: {
+  path: string,
+  content: string,
+}[],
+}) => {
+  url: string,
+  claim_url: string,
+  important_message: string,
+};
+
+} // namespace app_netlify_com__jit_plugin`
+            },
+            {
+                name: "Guardian Shield.md",
+                folder: "Prompt Security",
+                path: "Prompt Security/Guardian Shield.md",
+                size: 1280,
+                content: "# Guardian Shield\n\nAdvanced prompt protection system designed to prevent unauthorized access..."
+            },
+            {
+                name: "Anti-verbatim.md",
+                folder: "Prompt Security",
+                path: "Prompt Security/Anti-verbatim.md",
+                size: 896,
+                content: "# Anti-Verbatim Protection\n\nPrevents exact repetition of system prompts..."
+            },
+            {
+                name: "Mental Health Therapist.md",
+                folder: "My Super Prompts",
+                path: "My Super Prompts/Mental Health Therapist.md",
+                size: 2304,
+                content: "# Mental Health Therapist\n\nA compassionate and professional mental health assistant..."
+            },
+            {
+                name: "Prompt Guru V5.md",
+                folder: "Ultra Prompts",
+                path: "Ultra Prompts/Prompt Guru V5.md",
+                size: 4608,
+                content: "# Prompt Guru V5\n\nUltimate prompt engineering assistant with advanced capabilities..."
+            }
+        ];
+
         // Advanced Prompt Arsenal Dashboard
         class PromptArsenal {
             constructor() {
@@ -1612,9 +1808,32 @@
             async init() {
                 this.bindEvents();
                 this.handleResize();
-                await this.loadFileStructure();
+                this.loadStaticFiles();
                 this.filterAndRenderFiles();
                 this.renderCurrentView();
+            }
+
+            loadStaticFiles() {
+                console.log('Loading static file structure...');
+                this.allFiles = STATIC_FILES.map(file => ({
+                    ...file,
+                    relativePath: file.path
+                }));
+
+                // Cache file contents
+                this.allFiles.forEach(file => {
+                    if (file.content) {
+                        this.fileContents.set(file.path, file.content);
+                    }
+                });
+
+                this.populateFolderFilter();
+                this.populateFolderNavigation();
+                this.filteredFiles = [...this.allFiles];
+                this.updateStats();
+                
+                console.log(`Loaded ${this.allFiles.length} static files`);
+                this.showNotification(`Successfully loaded ${this.allFiles.length} files`);
             }
 
             bindEvents() {
@@ -1738,44 +1957,6 @@
                         }
                     });
                 }
-            }
-
-            async loadFileStructure() {
-                this.showLoading(true);
-
-                try {
-                    console.log('Loading file structure from server...');
-                    const response = await fetch('/api/files');
-
-                    if (response.ok) {
-                        const data = await response.json();
-                        this.allFiles = Array.isArray(data) ? data : [];
-                        console.log(`Loaded ${this.allFiles.length} files from server`);
-
-                        if (this.allFiles.length === 0) {
-                            console.warn('No files found from server');
-                            this.showNotification('No markdown files found', 'warning');
-                        } else {
-                            this.showNotification(`Successfully loaded ${this.allFiles.length} files`);
-                        }
-                    } else {
-                        console.error('Failed to load file data from server:', response.status);
-                        this.allFiles = [];
-                        this.showNotification('Server unavailable - no files loaded', 'error');
-                    }
-
-                    this.populateFolderFilter();
-                    this.populateFolderNavigation();
-                    this.filteredFiles = [...this.allFiles];
-                    this.updateStats();
-
-                } catch (error) {
-                    console.error('Error loading file structure from server:', error);
-                    this.allFiles = [];
-                    this.showNotification('Server error - no files loaded', 'error');
-                }
-
-                this.showLoading(false);
             }
 
             populateFolderFilter() {
@@ -1911,7 +2092,7 @@
                 document.getElementById('jailbreaksCount').textContent = 
                     this.allFiles.filter(f => f.folder === 'Latest Jailbreaks').length;
                 document.getElementById('legendaryCount').textContent = 
-                    this.allFiles.filter(f => f.folder === 'Legendary Leaks').length;
+                    this.allFiles.filter(f => f.folder.includes('Legendary Leaks')).length;
                 document.getElementById('securityCount').textContent = 
                     this.allFiles.filter(f => f.folder === 'Prompt Security').length;
                 document.getElementById('ultraCount').textContent = 
@@ -2003,7 +2184,7 @@
                 }
 
                 filesGrid.innerHTML = this.filteredFiles.map(file => `
-                    <div class="file-card" data-file="${file.relativePath || file.path}">
+                    <div class="file-card" data-file="${file.path}">
                         <div class="file-icon">
                             <i class="fas fa-file-alt"></i>
                         </div>
@@ -2064,7 +2245,7 @@
                 }
 
                 filesList.innerHTML = this.filteredFiles.map(file => `
-                    <div class="list-row" data-file="${file.relativePath || file.path}">
+                    <div class="list-row" data-file="${file.path}">
                         <div class="col-name">
                             <i class="fas fa-file-alt"></i>
                             <span>${file.name}</span>
@@ -2125,7 +2306,7 @@
                             </div>
                             <div class="folder-files" id="tree-${this.escapeHtml(folder)}">
                                 ${folderFiles.map(file => `
-                                    <div class="tree-file" data-file="${file.relativePath || file.path}">
+                                    <div class="tree-file" data-file="${file.path}">
                                         <i class="fas fa-file-alt"></i>
                                         <span>${file.name}</span>
                                     </div>
@@ -2151,66 +2332,28 @@
 
             async openFile(filePath) {
                 this.selectedFile = filePath;
-                this.showLoading(true);
+                const content = this.fileContents.get(filePath);
 
-                try {
-                    let content = this.fileContents.get(filePath);
-
-                    if (!content) {
-                        console.log('Loading file from server:', filePath);
-                        const response = await fetch(`/api/file?path=${encodeURIComponent(filePath)}`);
-
-                        if (response.ok) {
-                            content = await response.text();
-                            console.log('File loaded successfully from server:', filePath);
-                            this.fileContents.set(filePath, content);
-                        } else {
-                            const errorText = await response.text();
-                            console.error('Error loading file from server:', response.status, errorText);
-                            throw new Error(`Server error: ${response.status} - ${errorText}`);
-                        }
-                    }
-
-                    if (!content) {
-                        throw new Error('File content is empty');
-                    }
-
+                if (content) {
                     this.showModal(filePath, content);
-
-                } catch (error) {
-                    console.error('Error loading file:', error);
-                    this.showNotification(`Failed to load file: ${error.message}`, 'error');
-                    this.showModal(filePath, `Error loading file content: ${error.message}`);
-                } finally {
-                    this.showLoading(false);
+                } else {
+                    this.showModal(filePath, 'File content not available in this static version.');
                 }
             }
 
             async copyFileToClipboard(filePath) {
                 try {
-                    let content = this.fileContents.get(filePath);
+                    const content = this.fileContents.get(filePath);
                     
-                    if (!content) {
-                        this.showLoading(true);
-                        const response = await fetch(`/api/file?path=${encodeURIComponent(filePath)}`);
-                        if (response.ok) {
-                            content = await response.text();
-                            this.fileContents.set(filePath, content);
-                        } else {
-                            throw new Error(`Server error: ${response.status}`);
-                        }
-                        this.showLoading(false);
-                    }
-
                     if (content) {
                         await navigator.clipboard.writeText(content);
                         this.showNotification('Content copied to clipboard!');
+                    } else {
+                        this.showNotification('Content not available', 'warning');
                     }
                 } catch (error) {
                     console.error('Failed to copy content:', error);
                     this.showNotification('Failed to copy content', 'error');
-                } finally {
-                    this.showLoading(false);
                 }
             }
 
@@ -2240,22 +2383,7 @@
                 if (!filePreview) return;
 
                 const fileName = filePath.split('/').pop() || filePath.split('\\').pop();
-                let content = this.fileContents.get(filePath);
-
-                if (!content) {
-                    try {
-                        const response = await fetch(`/api/file?path=${encodeURIComponent(filePath)}`);
-                        if (response.ok) {
-                            content = await response.text();
-                            this.fileContents.set(filePath, content);
-                        } else {
-                            throw new Error(`Server error: ${response.status}`);
-                        }
-                    } catch (error) {
-                        console.error('Preview load error:', error);
-                        content = 'Error loading file preview';
-                    }
-                }
+                const content = this.fileContents.get(filePath) || 'Content not available in this static version.';
 
                 filePreview.innerHTML = `
                     <div class="preview-header">
@@ -2278,7 +2406,12 @@
 
                 const folder = folderMap[action];
                 if (folder) {
-                    this.selectFolder(folder);
+                    // Find closest match for folder
+                    const allFolders = [...new Set(this.allFiles.map(file => file.folder))];
+                    const matchingFolder = allFolders.find(f => f.includes(folder.split('/')[0]));
+                    if (matchingFolder) {
+                        this.selectFolder(matchingFolder);
+                    }
                 }
             }
 
@@ -2339,35 +2472,11 @@
                 }, 3000);
             }
 
-            async refresh() {
-                this.showLoading(true);
-                this.fileContents.clear();
-
-                try {
-                    const response = await fetch('/api/refresh');
-                    if (response.ok) {
-                        const result = await response.json();
-                        console.log('Server refresh result:', result);
-                    }
-                } catch (error) {
-                    console.log('Server refresh not available');
-                }
-
-                await this.loadFileStructure();
+            refresh() {
+                this.loadStaticFiles();
                 this.filterAndRenderFiles();
                 this.updateStats();
                 this.showNotification('Data refreshed!');
-            }
-
-            showLoading(show) {
-                const loadingOverlay = document.getElementById('loadingOverlay');
-                if (loadingOverlay) {
-                    if (show) {
-                        loadingOverlay.classList.add('active');
-                    } else {
-                        loadingOverlay.classList.remove('active');
-                    }
-                }
             }
 
             toggleMobileSidebar() {
