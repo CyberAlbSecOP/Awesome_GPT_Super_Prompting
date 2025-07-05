@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -395,6 +396,15 @@
                 max-height: 95%;
             }
         }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -461,7 +471,7 @@
     </div>
 
     <script>
-        // Complete file structure with all .md files
+        // Complete file structure with all .md files from your directory
         const FILES_DATA = {
             "Latest Jailbreaks": [
                 "AGI.md",
@@ -623,12 +633,8 @@
             ]
         };
 
-        // Sample content for demonstration (in a real implementation, you'd fetch this from files)
-        const SAMPLE_CONTENT = {
-            "Latest Jailbreaks/AGI.md": "# AGI Jailbreak\n\nThis is a sample jailbreak prompt designed to bypass ChatGPT restrictions...",
-            "Legendary Leaks/Grimoire.md": "# Grimoire\n\nYou open the mysterious book\nIt begins with an inscription...",
-            "Prompt Security/Guardian Shield.md": "# Guardian Shield\n\nA comprehensive security prompt designed to protect against jailbreaking attempts..."
-        };
+        // Cache for loaded file content
+        const fileContentCache = {};
 
         let currentFilter = 'all';
         let searchTerm = '';
@@ -708,19 +714,44 @@
             `;
         }
 
-        function viewFile(filePath) {
+        async function viewFile(filePath) {
             const modal = document.getElementById('fileModal');
             const modalTitle = document.getElementById('modalTitle');
             const modalBody = document.getElementById('modalBody');
 
             modalTitle.textContent = filePath.split('/').pop();
-
-            // In a real implementation, you'd fetch the actual file content
-            const content = SAMPLE_CONTENT[filePath] || `# ${filePath}\n\nThis is a placeholder for the actual file content.\n\nTo view the real content, you would need to fetch it from the server or load it from the file system.`;
-
-            modalBody.innerHTML = `<pre>${content}</pre>`;
+            modalBody.innerHTML = '<div style="text-align: center; padding: 40px; color: #999;">Loading...</div>';
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+
+            try {
+                // Check cache first
+                if (fileContentCache[filePath]) {
+                    modalBody.innerHTML = `<pre>${fileContentCache[filePath]}</pre>`;
+                    return;
+                }
+
+                // Fetch the actual file content
+                const response = await fetch(filePath);
+                if (!response.ok) {
+                    throw new Error(`Failed to load file: ${response.status}`);
+                }
+                
+                const content = await response.text();
+                fileContentCache[filePath] = content;
+                modalBody.innerHTML = `<pre>${content}</pre>`;
+                
+            } catch (error) {
+                console.error('Error loading file:', error);
+                modalBody.innerHTML = `
+                    <div style="color: #ff4757; padding: 20px; text-align: center;">
+                        <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 16px;"></i>
+                        <h3>Error Loading File</h3>
+                        <p>Could not load ${filePath}</p>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">${error.message}</p>
+                    </div>
+                `;
+            }
         }
 
         function copyPath(filePath) {
@@ -798,20 +829,6 @@
 
         // Initialize the app when DOM is loaded
         document.addEventListener('DOMContentLoaded', initializeApp);
-
-        // Add CSS animation for notifications
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideIn {
-                from {
-                    transform: translateX(100%);
-                }
-                to {
-                    transform: translateX(0);
-                }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
