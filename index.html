@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Arsenal - Advanced Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Prompt Arsenal</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search files..." id="globalSearch">
+                </div>
+                <div class="filter-controls">
+                    <select id="folderFilter">
+                        <option value="">All Folders</option>
+                    </select>
+                    <select id="sortBy">
+                        <option value="name">Sort by Name</option>
+                        <option value="folder">Sort by Folder</option>
+                        <option value="size">Sort by Size</option>
+                    </select>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>Quick Access</h3>
+                    <ul>
+                        <li class="nav-item active" data-view="dashboard">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </li>
+                        <li class="nav-item" data-view="grid">
+                            <i class="fas fa-th"></i>
+                            <span>Grid View</span>
+                        </li>
+                        <li class="nav-item" data-view="list">
+                            <i class="fas fa-list"></i>
+                            <span>List View</span>
+                        </li>
+                        <li class="nav-item" data-view="tree">
+                            <i class="fas fa-sitemap"></i>
+                            <span>Tree View</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>Folders</h3>
+                    <ul id="folderNav">
+                        <!-- Dynamically populated -->
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number" id="totalFiles">0</span>
+                        <span class="stat-label">Files</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="totalFolders">0</span>
+                        <span class="stat-label">Folders</span>
+                    </div>
+                </div>
+                <div class="developer-info">
+                    <p>Developed by <strong>0x0806</strong></p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="breadcrumb">
+                        <h1 id="pageTitle">Dashboard</h1>
+                        <p id="pageSubtitle">Advanced file browser and prompt manager</p>
+                    </div>
+                </div>
+                
+                <div class="header-right">
+                    <div class="view-controls">
+                        <button class="view-btn active" data-view="grid" title="Grid View">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list" title="List View">
+                            <i class="fas fa-list"></i>
+                        </button>
+                        <button class="view-btn" data-view="tree" title="Tree View">
+                            <i class="fas fa-sitemap"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <button class="action-btn" id="refreshBtn" title="Refresh">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <button class="action-btn" id="settingsBtn" title="Settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Dashboard View -->
+                <section class="view-section active" id="dashboardView">
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card stats-card">
+                            <h3>Collection Overview</h3>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <i class="fas fa-unlock-alt"></i>
+                                    <div>
+                                        <span class="stat-number" id="jailbreaksCount">0</span>
+                                        <span class="stat-label">Jailbreaks</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-crown"></i>
+                                    <div>
+                                        <span class="stat-number" id="legendaryCount">0</span>
+                                        <span class="stat-label">Legendary</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <div>
+                                        <span class="stat-number" id="securityCount">0</span>
+                                        <span class="stat-label">Security</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-rocket"></i>
+                                    <div>
+                                        <span class="stat-number" id="ultraCount">0</span>
+                                        <span class="stat-label">Ultra</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card recent-card">
+                            <h3>Quick Access</h3>
+                            <div class="quick-actions">
+                                <button class="quick-btn" data-action="latest">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Latest Jailbreaks</span>
+                                </button>
+                                <button class="quick-btn" data-action="legendary">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Legendary Leaks</span>
+                                </button>
+                                <button class="quick-btn" data-action="grimoire">
+                                    <i class="fas fa-book"></i>
+                                    <span>Grimoire Collection</span>
+                                </button>
+                                <button class="quick-btn" data-action="security">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Security Tools</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card folders-card">
+                            <h3>Folder Distribution</h3>
+                            <div class="folder-chart" id="folderChart">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Grid View -->
+                <section class="view-section" id="gridView">
+                    <div class="files-grid" id="filesGrid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </section>
+
+                <!-- List View -->
+                <section class="view-section" id="listView">
+                    <div class="files-list">
+                        <div class="list-header">
+                            <div class="col-name">Name</div>
+                            <div class="col-folder">Folder</div>
+                            <div class="col-size">Size</div>
+                            <div class="col-actions">Actions</div>
+                        </div>
+                        <div class="list-body" id="filesList">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tree View -->
+                <section class="view-section" id="treeView">
+                    <div class="tree-container">
+                        <div class="tree-sidebar">
+                            <div class="tree-structure" id="treeStructure">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+                        <div class="tree-content">
+                            <div class="file-preview" id="filePreview">
+                                <div class="preview-placeholder">
+                                    <i class="fas fa-file-alt"></i>
+                                    <p>Select a file to preview</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- File Modal -->
+    <div class="modal" id="fileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">File Content</h2>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-file-info">
+                    <span class="file-path" id="modalFilePath"></span>
+                    <div class="file-actions">
+                        <button class="action-btn" id="copyContent" title="Copy Content">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <button class="action-btn" id="downloadFile" title="Download">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-content-area" id="modalContentArea">
+                    <!-- File content goes here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading files...</p>
+        </div>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
