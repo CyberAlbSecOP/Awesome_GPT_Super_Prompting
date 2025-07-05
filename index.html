@@ -759,7 +759,7 @@
             gap: 8px;
         }
 
-        /* File List */
+        /* Files List */
         .files-list {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-color);
@@ -1011,7 +1011,7 @@
         }
 
         .modal.active {
-            display: flex;
+            display: flex !important;
             animation: fadeIn 0.3s ease-out;
         }
 
@@ -1411,9 +1411,6 @@
                         <button class="action-btn" id="refreshBtn" title="Refresh">
                             <i class="fas fa-sync-alt"></i>
                         </button>
-                        <button class="action-btn" id="loadFileSystemBtn" title="Load File System">
-                            <i class="fas fa-folder-open"></i>
-                        </button>
                     </div>
                 </div>
             </header>
@@ -1594,7 +1591,7 @@
     <div class="mobile-overlay" id="mobileOverlay"></div>
 
     <script>
-        // Advanced Prompt Arsenal Dashboard - File System Access Version
+        // Advanced Prompt Arsenal Dashboard
         class PromptArsenal {
             constructor() {
                 this.currentView = 'dashboard';
@@ -1608,7 +1605,6 @@
                 this.allFiles = [];
                 this.filteredFiles = [];
                 this.fileContents = new Map();
-                this.directoryHandle = null;
 
                 this.init();
             }
@@ -1616,7 +1612,7 @@
             async init() {
                 this.bindEvents();
                 this.handleResize();
-                await this.loadInitialData();
+                await this.loadFileStructure();
                 this.updateStats();
                 this.renderCurrentView();
             }
@@ -1694,11 +1690,6 @@
                     refreshBtn.addEventListener('click', () => this.refresh());
                 }
 
-                const loadFileSystemBtn = document.getElementById('loadFileSystemBtn');
-                if (loadFileSystemBtn) {
-                    loadFileSystemBtn.addEventListener('click', () => this.loadFileSystem());
-                }
-
                 // Modal events
                 const fileModal = document.getElementById('fileModal');
                 const modalClose = document.getElementById('modalClose');
@@ -1737,87 +1728,51 @@
 
                 // Window resize
                 window.addEventListener('resize', () => this.handleResize());
+
+                // Modal click outside to close
+                const modal = document.getElementById('fileModal');
+                if (modal) {
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) {
+                            this.closeModal();
+                        }
+                    });
+                }
             }
 
-            async loadInitialData() {
-                // First try to load from files.json if available
+            async loadFileStructure() {
+                this.showLoading(true);
+
                 try {
-                    const response = await fetch('./files.json');
+                    console.log('Loading file structure from server...');
+                    const response = await fetch('/api/files');
+
                     if (response.ok) {
                         const data = await response.json();
                         this.allFiles = Array.isArray(data) ? data : [];
-                        console.log(`Loaded ${this.allFiles.length} files from static data`);
+                        console.log(`Loaded ${this.allFiles.length} files from server`);
+
+                        if (this.allFiles.length === 0) {
+                            console.warn('No files found from server');
+                            this.showNotification('No markdown files found', 'warning');
+                        }
+                    } else {
+                        console.error('Failed to load file data from server:', response.status);
+                        this.allFiles = [];
+                        this.showNotification('Server unavailable - no files loaded', 'error');
                     }
-                } catch (error) {
-                    console.log('No static files.json found, ready for file system access');
-                }
 
-                if (this.allFiles.length === 0) {
-                    this.showNotification('Click "Load File System" to browse your markdown files', 'warning');
-                }
-
-                this.populateFolderFilter();
-                this.populateFolderNavigation();
-                this.filteredFiles = [...this.allFiles];
-            }
-
-            async loadFileSystem() {
-                if (!('showDirectoryPicker' in window)) {
-                    this.showNotification('File System Access API not supported in this browser', 'error');
-                    return;
-                }
-
-                try {
-                    this.showLoading(true);
-                    this.directoryHandle = await window.showDirectoryPicker();
-                    
-                    this.allFiles = [];
-                    await this.scanDirectory(this.directoryHandle, '');
-                    
-                    console.log(`Loaded ${this.allFiles.length} markdown files from file system`);
-                    this.showNotification(`Found ${this.allFiles.length} markdown files!`, 'success');
-                    
                     this.populateFolderFilter();
                     this.populateFolderNavigation();
                     this.filteredFiles = [...this.allFiles];
-                    this.updateStats();
-                    this.renderCurrentView();
-                    
-                } catch (error) {
-                    if (error.name !== 'AbortError') {
-                        console.error('Error accessing file system:', error);
-                        this.showNotification('Error accessing file system', 'error');
-                    }
-                } finally {
-                    this.showLoading(false);
-                }
-            }
 
-            async scanDirectory(dirHandle, path) {
-                try {
-                    for await (const entry of dirHandle.values()) {
-                        const currentPath = path ? `${path}/${entry.name}` : entry.name;
-                        
-                        if (entry.kind === 'file' && entry.name.endsWith('.md')) {
-                            const file = await entry.getFile();
-                            this.allFiles.push({
-                                name: entry.name,
-                                path: currentPath,
-                                relativePath: currentPath,
-                                folder: path || 'Root',
-                                size: file.size,
-                                type: 'md',
-                                lastModified: new Date(file.lastModified).toISOString(),
-                                fileHandle: entry
-                            });
-                        } else if (entry.kind === 'directory' && !entry.name.startsWith('.')) {
-                            const subDirHandle = await dirHandle.getDirectoryHandle(entry.name);
-                            await this.scanDirectory(subDirHandle, currentPath);
-                        }
-                    }
                 } catch (error) {
-                    console.error(`Error scanning directory ${path}:`, error);
+                    console.error('Error loading file structure from server:', error);
+                    this.allFiles = [];
+                    this.showNotification('Server error - no files loaded', 'error');
                 }
+
+                this.showLoading(false);
             }
 
             populateFolderFilter() {
@@ -2028,7 +1983,7 @@
                         <div class="empty-state">
                             <i class="fas fa-search"></i>
                             <h3>No files found</h3>
-                            <p>Try adjusting your search or filter criteria, or load the file system</p>
+                            <p>Try adjusting your search or filter criteria</p>
                         </div>
                     `;
                     return;
@@ -2089,7 +2044,7 @@
                         <div class="empty-state">
                             <i class="fas fa-search"></i>
                             <h3>No files found</h3>
-                            <p>Try adjusting your search or filter criteria, or load the file system</p>
+                            <p>Try adjusting your search or filter criteria</p>
                         </div>
                     `;
                     return;
@@ -2170,6 +2125,11 @@
                 // Add click events to files
                 treeStructure.querySelectorAll('.tree-file').forEach(fileEl => {
                     fileEl.addEventListener('click', async (e) => {
+                        // Remove active class from all files
+                        treeStructure.querySelectorAll('.tree-file').forEach(f => f.classList.remove('active'));
+                        // Add active class to clicked file
+                        e.currentTarget.classList.add('active');
+                        
                         const filePath = e.currentTarget.dataset.file;
                         await this.showFilePreview(filePath);
                     });
@@ -2184,29 +2144,17 @@
                     let content = this.fileContents.get(filePath);
 
                     if (!content) {
-                        const file = this.allFiles.find(f => f.relativePath === filePath || f.path === filePath);
-                        if (!file) {
-                            throw new Error('File not found');
-                        }
+                        console.log('Loading file from server:', filePath);
+                        const response = await fetch(`/api/file?path=${encodeURIComponent(filePath)}`);
 
-                        if (file.fileHandle) {
-                            // Use File System Access API
-                            const fileObj = await file.fileHandle.getFile();
-                            content = await fileObj.text();
+                        if (response.ok) {
+                            content = await response.text();
+                            console.log('File loaded successfully from server:', filePath);
+                            this.fileContents.set(filePath, content);
                         } else {
-                            // Fetch from server API
-                            console.log('Loading file from server:', filePath);
-                            const response = await fetch(`/api/file?path=${encodeURIComponent(filePath)}`);
-                            
-                            if (response.ok) {
-                                content = await response.text();
-                                console.log('File loaded successfully from server:', filePath);
-                            } else {
-                                throw new Error(`Server error: ${response.status}`);
-                            }
+                            console.error('Error loading file from server:', response.status);
+                            throw new Error(`Server error: ${response.status}`);
                         }
-
-                        this.fileContents.set(filePath, content);
                     }
 
                     this.showModal(filePath, content);
@@ -2225,25 +2173,13 @@
                     
                     if (!content) {
                         this.showLoading(true);
-                        const file = this.allFiles.find(f => f.relativePath === filePath || f.path === filePath);
-                        if (!file) {
-                            throw new Error('File not found');
-                        }
-
-                        if (file.fileHandle) {
-                            const fileObj = await file.fileHandle.getFile();
-                            content = await fileObj.text();
+                        const response = await fetch(`/api/file?path=${encodeURIComponent(filePath)}`);
+                        if (response.ok) {
+                            content = await response.text();
+                            this.fileContents.set(filePath, content);
                         } else {
-                            // Fetch from server API
-                            const response = await fetch(`/api/file?path=${encodeURIComponent(filePath)}`);
-                            if (response.ok) {
-                                content = await response.text();
-                            } else {
-                                throw new Error(`Server error: ${response.status}`);
-                            }
+                            throw new Error(`Server error: ${response.status}`);
                         }
-
-                        this.fileContents.set(filePath, content);
                         this.showLoading(false);
                     }
 
@@ -2289,22 +2225,12 @@
 
                 if (!content) {
                     try {
-                        const file = this.allFiles.find(f => f.relativePath === filePath || f.path === filePath);
-                        if (!file) {
-                            content = 'File not found';
-                        } else if (file.fileHandle) {
-                            const fileObj = await file.fileHandle.getFile();
-                            content = await fileObj.text();
+                        const response = await fetch(`/api/file?path=${encodeURIComponent(filePath)}`);
+                        if (response.ok) {
+                            content = await response.text();
                             this.fileContents.set(filePath, content);
                         } else {
-                            // Fetch from server API
-                            const response = await fetch(`/api/file?path=${encodeURIComponent(filePath)}`);
-                            if (response.ok) {
-                                content = await response.text();
-                                this.fileContents.set(filePath, content);
-                            } else {
-                                content = `Error loading file: ${response.status}`;
-                            }
+                            throw new Error(`Server error: ${response.status}`);
                         }
                     } catch (error) {
                         console.error('Preview load error:', error);
@@ -2395,11 +2321,20 @@
             }
 
             async refresh() {
-                if (this.directoryHandle) {
-                    await this.loadFileSystem();
-                } else {
-                    await this.loadInitialData();
+                this.showLoading(true);
+                this.fileContents.clear();
+
+                try {
+                    const response = await fetch('/api/refresh');
+                    if (response.ok) {
+                        const result = await response.json();
+                        console.log('Server refresh result:', result);
+                    }
+                } catch (error) {
+                    console.log('Server refresh not available');
                 }
+
+                await this.loadFileStructure();
                 this.filterAndRenderFiles();
                 this.updateStats();
                 this.showNotification('Data refreshed!');
