@@ -1523,31 +1523,52 @@
             try {
                 const files = [];
                 
-                // Since we can't directly access the file system in a browser,
-                // we'll need to manually specify the files to include
-                // This would need to be replaced with actual file system access in a proper environment
-                
-                // For now, let's scan the current directory files
-                const directoryFiles = [
-                    { name: 'index.html', type: 'file', size: 0 },
-                    { name: 'script.js', type: 'file', size: 0 },
-                    { name: 'style.css', type: 'file', size: 0 }
+                // Get actual files from the current directory
+                const knownFiles = [
+                    'index.html',
+                    'script.js', 
+                    'style.css',
+                    '.replit'
                 ];
+
+                // Add any additional files that might exist
+                const potentialFiles = [
+                    'README.md',
+                    'main.py',
+                    'app.js',
+                    'server.js',
+                    'package.json',
+                    'requirements.txt',
+                    'config.js',
+                    'data.json',
+                    'utils.js',
+                    'helpers.py',
+                    'styles.css',
+                    'script.min.js',
+                    'favicon.ico',
+                    'manifest.json'
+                ];
+
+                const allFiles = [...knownFiles, ...potentialFiles];
                 
-                for (const file of directoryFiles) {
-                    if (file.type === 'file' && (file.name.endsWith('.md') || file.name.endsWith('.txt') || file.name.endsWith('.js') || file.name.endsWith('.html') || file.name.endsWith('.css'))) {
-                        try {
-                            const content = await loadFileContent(file.name);
+                for (const fileName of allFiles) {
+                    try {
+                        const response = await fetch(fileName);
+                        if (response.ok) {
+                            const content = await response.text();
+                            const size = new Blob([content]).size;
+                            
                             files.push({
-                                name: file.name.replace(/\.[^/.]+$/, ""), // Remove extension
-                                folder: determineFolder(file.name),
-                                path: file.name,
-                                size: content.length,
+                                name: fileName.replace(/\.[^/.]+$/, ""), // Remove extension
+                                folder: determineFolder(fileName),
+                                path: fileName,
+                                size: size,
                                 content: content
                             });
-                        } catch (error) {
-                            console.warn(`Could not load ${file.name}:`, error);
                         }
+                    } catch (error) {
+                        // File doesn't exist or can't be loaded, skip silently
+                        continue;
                     }
                 }
                 
@@ -1575,12 +1596,32 @@
             const ext = fileName.split('.').pop().toLowerCase();
             const name = fileName.toLowerCase();
             
-            if (ext === 'html') return 'Web Pages';
-            if (ext === 'css') return 'Stylesheets';
-            if (ext === 'js') return 'JavaScript';
-            if (ext === 'md') return 'Documentation';
-            if (ext === 'txt') return 'Text Files';
-            if (name.includes('config')) return 'Configuration';
+            // Web files
+            if (ext === 'html' || ext === 'htm') return 'Web Pages';
+            if (ext === 'css' || ext === 'scss' || ext === 'sass') return 'Stylesheets';
+            if (ext === 'js' || ext === 'jsx' || ext === 'ts' || ext === 'tsx') return 'JavaScript';
+            
+            // Programming languages
+            if (ext === 'py' || ext === 'python') return 'Python';
+            if (ext === 'java' || ext === 'class') return 'Java';
+            if (ext === 'cpp' || ext === 'c' || ext === 'h') return 'C/C++';
+            if (ext === 'php') return 'PHP';
+            if (ext === 'rb' || ext === 'ruby') return 'Ruby';
+            
+            // Documentation and text
+            if (ext === 'md' || ext === 'markdown') return 'Documentation';
+            if (ext === 'txt' || ext === 'text') return 'Text Files';
+            if (ext === 'json') return 'Data Files';
+            if (ext === 'xml' || ext === 'yaml' || ext === 'yml') return 'Data Files';
+            
+            // Configuration
+            if (name.includes('config') || name.includes('.env') || fileName === '.replit') return 'Configuration';
+            if (ext === 'toml' || ext === 'ini' || ext === 'conf') return 'Configuration';
+            if (fileName === 'package.json' || fileName === 'requirements.txt') return 'Dependencies';
+            
+            // Media
+            if (ext === 'jpg' || ext === 'jpeg' || ext === 'png' || ext === 'gif' || ext === 'svg') return 'Images';
+            if (ext === 'ico') return 'Assets';
             
             return 'Miscellaneous';
         }
