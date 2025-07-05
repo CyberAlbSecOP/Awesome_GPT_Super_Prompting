@@ -288,6 +288,38 @@ body {
     color: var(--primary-color);
 }
 
+.developer-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.repo-credit {
+    margin-top: 10px !important;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.repo-credit a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 5px;
+    transition: color 0.3s ease;
+}
+
+.repo-credit a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+.repo-credit i {
+    color: #ffd700;
+    margin-right: 5px;
+}
+
 /* Main Content */
 .main-content {
     flex: 1;
@@ -532,45 +564,121 @@ body {
 }
 
 .folder-chart {
+    height: 200px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    color: var(--text-secondary);
 }
 
-.chart-item {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    padding: 16px;
-    flex: 1;
-    min-width: 150px;
-    text-align: center;
-    transition: var(--transition);
+.credits-card {
+    grid-column: span 2;
 }
 
-.chart-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--primary-color);
+.credits-content {
+    space-y: 1rem;
 }
 
-.chart-item .folder-name {
-    font-size: 14px;
-    font-weight: 600;
+.credit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.credit-avatar {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.credit-info h4 {
+    margin: 0 0 0.5rem 0;
     color: var(--text-primary);
-    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
-.chart-item .file-count {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--primary-color);
-    line-height: 1;
+.credit-info p {
+    margin: 0.25rem 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
-.chart-item .file-label {
-    font-size: 11px;
-    color: var(--text-muted);
-    text-transform: uppercase;
+.credit-stats {
+    color: var(--accent-color) !important;
+    font-weight: 500;
+}
+
+.credit-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.credit-link:hover {
+    color: var(--accent-hover);
+}
+
+.credit-description {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.credit-description p {
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Chart Styles */
+.chart-item {
+    margin-bottom: 1rem;
+}
+
+.chart-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--background-secondary);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.chart-fill {
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.chart-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Tree View Improvements */
+.tree-folder {
+    margin-bottom: 1rem;
 }
 
 /* Grid View */
@@ -1129,39 +1237,6 @@ body {
 .empty-state p {
     margin: 0;
     font-size: 0.9rem;
-}
-
-/* Chart Styles */
-.chart-item {
-    margin-bottom: 1rem;
-}
-
-.chart-bar {
-    width: 100%;
-    height: 8px;
-    background: var(--background-secondary);
-    border-radius: 4px;
-    overflow: hidden;
-    margin-bottom: 0.5rem;
-}
-
-.chart-fill {
-    height: 100%;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    border-radius: 4px;
-    transition: width 0.3s ease;
-}
-
-.chart-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-}
-
-/* Tree View Improvements */
-.tree-folder {
-    margin-bottom: 1rem;
 }
 
 .folder-header {
