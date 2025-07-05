@@ -18,22 +18,25 @@ function getAllMarkdownFiles(dirPath, arrayOfFiles = []) {
                     getAllMarkdownFiles(fullPath, arrayOfFiles);
                 } else if (file.endsWith('.md')) {
                     const stats = fs.statSync(fullPath);
+                    const relativePath = path.relative('.', fullPath);
+                    const folderPath = path.dirname(relativePath);
+                    
                     arrayOfFiles.push({
                         name: file,
                         path: fullPath,
-                        relativePath: path.relative('.', fullPath),
-                        folder: path.dirname(path.relative('.', fullPath)),
+                        relativePath: relativePath,
+                        folder: folderPath === '.' ? 'Root' : folderPath,
                         size: stats.size,
                         type: 'md',
                         lastModified: stats.mtime
                     });
                 }
             } catch (error) {
-                // Skip files that can't be accessed
+                console.error(`Error processing file ${fullPath}:`, error.message);
             }
         });
     } catch (error) {
-        // Skip directories that can't be accessed
+        console.error(`Error reading directory ${dirPath}:`, error.message);
     }
     
     return arrayOfFiles;
@@ -61,13 +64,23 @@ const server = http.createServer((req, res) => {
             return;
         }
         
+        // Security check to prevent directory traversal
+        const resolvedPath = path.resolve(filePath);
+        const projectRoot = path.resolve('.');
+        if (!resolvedPath.startsWith(projectRoot)) {
+            res.writeHead(403, { 'Content-Type': 'text/plain' });
+            res.end('Access denied');
+            return;
+        }
+        
         try {
-            const content = fs.readFileSync(filePath, 'utf8');
+            const content = fs.readFileSync(resolvedPath, 'utf8');
             res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
             res.end(content);
         } catch (error) {
+            console.error(`Error reading file ${resolvedPath}:`, error.message);
             res.writeHead(404, { 'Content-Type': 'text/plain' });
-            res.end('File not found');
+            res.end('File not found: ' + error.message);
         }
         return;
     }
