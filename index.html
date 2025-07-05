@@ -1613,7 +1613,7 @@
                 this.bindEvents();
                 this.handleResize();
                 await this.loadFileStructure();
-                this.updateStats();
+                this.filterAndRenderFiles();
                 this.renderCurrentView();
             }
 
@@ -1755,6 +1755,8 @@
                         if (this.allFiles.length === 0) {
                             console.warn('No files found from server');
                             this.showNotification('No markdown files found', 'warning');
+                        } else {
+                            this.showNotification(`Successfully loaded ${this.allFiles.length} files`);
                         }
                     } else {
                         console.error('Failed to load file data from server:', response.status);
@@ -1765,6 +1767,7 @@
                     this.populateFolderFilter();
                     this.populateFolderNavigation();
                     this.filteredFiles = [...this.allFiles];
+                    this.updateStats();
 
                 } catch (error) {
                     console.error('Error loading file structure from server:', error);
@@ -1918,6 +1921,16 @@
             renderFolderChart() {
                 const folderChart = document.getElementById('folderChart');
                 if (!folderChart) return;
+
+                if (this.allFiles.length === 0) {
+                    folderChart.innerHTML = `
+                        <div style="text-align: center; color: var(--text-muted); padding: 20px;">
+                            <i class="fas fa-folder-open" style="font-size: 24px; margin-bottom: 12px;"></i>
+                            <p>No folders found</p>
+                        </div>
+                    `;
+                    return;
+                }
 
                 const folders = [...new Set(this.allFiles.map(file => file.folder))].sort();
                 folderChart.innerHTML = '';
@@ -2152,16 +2165,22 @@
                             console.log('File loaded successfully from server:', filePath);
                             this.fileContents.set(filePath, content);
                         } else {
-                            console.error('Error loading file from server:', response.status);
-                            throw new Error(`Server error: ${response.status}`);
+                            const errorText = await response.text();
+                            console.error('Error loading file from server:', response.status, errorText);
+                            throw new Error(`Server error: ${response.status} - ${errorText}`);
                         }
+                    }
+
+                    if (!content) {
+                        throw new Error('File content is empty');
                     }
 
                     this.showModal(filePath, content);
 
                 } catch (error) {
                     console.error('Error loading file:', error);
-                    this.showModal(filePath, 'Error loading file content: ' + error.message);
+                    this.showNotification(`Failed to load file: ${error.message}`, 'error');
+                    this.showModal(filePath, `Error loading file content: ${error.message}`);
                 } finally {
                     this.showLoading(false);
                 }
