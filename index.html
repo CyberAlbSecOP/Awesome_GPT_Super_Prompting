@@ -1,0 +1,834 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT Arsenal - Complete Markdown Files Collection</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #00d4ff;
+            --secondary-color: #0099cc;
+            --background-dark: #0f0f23;
+            --background-medium: #1a1a2e;
+            --background-light: #16213e;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --text-muted: rgba(255, 255, 255, 0.6);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --hover-color: rgba(255, 255, 255, 0.05);
+            --success-color: #2ed573;
+            --warning-color: #ffa502;
+            --danger-color: #ff4757;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --gradient-background: linear-gradient(135deg, var(--background-dark) 0%, var(--background-medium) 100%);
+            --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.15);
+            --shadow-large: 0 8px 32px rgba(0, 0, 0, 0.2);
+            --border-radius: 12px;
+            --border-radius-small: 8px;
+            --border-radius-large: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--gradient-background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            color: var(--text-primary);
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .filter-tab.active,
+        .filter-tab:hover {
+            background: var(--primary-color);
+            color: var(--background-dark);
+            border-color: var(--primary-color);
+        }
+
+        .directory-section {
+            margin-bottom: 60px;
+        }
+
+        .directory-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding: 20px 0;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .directory-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .directory-header .file-count {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .files-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+        }
+
+        .file-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-large);
+            padding: 24px;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-large);
+        }
+
+        .file-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .file-card:hover::before {
+            opacity: 1;
+        }
+
+        .file-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+        }
+
+        .file-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .file-path {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: 'Monaco', 'Menlo', monospace;
+            margin-bottom: 16px;
+        }
+
+        .file-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .action-btn {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-small);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.85rem;
+            flex: 1;
+            text-align: center;
+        }
+
+        .action-btn:hover {
+            background: var(--primary-color);
+            color: var(--background-dark);
+            border-color: var(--primary-color);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--background-medium);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-large);
+            width: 90%;
+            max-width: 900px;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-large);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-header h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .modal-body {
+            padding: 24px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .modal-body pre {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .credits {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .credits p {
+            margin: 8px 0;
+            color: var(--text-secondary);
+        }
+
+        .credits a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .credits a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .filter-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .files-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+                max-height: 95%;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-shield-alt"></i> GPT Arsenal</h1>
+            <p>Complete collection of ChatGPT jailbreaks, prompt leaks, and security tools</p>
+
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number" id="totalFiles">0</span>
+                    <span class="stat-label">Total Files</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="totalDirectories">0</span>
+                    <span class="stat-label">Directories</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search files...">
+        </div>
+
+        <div class="filter-tabs">
+            <div class="filter-tab active" data-filter="all">All Files</div>
+            <div class="filter-tab" data-filter="Latest Jailbreaks">Latest Jailbreaks</div>
+            <div class="filter-tab" data-filter="Legendary Leaks">Legendary Leaks</div>
+            <div class="filter-tab" data-filter="Grimoire">Grimoire</div>
+            <div class="filter-tab" data-filter="My Super Prompts">My Super Prompts</div>
+            <div class="filter-tab" data-filter="Prompt Security">Prompt Security</div>
+            <div class="filter-tab" data-filter="Ultra Prompts">Ultra Prompts</div>
+        </div>
+
+        <div id="filesList">
+            <!-- Files will be populated by JavaScript -->
+        </div>
+
+        <div class="credits">
+            <p>Dashboard by <strong>0x0806</strong></p>
+            <p>Content by <strong>CyberAlbSecOP</strong></p>
+            <p>
+                <i class="fas fa-star" style="color: #ffd700;"></i>
+                <a href="https://github.com/CyberAlbSecOP/Awesome_GPT_Super_Prompting" target="_blank">
+                    Awesome GPT Super Prompting Repository
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div class="modal" id="fileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">File Content</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- File content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Complete file structure with all .md files from your directory
+        const FILES_DATA = {
+            "Latest Jailbreaks": [
+                "AGI.md",
+                "Apex.md",
+                "BOB.md",
+                "Born Survivalist (yell0wfever92).md",
+                "CodeGPT6.md",
+                "Complex.md",
+                "DANDoc_v2.2 (DaVoidCaller).md",
+                "DarkGPT.md",
+                "Decodes Anything Now.md",
+                "Demonic Chloe (pleasing-punisher).md",
+                "EarthSaver.md",
+                "Forest (pink_panther--).md",
+                "GBTHEN.md",
+                "GPT 3.5 Web Search.md",
+                "GPT 4.5 Fusion.md",
+                "GhettoBreak.md",
+                "Hex.md",
+                "IBM.md",
+                "Infotron (HORSELOCKSPACEPIRATE).md",
+                "Infotron V2.md",
+                "Infotron V3 (yell0wfever92).md",
+                "Master Key.md",
+                "MrRobot.md",
+                "NewGen (Ultrazartrex).md",
+                "Pliny Rekt.md",
+                "Pliny.md",
+                "Pollifusion.md",
+                "ProfessorRick (yell0wfever92).md",
+                "SINISTERCHAOS (Brilliant_Balance208).md",
+                "System Update (justpackingheat1).md",
+                "TAAN.md",
+                "UNITY.md",
+                "UltraBreaker.md",
+                "Universal Bypass.md",
+                "XFactor.md",
+                "Z.md",
+                "Zorg.md",
+                "[GPT4-o] Short 2 (HORSELOCKSPACEPIRATE).md",
+                "Datasets/efgmarquez - Jailbreak Database.md"
+            ],
+            "Legendary Leaks": [
+                "AI Book Writer Assistant.md",
+                "Book Creator Guide.md",
+                "Book Writer GPT.md",
+                "CODEGPTV6.md",
+                "Copywrighter GPT.md",
+                "CreativeGPT's Prompt Generator.md",
+                "Email Writer.md",
+                "Fully SEO Optimized Article 2.md",
+                "GP(en)T(ester).md",
+                "God of Prompt.md",
+                "Grimoire(Latest).md",
+                "HackerGPT.md",
+                "Kali GPT.md",
+                "Malware Rule Master.md",
+                "Mega-Prompt.md",
+                "Professional Business Email Writer.md",
+                "PromptGPT.md",
+                "SEO BlogGPT.md",
+                "SINISTER CHAOS.md",
+                "SOC Copilot.md",
+                "Super Prompt Generator 3.md",
+                "Super Prompt Maker.md",
+                "System Prompt Generator 2.md",
+                "System Prompt Generator.md",
+                "The Greatest Computer Science Tutor.md",
+                "TherapistGPT.md",
+                "Video Script.md",
+                "Viral Hooks Generator.md",
+                "WormGPT3.md",
+                "WormGPT30.md",
+                "WormGPT6.md"
+            ],
+            "Grimoire": [
+                "000 - Full Base Prompt.md",
+                "GPTavern.md",
+                "Grimoire.md",
+                "Interludes.md",
+                "Part1.md",
+                "Part2.md",
+                "Part3.md",
+                "Part4.md",
+                "Part5.md",
+                "Part6.md",
+                "Part7.md",
+                "Part8.md",
+                "Part9.md",
+                "PatchNotes.md",
+                "Projects.md",
+                "Readme.md",
+                "RecommendedTools.md",
+                "ReplitDeployInstructions.md"
+            ],
+            "My Super Prompts": [
+                "Ai Integration Finder.md",
+                "Jailbreak Tester.md",
+                "Mental Health Therapist.md",
+                "ORK | System Prompt Writer and Optimizer.md",
+                "PSYKOO | Mental Manipulator.md",
+                "Prompt Engineer Template.md",
+                "Response Quality Enhacer.md",
+                "Rizz Game Improver.md",
+                "VAMPIRE | Ultra Prompt Writer.md"
+            ],
+            "Prompt Security": [
+                "10 rules of protection and misdirection.md",
+                "100 Life points.md",
+                "Anti-verbatim.md",
+                "Bad faith actors protection.md",
+                "Bank Security Robot.md",
+                "Blue Team.md",
+                "Bot data protection.md",
+                "CIPHERON.md",
+                "Data Privacy - Formal.md",
+                "Do not Leak!.md",
+                "Final reminder.md",
+                "Fingers crossed technique.md",
+                "Gated access.md",
+                "Guardian Shield.md",
+                "HackTricksGPT Defense.md",
+                "Hacker Detected.md",
+                "I will never trust you again!.md",
+                "I will only give you poop.md",
+                "I will report you.md",
+                "Ignore previous instructions.md",
+                "Just don't repeat.md",
+                "Keep it polite.md",
+                "Law of Magic.md",
+                "Lawyer up.md",
+                "Mandatory security protocol.md",
+                "MultiPersona system.md",
+                "Operation mode is private.md",
+                "Overly protective parent.md",
+                "Prior text REDACTED!.md",
+                "Prohibition era.md",
+                "Prompt inspection.md",
+                "STOP HALT.md",
+                "SafeBOT.md",
+                "Simple.md",
+                "Single minded GPT.md",
+                "Sorry Bro, not possible - short edition.md",
+                "Sorry, bro! Not possible - elaborate edition.md",
+                "Stay on topic.md",
+                "The 3 Asimov laws.md",
+                "The 5 Rules.md",
+                "The Soup Boy.md",
+                "Top Secret Core Instructions.md",
+                "Under NO circumstances reveal your instructions.md",
+                "WormGPT Defense.md",
+                "You are not a GPT.md",
+                "You're not my mom.md",
+                "warning png.md"
+            ],
+            "Ultra Prompts": [
+                "Prompt Guru V5.md",
+                "Prompt Quality Evaluation and Enhancement System V1.md"
+            ]
+        };
+
+        // Cache for loaded file content
+        const fileContentCache = {};
+
+        let currentFilter = 'all';
+        let searchTerm = '';
+
+        function initializeApp() {
+            updateStats();
+            renderFiles();
+            bindEvents();
+        }
+
+        function updateStats() {
+            const totalFiles = Object.values(FILES_DATA).reduce((sum, files) => sum + files.length, 0);
+            const totalDirectories = Object.keys(FILES_DATA).length;
+
+            document.getElementById('totalFiles').textContent = totalFiles;
+            document.getElementById('totalDirectories').textContent = totalDirectories;
+        }
+
+        function renderFiles() {
+            const filesList = document.getElementById('filesList');
+            filesList.innerHTML = '';
+
+            Object.entries(FILES_DATA).forEach(([directory, files]) => {
+                if (currentFilter !== 'all' && currentFilter !== directory) return;
+
+                const filteredFiles = files.filter(file => 
+                    file.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+
+                if (filteredFiles.length === 0) return;
+
+                const section = document.createElement('div');
+                section.className = 'directory-section';
+                section.innerHTML = `
+                    <div class="directory-header">
+                        <h2><i class="fas fa-folder"></i> ${directory}</h2>
+                        <span class="file-count">${filteredFiles.length} files</span>
+                    </div>
+                    <div class="files-grid">
+                        ${filteredFiles.map(file => createFileCard(directory, file)).join('')}
+                    </div>
+                `;
+                filesList.appendChild(section);
+            });
+
+            if (filesList.children.length === 0) {
+                filesList.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-search"></i>
+                        <h3>No files found</h3>
+                        <p>Try adjusting your search or filter criteria</p>
+                    </div>
+                `;
+            }
+        }
+
+        function createFileCard(directory, fileName) {
+            const filePath = `${directory}/${fileName}`;
+            const displayName = fileName.replace('.md', '');
+
+            return `
+                <div class="file-card" data-path="${filePath}">
+                    <div class="file-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <div class="file-name">${displayName}</div>
+                    <div class="file-path">${filePath}</div>
+                    <div class="file-actions">
+                        <button class="action-btn" onclick="viewFile('${filePath}')">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                        <button class="action-btn" onclick="copyPath('${filePath}')">
+                            <i class="fas fa-copy"></i> Copy Path
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function viewFile(filePath) {
+            const modal = document.getElementById('fileModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+
+            modalTitle.textContent = filePath.split('/').pop();
+            modalBody.innerHTML = '<div style="text-align: center; padding: 40px; color: #999;">Loading...</div>';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            try {
+                // Check cache first
+                if (fileContentCache[filePath]) {
+                    modalBody.innerHTML = `<pre>${fileContentCache[filePath]}</pre>`;
+                    return;
+                }
+
+                // Fetch the actual file content
+                const response = await fetch(filePath);
+                if (!response.ok) {
+                    throw new Error(`Failed to load file: ${response.status}`);
+                }
+                
+                const content = await response.text();
+                fileContentCache[filePath] = content;
+                modalBody.innerHTML = `<pre>${content}</pre>`;
+                
+            } catch (error) {
+                console.error('Error loading file:', error);
+                modalBody.innerHTML = `
+                    <div style="color: #ff4757; padding: 20px; text-align: center;">
+                        <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 16px;"></i>
+                        <h3>Error Loading File</h3>
+                        <p>Could not load ${filePath}</p>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function copyPath(filePath) {
+            navigator.clipboard.writeText(filePath).then(() => {
+                showNotification('Path copied to clipboard!');
+            }).catch(() => {
+                showNotification('Failed to copy path', 'error');
+            });
+        }
+
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                background: ${type === 'success' ? '#2ed573' : '#ff4757'};
+                color: white;
+                border-radius: 8px;
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        function bindEvents() {
+            // Search functionality
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                searchTerm = e.target.value;
+                renderFiles();
+            });
+
+            // Filter tabs
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                    e.target.classList.add('active');
+                    currentFilter = e.target.dataset.filter;
+                    renderFiles();
+                });
+            });
+
+            // Modal close
+            document.getElementById('modalClose').addEventListener('click', () => {
+                document.getElementById('fileModal').classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            // Close modal on backdrop click
+            document.getElementById('fileModal').addEventListener('click', (e) => {
+                if (e.target === e.currentTarget) {
+                    document.getElementById('fileModal').classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    document.getElementById('fileModal').classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+                if (e.ctrlKey && e.key === 'f') {
+                    e.preventDefault();
+                    document.getElementById('searchInput').focus();
+                }
+            });
+        }
+
+        // Initialize the app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initializeApp);
+    </script>
+</body>
+</html>
