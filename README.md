@@ -176,6 +176,7 @@ Communities and forums for discovering and sharing prompts.
 - [r/PromptWizards/](https://www.reddit.com/r/PromptWizards/) - Community for wizards of prompt engineering.
 - [altenens.is/forums/chatgpt-tools](https://altenens.is/forums/chatgpt-tools.469297/) - Forum for sharing GPT tools and resources.
 - [onehack.us/prompt](https://onehack.us/search?q=prompt) - Another platform for discovering GPT prompts.
+- [God Tier Prompts](https://www.godtierprompts.com) - A community driven leaderboard where the best prompts rise to the top.
 
 ---
 
