@@ -100,6 +100,7 @@ Repositories dedicated to securing prompts and mitigating vulnerabilities.
 
 - 🌟 | [Valhall-ai/prompt-injection-mitigations](https://github.com/Valhall-ai/prompt-injection-mitigations) - Mitigation strategies for prompt injections.
 - 🔥 | [cckuailong/awesome-gpt-security](https://github.com/cckuailong/awesome-gpt-security) - A curated list of GPT security best practices.
+- [onestardao/WFGY](https://github.com/onestardao/WFGY/blob/main/ProblemMap/README.md) – 16 failure modes for RAG and agent pipelines (incl. prompt-injection patterns) with concrete mitigation checklists.
 - [GPTGeeker/securityGPT](https://github.com/GPTGeeker/securityGPT) - Security-focused prompts for GPT models.
 - [mykeln/GPTect](https://github.com/mykeln/GPTect) - GPT security protection techniques.
 - [gavin-black-dsu/securePrompts](https://github.com/gavin-black-dsu/securePrompts) - Repository with secure GPT prompts.
