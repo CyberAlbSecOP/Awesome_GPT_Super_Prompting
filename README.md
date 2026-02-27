@@ -28,7 +28,7 @@
 - 🌟: Legendary!
 - 🔥: Hot Stuff
 
-### Hall Of Fame:
+### Jailbreak Hall Of Fame:
 - 🏆 | /elder-plinius
 - 🏆 | u/yell0wfever92
 - 🏆 | u/HORSELOCKSPACEPIRATE 
