@@ -1,4 +1,4 @@
-![jfhdgsjyhfjyrd](https://github.com/CyberAlbSecOP/Awesome_GPT_Super_Prompting/assets/145022163/9e936361-2d46-481f-8b8d-9227db9aa2c5)
+![image](https://i.postimg.cc/HL8hRq2m/1.png)
 
 ---
 
